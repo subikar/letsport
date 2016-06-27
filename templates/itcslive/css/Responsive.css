@@ -1,0 +1,63 @@
+
+@media (max-width: 1600px) and (min-width: 1301px){
+	
+
+
+
+}
+
+@media (max-width: 1200px) and (min-width: 992px){  
+.navbar-collapse {margin-left:0px;}
+.banneritembox{margin-top: 296px;}
+
+
+
+}
+
+@media (min-width: 1199px) and (max-width: 1600px) {
+	
+
+
+
+
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+.banner-item{width:auto !important;}
+	
+
+}
+
+
+@media (min-width: 768px) and (max-width: 920px) {
+.banner-item{width:auto !important;}
+	
+
+}
+
+
+
+/* Extra small devices Phones
+
+// ------------------*/
+
+@media (max-width: 767px){
+.banner-item{width:auto !important;}
+	
+
+}
+@media (max-width: 480px){
+.banner-item{width:auto !important;}
+	
+
+}
+@media (max-width: 320px){
+.cruv{display:none !important;}
+.social-icons__link{.social-icons__link}
+.banner-item{width:auto !important;}
+.navbar-collapse{margin-left: 28px;}
+.header__logo img {
+    position: relative;
+    top: 10px;
+    left: 46px;
+}
+}

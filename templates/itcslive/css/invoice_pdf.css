@@ -1,0 +1,34 @@
+.pdfHeader {font-size:14px;}
+.invoice_bind {border:1px solid #000;}
+#invoice_to-1 {float:left; width:35%; border-right:1px solid #000; height:140px;}
+#invoice_to-1 p {font:normal 11px/18px Arial, Helvetica, sans-serif; text-align:center;}
+.logo_company {float:none; text-align:center; width:auto;}
+
+#invoice_to-2 {float:right; width:60%; padding-left:10px;}
+.own_address pre {font:normal 11px/19px Arial, Helvetica, sans-serif;}
+
+#invoice_to-3 {float:left; width:73%;font:normal 14px/18px Arial, Helvetica, sans-serif; padding-top:15px;}
+#invoice_to-3 pre {font:normal 11px/19px Arial, Helvetica, sans-serif;}
+#invoice_to-4 {float:left; width:25%;}
+ul.invoice_numbers li {list-style-type:none; float:left;font:normal 14px/18px Arial, Helvetica, sans-serif;}
+
+#table_invoice table {border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;}
+#table_invoice table td {padding-left:5px;border-bottom:1px solid #000;border-right:1px solid #000;font:normal 11px/15px Arial, Helvetica, sans-serif;}
+#table_invoice table td.last {border-right:none;}
+
+#table_invoice1 {margin-top:50px;}
+#table_invoice1 table {border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;margin-left:48%;}
+#table_invoice1 table td {padding-left:5px;border-bottom:1px solid #000;border-right:1px solid #000;font:normal 11px/15px Arial, Helvetica, sans-serif;}
+#table_invoice1 table td.last1 {border-right:none;}
+
+#additional_1 {width:100%;height:220px;}
+#additional_1 span {font:normal 14px/20px Arial, Helvetica, sans-serif;}
+.additional_1_detail {font:normal 11px/16px Arial, Helvetica, sans-serif; margin-top:10px;}
+.additional_1_line {width:100%; height:2px; background:#000;}
+
+#bottom_area p {font:normal 14px/20px Arial, Helvetica, sans-serif;}
+.bottom_area_line {width:100%; height:4px; background:#622423;}
+
+.address1 p {font-size:11px;}
+.address1 {position:absolute; bottom:0;}
+.address1 span {color:#405166;font-size:11px}

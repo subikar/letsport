@@ -1,0 +1,25 @@
+/* CSS Document */
+
+
+
+.graphics-iconbox1, .graphics-iconbox2, .graphics-iconbox3 {
+    background-color: #fff;
+    background-image: url("../images/graphic-design-sprite.png");
+    background-position: 0 12px;
+    background-repeat: no-repeat;
+    border-radius: 84px;
+    box-shadow: 2px 2px 2px #414141;
+    display: block;
+    height: 84px;
+    margin: -42px auto 0;
+    overflow: hidden;
+    width: 84px;
+}
+
+.graphics-iconbox2 {
+    background-position: 4px -72px;
+}
+
+.graphics-iconbox3 {
+    background-position: 7px -149px;
+}

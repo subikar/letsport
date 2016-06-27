@@ -1,0 +1,144 @@
+.total_image_body { /*background:url('../images/itcslive.png') no-repeat top left;*/ background:none;}
+.invoice_bind{width:99.8%; float:left; /*padding:10px;*/ margin: 0 0 36px;}
+.invoice_bind .invoice_to{padding-bottom:8px; width:50%; float:left;}
+.invoice_bind .invoice_to span  { /*padding:0 20px;*/ border-radius:3px; /*background-color:#2979CA;*/ color:#E83E01; font-weight:bold; font-size:24px; padding-bottom:3px; line-height:50px;}
+.invoice_bind .invoice_to textarea { height:69px;border-radius:3px;resize: none; border:0;}
+.invoced_company_details{width:100%; float:left;}
+.invoced_company_details .companylogo{width: 156px; height: 64px; margin: 0px;background: url('images/itcs-logo.png') repeat scroll 0% 0% transparent; float:right;}
+.invoced_company_details .numberdate{ width:100%; padding:0;}
+.invoced_company_details .numberdate div.date { width:48%; padding:5px 17px; margin:0; float:left;}
+.invoced_company_details .numberdate div:last-child { border-bottom:none;}
+.invoced_company_details .numberdate div span.jh { width:49%; background-color:#2979CA;height:20px; display:inline-block;}
+.invoced_company_details .numberdate div input { width:49%; height:20px; line-height:20px;}
+.invoced_company_details .numberdate div.clear{padding:0px;}
+.row-fluid{width:36%; float:left; margin:15px 0;}
+.row-fluid ul li { list-style:none; clear:both;}
+.row-fluid ul li span { float:left; width:34%;}
+.row-fluid ul li .pull-right { float:right;width:59%;}
+.row-fluid ul li .pull-right .currency-sign { float:left;width:18%; margin-right:5px; text-align:right;}
+#notes{margin:10px; width:97%; height:100px; padding:10px; border:1px solid #eeeeee;}
+.invoice #item-totals{width:100%;border-radius:3px; background-color:rgba(232, 62, 1, 0.34); font-size:14px; padding-bottom:3px; margin-top:10px; border:1px solid #2979ca}
+.total_image_body .invoice #item-totals th, .invoice #item-totals td{text-align:center;   border: 1px solid #E83E01;}
+.invoice #item-totals th input, .invoice #item-totals td input { width: 85%;height: 20px;border-radius: 5px;border:none; background:none;}
+#theadline th{border-bottom: 1px solid #FFF;margin: 0px auto;clear: both;}
+.btn-info{background-image: linear-gradient(#7BBDF7, #3399F3 50%, #208FF2);background-repeat: no-repeat;filter: none;border: 1px solid #0E80E5;color: #FFF;
+background-color: #E83E01;}
+.btn{text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);display: inline-block;margin-bottom: 0px;font-weight: normal;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 8px 12px;font-size: 14px;line-height: 1.42857;border-radius: 4px;-moz-user-select: none;}
+.glyphicon-plus:before{content:"\2b"; font-size:24px; font-weight:bold;}
+.defaultBoxLine table td, .defaultBoxLine table th { text-align:center; font-size:13px;}
+.middle { margin:0 auto;}
+.defaultBoxLine4 .company_details { float:right; width:40%}
+.defaultBoxLine4 .person_details { float:left; width:59%; height:120px; border-right:1px solid #FFFFFF; margin-right:4px;}
+.amount_pay { width:80%; margin:5px auto; text-align:center; border:1px solid #FFFFFF; border-radius:5px;}
+.total { margin:10px 0 0 0}
+.total td  {border:1px solid #2979ca; padding-left: 10px;}
+.logo_company { width:34%; float:left;}
+.bottom_area { width:100%; /*float:left;*/ margin:20px 0; }
+.additional { width:64%; float:left; margin-right:10px;}
+.signeture { width:30%; float:right;}
+.signeture_title { border-top:1px solid #0099FF; text-align:center;}
+.main_signeture { text-align:center;}
+.address {width:100%; margin-top:20px; color:#0a5bad; font-size:12px;}
+.address p{ padding:0; margin:0;}
+
+/*new style created 29/10/2014*/
+
+.invoice_bind {border:1px solid #ccc;}
+.invoice_to-1 {float:left; width:30%; border-right:1px solid #ccc; min-height:153px;}
+.invoice_to-1 p {font:normal 14px/18px Arial, Helvetica, sans-serif; text-align:center;}
+.logo_company {float:none; text-align:center; width:auto;}
+
+.invoice_to-2 {float:right; width:65%; padding-left:10px;}
+
+
+.own_address pre { float:right;display:block;font:normal 14px/19px Arial, Helvetica, sans-serif; margin-left:10px; padding:10px 0;}
+.boiteContent pre {font:normal 14px/19px Arial, Helvetica, sans-serif;}
+.additional_1 p {margin-top:10px;}
+ul.invoice_numbers {padding-left:0}
+ul.invoice_numbers li {list-style-type:none !important; width:240px; min-height:18px; margin-bottom:0;}
+ul.invoice_numbers li:nth-of-type(odd) {float:left}
+ul.invoice_numbers li:nth-of-type(even) {float:right}
+
+.table_invoice table {border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;}
+.table_invoice table td {padding-left:5px;border-bottom:1px solid #000;border-right:1px solid #000;}
+.table_invoice table td.last {border-right:none;}
+
+.table_invoice1 {margin-top:50px; width:50%; float:right;}
+.table_invoice1 table {border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;}
+.table_invoice1 table td {padding-left:5px;border-bottom:1px solid #000;border-right:1px solid #000;}
+.table_invoice1 table td.last1 {border-right:none;}
+
+.additional_1 {min-height:248px; width:100%;}
+.additional_1 span {border-bottom:2px solid #000; display:block;}
+.bottom_area {border-bottom:4px solid #622423}
+.bottom_area p {padding-bottom:5px}
+
+.address1 {margin-top:30px}
+.address1 h6 {font-size:18px; color:#000}
+.address1 p span {color:#405166;}
+
+.fa-user-1:before {
+    color: #fff;
+    content: "\f007";
+    font-size: 20px;
+    margin: 0 0 0 3px;
+}
+
+.table_item ul {margin:0;border-left:1px solid #000; list-style-type:none; margin-bottom:20px; padding:0;} 
+.table_item ul li {float:left; width:24%;border-top:1px solid #000;border-bottom:1px solid #000;border-right:1px solid #000;list-style-type:none; padding:5px}
+
+
+
+.table_invoice table {border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;}
+.table_invoice table td {padding-left:5px;border-bottom:1px solid #000;border-right:1px solid #000;}
+.table_invoice table td.last {border-right:none;}
+
+.table_invoice1 {margin-top:50px; width:50%; float:right;}
+.table_invoice1 table {border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;}
+.table_invoice1 table td {padding-left:5px;border-bottom:1px solid #000;border-right:1px solid #000;}
+.table_invoice1 table td.last1 {border-right:none;}
+.input_boxes { width:120px !important; border:1px solid #eee !important; height:24px !important; margin-left:5px; padding:0 5px;}
+.invoice_inputs {float:left; margin-right:10px; width:240px;}
+
+.invoice_inputs1 {width:135px !important; padding:0 5px; background:#fff; float:none;}
+.invoice_inputs2 {width:135px; border:1px solid #eee; padding:0 5px; background:#fff;}
+
+@media only screen and (min-width: 996px) and (max-width: 1026px) {
+.invoice_inputs {float:none; margin-bottom:10px; width:270px;}
+.input_boxes {float:right; width:135px !important;}
+.invoice_inputs1 {width:135px !important; float:right;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+.invoice_to-1 {width:30%;}
+.invoice_to-2 {width:68%;}
+.row-fluid{width:50%; float:right;}
+#notes {width:94%;}
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+.invoice_to-1 {width:100%; float:none; padding-top:10px;}
+.invoice_to-2 {width:97.2%; float:none; border-left:none; border-top:1px solid #000;}
+.own_address pre {float:none;font:normal 13px/16px Arial, Helvetica, sans-serif; margin-left:0; padding:10px 0;}
+ul.invoice_numbers li {width:204px;}
+.row-fluid{width:85%; float:none; margin:15px auto;}
+#notes {width:89%;}
+}
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+.invoice_to-1 {width:100%; float:none; padding-top:10px;}
+.invoice_to-2 {width:97.2%; float:none; border-left:none; border-top:1px solid #000;}
+.own_address pre {float:none;font:normal 13px/16px Arial, Helvetica, sans-serif; margin-left:0; padding:10px 0;}
+ul.invoice_numbers li {width:204px;}
+.row-fluid{width:85%; float:none; margin:15px auto;}
+#notes {width:89%;}
+}
+@media only screen and (min-width: 240px) and (max-width: 479px) {
+.logo_company {float:none; width:273px; margin:0 auto;}
+.invoice_to-1 {width:100%; float:none; padding-top:10px;}
+.invoice_to-2 {width:96.5%; float:none; border-left:none; border-top:1px solid #000;}
+.own_address pre {float:none;display:block;font:normal 9px/15px Arial, Helvetica, sans-serif; margin-left:0; padding:10px 0;}
+ul.invoice_numbers li{float:none !important;}
+.row-fluid{width:98%; float:none; margin:15px auto;}
+#notes {width:89%;}
+.invoice_inputs2 {width:99px;}
+}
+
