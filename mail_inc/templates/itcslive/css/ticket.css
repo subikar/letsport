@@ -1,0 +1,64 @@
+.box_area {
+    border: 1px solid #FF4400;
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.each_box_area {
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    width: 27%;
+}
+.each_box_area input {
+    border: 1px solid #E83E01;
+    border-radius: 5px 5px 5px 5px;
+}
+.box_area input.search_add {
+    background-color: #3093C7;
+    background-image: linear-gradient(to bottom, #3093C7, #1C5A85);
+    border: 1px solid #25729A;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px 10px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+.box_area input.search_add:hover {
+    background-color: #26759E;
+    background-image: linear-gradient(to bottom, #26759E, #133D5B);
+    border: 1px solid #1C5675;
+}
+
+.rowticket { font-family:"Trebuchet MS"; margin:0; padding:0; width:100%; color:#999999;}
+.left_part { width:46%; float:left; border-right:4px solid #0c59b9; margin-right:5px;}
+.right_part { width:52%; float:left; background:#e1e1e1; height:413px; overflow:scroll;}
+/*.boiteHeader { height:60px;}*/
+.boiteHeader .title { width:32%; float:left; font-size:12px;}
+.boiteHeader .info { width:68%; float:right; font-size:12px;}
+.left_part h2 { font-size:16px; color:#999999;}
+.boiteContent .title { margin:10px 0px; font-size:12px;}
+.defaultBoxLine1 { background:#FFF; border-bottom:1px solid #666666; padding:5px;}
+.defaultBoxLine2 { background:#FFF; border-bottom:1px solid #666666; padding:5px;}
+.user { width:50%; float:left;}
+.date_time { width:50%; float:right;font-size:12px; text-align:right; }
+.site_description { margin:0px; padding:0;}
+
+.login_btns .login {/*background:#E83E01 !important;*/background: -moz-linear-gradient(center top , #E83E01 5%, #E83E01 100%) repeat scroll 0 0 #E83E01;border: 1px solid #E83E01;border-radius: 6px; box-shadow: 0 1px 0 0 #97c4fe inset;color: #fff !important;display: inline-block;font-family: arial;font-size: 93%;font-weight: bold; height: 35px;line-height: 35px; margin-left: 20px;margin-top: 10px; text-align: center; text-decoration: none !important;text-shadow: 1px 1px 0 #1570cd; width: 150px;}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.login_btns .login  {background:#E83E01 !important;}
+}
+
+
+.details { width:60%; float:left;}
+.defaultBoxLine div.image_avatar { border: 2px solid #cccccc; margin: 3px; padding: 3px; width: 100px;}
+
+

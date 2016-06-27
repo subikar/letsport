@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cache/
+Disallow: /classes/
+Disallow: /mail_inc/
+Disallow: /images/
+Disallow: /templates/
+Disallow: /tmp/

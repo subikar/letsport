@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="component" label="Common configuration" description="">
+		<field id="payment_option" name="payment_option" type="list" default="Paypal" multiple="multiple" label="Payment Mode" class="inputbox">
+			<option value="Paypal">Paypal </option>
+			<option value="Credit Card">Credit Card </option> 
+			<option value="Debit Card">Debit Card </option>
+			<option value="Online Transfer">Online Transfer </option>		
+		</field>
+		<field id="currency_symbol" name="currency_symbol" type="text" label="Currency Symbol" class="inputbox"></field>
+		<field id="currency_code" name="currency_code" type="text" label="Currency Code" class="inputbox"></field>
+		<field id="plan_rate" name="plan_rate" type="text" label="Service tax   % " class="inputbox"></field>
+		<field id="expiry_date" name="expiry_date" type="text" label="Expiry Date" class="inputbox"></field>
+	</fieldset>
+
+	<fieldset name="paypal_setting" label="Paypal Settings" description="">
+		<field id="paypal_st" name="paypal_st" type="list" label="Paypal status " description="" class="inputbox">
+			<option value="0">Sandbox</option>
+			<option value="1">Live</option> 
+		</field>
+		<field id="paypal_id" name="paypal_id" type="text" label="Paypal Id " class="inputbox"></field>
+	</fieldset>
+	
+	
+	<fieldset name="pro_time_setting" label="Property Time Settings" description="">
+		<field id="expiry_date" name="expiry_date" type="text" label="Expiry Date " description="" class="inputbox">
+		</field>
+	</fieldset>
+	
+	<fieldset name="banwords" label="BanWord Settings" description="">
+		<field id="ban_word" name="ban_word" type="textarea" label="Ban Words " description="" class="inputbox">
+		</field>
+	</fieldset>
+	
+	<fieldset name="mail_setting" label="Mail Settings" description="">
+		<field id="mail_st" name="mail_st" type="list" label="Mail status " description="" class="inputbox">
+			<option value="server">Server</option>
+			<option value="falconide">Falconide</option> 
+		</field>
+		<field id="mail_sender_id" name="mail_sender_id" type="text" label="Mail Sender ID " class="inputbox"></field>
+		<field id="mail_sender_name" name="mail_sender_name" type="text" label="Mail Sender Name " class="inputbox"></field>
+		<field id="falconide_key" name="falconide_key" type="text" label="Falconide Key " class="inputbox"></field>
+	</fieldset>
+	
+	<fieldset name="ccavenue_setting" label="CC Avenue settings" description="">
+		<field id="merchant_id" name="merchant_id" type="text" label="Merchant ID " class="inputbox"></field>
+		<field id="working_key" name="working_key" type="text" label="Working Key " class="inputbox"></field>
+		<field id="ccavenue_st" name="ccavenue_st" type="list" label="CC Avenue status " description="" class="inputbox">
+			<option value="0">Sandbox</option>
+			<option value="1">Live</option> 
+		</field>
+	</fieldset>
+</config>

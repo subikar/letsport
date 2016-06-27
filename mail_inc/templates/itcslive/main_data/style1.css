@@ -1,0 +1,37 @@
+
+/*----------------Key Solution Tab---------------------*/
+.clear { clear:both; height:0;}
+#keySolution { display: block; height:297px; }
+#keySolution p { line-height:17px }
+#keySolution #htabs { border: 1px solid #13B3FD; position: absolute; width: 1000px; background: #116da0; border-radius:5px; }
+#keySolution .tabs { float: left; width: 200px; }
+#keySolution .tabs li { background: url(../css/images/hvr-tab-button.png) left top no-repeat; 
+/*background: rgba(73,155,234,1);
+background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(32,124,229,1)));
+background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );*/
+color:#333; height:33px; width: 196px; cursor: pointer; text-align: left; padding-left:5px; /*padding-top: 10px; border-right: 1px solid #13B3FD;*/ font-weight:bold; }
+#keySolution .tabs li img { float:left; padding-right:10px }
+#keySolution .tabs li p { float:left; font-size:13px; width:190px; line-height:33px; color:#000; }
+#keySolution .tabs li:hover { background: url(../css/images/hvr-tab-button-over.png) left top no-repeat; font-weight:bold; border:none; width:234px; padding-right:20px; color:#FFFFFF; }
+#keySolution .tabs li:hover p { color:#fff;}
+#keySolution .tabs li.active { background: url(../css/images/hvr-tab-button-over.png) left top no-repeat; font-weight:bold; border:none; width:234px; padding-right:20px; color:#FFFFFF; }
+#keySolution .tabs li.active p { color:#fff;}
+#keySolution .tabs li.last { border-bottom: none; height:30px; }
+#keySolution .htabs-content-wrap { float: left; overflow: hidden; width: 742px; height: 297px; padding-left:47px; }
+#keySolution .htabs-scroll { width: 410px; height: 340px; }
+#keySolution .content { width: 742px; height:294px; }
+#keySolution .content h2 { margin-top:8px;}
+#keySolution .content .customization h2, #keySolution .content .excellence h2 { margin-top:5px;}
+#keySolution .content img { float:right; padding-left:10px; padding-top:10px; }
+#keySolution .content p { font-size:12px; padding:7px 7px 0 0px; line-height:18px; }
+#keySolution .htabs-scroll ul { float: left; padding: 10px 0px 0px 21px; font-size:12px; }
+#keySolution .htabs-scroll li { color: #999999; background: url(../css/images/red-bullet-small.gif) no-repeat left center; padding-left: 15px; line-height: 20px; }
+#keySolution .htabs-scroll li a { color: #389FD8; margin-left:391px; }
+#keySolution .htabs-scroll .more { color: #6699CC; font-weight: bold; background: url(../css/images/red-bullet-small.gif) no-repeat left center; padding-left: 15px; text-indent: 0px; width: 120px; }
+
+.content.excellence h2 { padding-left:30px;}

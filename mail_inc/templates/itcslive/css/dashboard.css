@@ -1,0 +1,177 @@
+.padDiv{border:1px solid #CCCCCC;border-radius:5px;padding:0px;float:left;margin-top:0px;}
+
+.padDiv .line{border-bottom:1px solid #FF4400;line-height:2px;margin:0 auto;clear:both;}
+
+.boiteHeader{margin-top:15;padding:5px;background:#E83E01;line-height:20px;height:20px;}
+
+.boiteHeader ol{float:right;margin:0;padding:0;}
+
+.boiteHeader li{float:right;list-style:none;display:inline;}
+
+.boiteHeader li a{float:left;display:inline;color:#FFFFFF;margin-left:6px;text-decoration:none;}
+
+.boiteHeader h5{float:left;color:#FFFFFF;margin:0;padding:0;font-size:12pt;text-transform:uppercase;padding-left:11px;}
+
+.boiteHeader h5 a{color:#FFFFFF;margin-left:3px;text-decoration:none;}
+
+.boiteContent{margin:5px;clear:both;margin:0px 5px 0px 5px;}
+
+.boiteContent ul{margin:0;padding-left:28px;}
+
+.boiteContent ul li{list-style-type:decimal;padding:0px;}
+
+.boiteContent span{color:#000;}
+
+.boiteContent textarea{width:99%;height:auto;}
+
+.contact:before{content:"\f0c0";font-size:20px;}
+
+.add:before{content:"\f196";position: relative;left: -6px;}
+
+.row1{width:34%;}
+
+.marginright{margin-right:0%;}
+
+.row2{width:62%;float:right;}
+
+.row4{width:61%;float:right;}
+
+.row3{width:50%;margin-left:4px;}
+
+.row10{width:100%;}
+
+.defaultBoxLine div{width:33.33%;float:left;}
+
+.fa-usd:before{content:"\f155";}
+
+.fa-search:before{content:"\f002";}
+
+.fa-question-circle:before{content:"\f059";}
+
+.fa-tasks:before{content:"\f0ae";}
+
+.right{float:right;margin:0 auto;clear:both;}
+
+.small{font-size:x-small;}
+
+.fa-truck:before{content:"\f0f9";font-size:100px;}
+
+.fa-user-1:before{content:"\f007";font-size:20px;color:#fff;margin:0 0 0 3px;}
+
+.box_area .each_box_area{width:24%;float:left;margin:5px; border:solid 1px #ccc}
+
+.defaultBoxLine table thead{background-color:#4EB6F3;}
+
+.leave_record_box{float:left;width:40%;}
+
+#form input{border-right:medium none;border-left:medium none;-moz-border-top-colors:none;-moz-border-right-colors:none;-moz-border-bottom-colors:none;-moz-border-left-colors:none;border-image:none;background:none repeat scroll 0px 0px #FFF;border-width:1px medium;border-style:solid none;border-color:#ff4400; /*-moz-use-text-color #F2F5F5;*/border-radius:30px !important;box-shadow:0px -1px 0px #D3D3D3 inset;color:#484747;padding:9px 10px 7px;width:20%;height:34px;font:14px/18px Arial,Helvetica,sans-serif;box-sizing:border-box;margin:15px;}
+
+#form .button-1{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:16px;padding:5px 10px 10px 10px;background:none repeat scroll 0% 0% #E83E01;color:#FFF;position:relative;border-radius:30px;width:13%;}
+
+#form .k-select{top:17px;right:0;}
+
+#projects .article-body .boiteContent{/*border:solid 1px #E83E01;*/}
+
+table{width:100%;border-collapse:collapse;}
+
+tr:nth-of-type(odd){background:#eee;}
+
+th{background:#E83E01;color:white;font-weight:bold;}
+
+td, th{padding:6px;border:1px solid #ccc;text-align:left;}
+
+.input_1{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background:none repeat scroll 0 0 #ffffff;border-color:#c5c5c5 -moz-use-text-color #f2f5f5;border-image:none;border-left:medium none;border-radius:30px !important;border-right:medium none;border-style:solid none;border-width:1px medium;box-shadow:0 -1px 0 #d3d3d3 inset;box-sizing:border-box;color:#999999;font:14px/18px Arial,Helvetica,sans-serif;height:34px;padding:9px 10px 7px;width:100%;}
+
+.table_edituser{margin:0;}
+
+.table_edituser table tr{background:none;border:none;}
+
+.table_edituser table tr:nth-child(2n+1){float:left;width:48%;margin:0 0 0 5px;}
+
+.table_edituser table tr:nth-child(2n+2){float:right;width:48%;margin:0 5px 0 0;}
+
+.myappointment .each_box_area{background:#fff;line-height:30px;}
+
+.myappointment .each_box_area span.k-autocomplete{width:100%;}
+
+.myappointment .each_box_area span.k-datepicker{width:100%;}
+
+
+
+#content .container_12 .box_area #form input[type="checkbox"]{width: 18px;position: relative;top: -20px;left: -10px;box-shadow: 0px 0px 0px;}
+
+#content #primary .boiteHeader .add:before {content: "\f196";position: relative; left: -2px;}
+
+#content .container_12 #primary .article-body .fa-truck:before{color:#E83E01}
+
+
+.each_box_area .k-dropdown-wrap .k-select {top:0px;}
+.each_box_area .k-picker-wrap .k-select {top:3px; right:3px;}
+
+@media only screen and (max-width:767px) { 
+.box_area {margin-bottom:10px;}
+.box_area .each_box_area {float:none; width:97%;}
+}
+
+
+
+
+@media only screen and (max-width:580px),
+
+(min-device-width:240px) and (max-device-width:580px){.table_edituser{margin:0;}
+
+.table_edituser table tr{background:none;border:none;}
+
+.table_edituser table tr:nth-child(2n+1){float:none;width:98%;margin:0 auto;}
+
+.table_edituser table tr:nth-child(2n+2){float:none;width:98%;margin:0 auto;}
+
+}
+
+@media only screen and (max-width:760px),
+
+(min-device-width:768px) and (max-device-width:1024px){.table_edituser{margin:0;}
+
+.table_edituser table tr{background:none;border:none;}
+
+.table_edituser table tr:nth-child(2n+1){float:left;width:48%;margin:0 0 0 5px;}
+
+.table_edituser table tr:nth-child(2n+2){float:right;width:48%;margin:0 5px 0 0;}
+
+table, thead, tbody, th, td, tr{display:block;}
+
+thead tr{position:absolute;top:-9999px;left:-9999px;}
+
+tr{border:1px solid #ccc;}
+
+td{border:none;border-bottom:1px solid #eee;position:relative;padding-left:50%;}
+
+td:before{top:6px;left:6px;width:45%;padding-right:10px;white-space:nowrap;}
+
+.row1,.row2,.row3, .row4{width:100%;margin-top:10px;}
+
+.completetaskdiv{background-color:#FFF;width:100%;margin-top:10px;}
+
+#mycontact td:nth-of-type(1):before{content:"Name";}
+
+#mycontact td:nth-of-type(2):before{content:"Email ID";}
+
+#mycontact td:nth-of-type(3):before{content:"Phone Number";}
+
+#invoice td:nth-of-type(1):before{content:"Invoice";font-size:14px;font-weight:bold;}
+
+#invoice td:nth-of-type(2):before{content:"From";font-size:14px;font-weight:bold;}
+
+#invoice td:nth-of-type(3):before{content:"To";font-size:14px;font-weight:bold;}
+
+#invoice td:nth-of-type(4):before{content:"Date";font-size:14px;font-weight:bold;}
+
+#invoice td:nth-of-type(5):before{content:"Balance";font-size:14px;font-weight:bold;}
+
+#myticket td:nth-of-type(1):before{content:"Created On";}
+
+#myticket td:nth-of-type(2):before{content:"Ticket";}
+
+#myticket td:nth-of-type(3):before{content:"Created By";}
+
+}

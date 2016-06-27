@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="invoice_config" label="Common configuration" description="">
+		<field id="invoice_company" name="invoice_company[]" type="list" default="itcslive" multiple="multiple" label="Invoice Option" class="inputbox">
+			<option>itcslive</option>
+			<option>joomspot</option> 
+		</field>
+		<field id="invoice_tax_rate" name="invoice_tax_rate" type="text" label="Invoice Service tax % " class="inputbox"></field>
+		<field id="currency_option" name="currency_option[]" type="list" default="INR" multiple="multiple" label="Currency Option" class="inputbox">
+			<option>USD</option>
+			<option>INR</option> 
+		</field>
+	</fieldset>
+	<fieldset name="invoice_advance_config" label="Advance configuration" description="">
+	<field id="invoice_comp_address" name="invoice_comp_address" type="textarea" label="Company Address " description="" class="inputbox"></field>
+	</fieldset>
+	<fieldset name="invoice_other_config" label="Other configuration" description="">
+	<field id="gallery_page_limit" name="gallery_page_limit" type="text" label="Gallerey Page Limit" class="inputbox"></field>
+	</fieldset>
+</config>

@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName "To Check Our Portfolio."
+AuthUserFile /home/itcslivesub/.htpasswd
+require valid-user
+RewriteEngine On
+RewriteRule sitemap.xml sitemap.php
+RewriteRule page?([A-Za-z0-9-]+)-([A-Za-z0-9-]+).html index.php?c=$1&p=$2 [L]
+RewriteRule page?([A-Za-z0-9-]+).html index.php?p=$1 [L]

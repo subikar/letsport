@@ -1,0 +1,3 @@
+.button, .button-1, .div-search, .block-2, #form input, #form textarea, .tabs>.div-tabs{behavior:url(js/PIE.htc); position:relative;}
+.tabs .tab-content img{border-radius: 21px;position: relative;behavior:url(js/PIE.htc);} 
+.tabs ul.nav li{behavior:url(js/PIE.htc); position:relative;}

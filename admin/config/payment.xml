@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="payment_config" label="Common configuration" description="">
+		<field id="payment_option" name="payment_option[]" type="list" default="Paypal" multiple="multiple" label="Payment Mode" class="inputbox">
+			<option value="Paypal">Paypal</option>
+			<option value="Payu">Payu</option> 
+			<option value="ccavenue">ccavenue</option>
+		</field>
+		<field id="plan_rate" name="plan_rate" type="text" label="Service tax   % " class="inputbox"></field>
+	</fieldset>
+
+	<fieldset name="paypal_setting" label="Paypal Settings" description="">
+		<field id="paypal_st" name="paypal_st" type="list" label="Paypal status " description="" class="inputbox">
+			<option value="0">Sandbox</option>
+			<option value="1">Live</option> 
+		</field>
+		<field id="paypal_id" name="paypal_id" type="text" label="Paypal Id " class="inputbox"></field>
+		<field id="paypal_currency_symbol" name="paypal_currency_symbol" type="text" label="Currency Symbol" class="inputbox"></field>
+		<field id="paypal_currency_code" name="paypal_currency_code" type="text" label="Currency Code" class="inputbox"></field>
+	</fieldset>
+	
+	<fieldset name="payu_setting" label="PayU Settings" description="">
+		<field id="payu_st" name="payu_st" type="list" label="Payu status " description="" class="inputbox">
+			<option value="0">Sandbox</option>
+			<option value="1">Live</option> 
+		</field>
+		<field id="payu_key" name="payu_key" type="text" label="Payu Key " class="inputbox"></field>
+		<field id="payu_salt" name="payu_salt" type="text" label="Payu Salt" class="inputbox"></field>
+	</fieldset>
+		
+	<fieldset name="ccavenue_setting" label="CC Avenue settings" description="">
+		<field id="ccav_merchant_id" name="ccav_merchant_id" type="text" label="Merchant ID " class="inputbox"></field>
+		<field id="ccav_key" name="ccav_key" type="text" label="Working Key " class="inputbox"></field>
+		<field id="ccavenue_st" name="ccavenue_st" type="list" label="CC Avenue status " description="" class="inputbox">
+			<option value="0">Sandbox</option>
+			<option value="1">Live</option> 
+		</field>
+	</fieldset>
+</config>
