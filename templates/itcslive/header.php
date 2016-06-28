@@ -22,7 +22,7 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 <meta name='verify-v1' content='dbf4e7b7ebca3ecc5f01a3cdf36e2de2'/>
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 <META http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-<title><?php echo isset($this->Title)?$this->Title.' | iTCSLive':'iTCSLive'; ?></title>
+<title><?php echo isset($this->Title)?$this->Title.' | Lets Port':'Lets Port'; ?></title>
 <meta property="og:image" content="<?php echo $this->site; ?>templates/itcslive/css/images/logo.png" />
 <meta property="og:title" content="<?php echo isset($this->Title)?$this->Title:''; ?>" />
 <meta property="og:type" content="article"/>
@@ -79,12 +79,12 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 logo-sp-outer">
 			
 		</div>
-		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 topbar">
 			<ul class="quick-contact">
 				<!--<li class="">Load Board</li>
 				<li class="">Truck Board</li>
 				<li class="">Submit Load</li>-->
-				<li class=""><div class="login"><a class="truckavailibilty" href="<?php echo $Config->site.'add-truck-available'; ?>" title="Submit Truck Availability For Free">Submit Truck Availability For Free</a> &nbsp;&nbsp;</li>
+				<li class="top"><div class="login"><a class="truckavailibilty" href="<?php echo $Config->site.'add-truck-available'; ?>" title="Submit Truck Availability For Free">Submit Truck Availability For Free</a> &nbsp;&nbsp;</li>
 			</ul>
 		</div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">

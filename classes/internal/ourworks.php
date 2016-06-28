@@ -65,7 +65,7 @@
 		{
 			global $db;
 			$post = IRequest::get('POST');
-			
+			print_r($post);
 			$Where = array();
 			
 			$Where[] = 'w.status=1';
@@ -73,14 +73,31 @@
 			  {
 			     $Where[] = 'w.start_location LIKE '.$db->quote('%'.$post['start_location'].'%');
 			  }			
-			 
+				 
+			if($post['end_location'] != '')
+			  {
+			     $Where[] = 'w.end_location LIKE '.$db->quote('%'.$post['end_location'].'%');
+			  }			
 			
+			if($post['consignment_weight'] != '')
+			  {
+			     $Where[] = 'w.consignment_weight LIKE '.$db->quote('%'.$post['consignment_weight'].'%');
+			  }
+
+				if($post['avaliable_date'] != '')
+			  {
+			     $Where[] = 'w.avaliable_date LIKE '.$db->quote('%'.$post['avaliable_date'].'%');
+			  }
+				
+				if($post['optn'] != '')
+			  {
+			     $Where[] = 'w.operation_type LIKE '.$db->quote('%'.$post['operation_type'].'%');
+			  }
 			
 			
 			$Where = ' WHERE '.implode(' AND ',$Where);
-			
-			
 			$Query="SELECT w.*,u.* FROM #__ourworks as w LEFT JOIN #__users as u ON w.owner_id = u.uid $Where order by w.id desc ";
+			//echo $Query; exit;
 			$db->setQuery($Query,$Start,$Limit);
 			$worksInArray= $db->loadObjectList();
 			//print_r($worksInArray); exit;

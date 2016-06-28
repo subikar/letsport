@@ -1,13 +1,6 @@
 <div class="banner-item">
 <h1> India's Best e-Transportation Platform</h1>
-<ul class="quick-contact">
-	<li class="top_coll_button"><i class="fa fa-car" aria-hidden="true"></i>Search Truck</li>
-	<li class="top_help_button"><i class="fa fa-tasks" aria-hidden="true"></i>Search Load</li>
-</ul>
-<div class="form-group">
 	<?php includemodule('contentsearch'); ?>
-								
-		</div>
 </div>
  
 <div class="banneritembox col-xs-12 col-sm-12 col-md-12 col-lg-9">
@@ -59,6 +52,12 @@
     </div>
     <div class="item">
       <img src="images/2.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/3.jpg" alt="...">
       <div class="carousel-caption">
         ...
       </div>

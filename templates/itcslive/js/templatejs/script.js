@@ -94,4 +94,22 @@ jQuery(document).ready(function(){
 					else
 				 	 jQuery('.toggle-menu').addClass('tgclose');
 				}); 
+jQuery('.search_truck').click(function(){
+	jQuery("#truck").slideDown();
+	jQuery("#load").slideUp();
+	jQuery('.tab').removeClass('selected');
+	jQuery('.search_truck').addClass('selected');
+	
+	//alert("subikar")
+});
+
+jQuery('.search_load').click(function(){
+ //  alert("burman")
+	jQuery("#truck").slideUp();
+	jQuery("#load").slideDown();
+	jQuery('.tab').removeClass('selected');
+	jQuery('.search_load').addClass('selected');
+
+});
+
  }); 
