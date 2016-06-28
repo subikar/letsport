@@ -81,7 +81,7 @@
 		  $template->display('header');	
 		  $template->display('login/index');
 		  $template->display('footer');	
-		}		
+		}	
 		
   	}
 ?>

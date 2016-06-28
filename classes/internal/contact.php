@@ -30,7 +30,7 @@ error_reporting(0);
 						 $mainframe->redirect($Config->site.'error-thank-you');
 					}
    			    unset($post["formkey"]);
-				 unset($post["text_num"]);
+				unset($post["text_num"]);
 				unset($post["form"]);
 				unset($post["task"]);
 				unset($post["view"]);
@@ -261,7 +261,94 @@ error_reporting(0);
 			}
 			
 			print_r(json_encode(array("result_html"=>$html,"status"=>$status))); exit;
-		} 
+		}
+     function SaveRegister()
+	   {
+	      global $mainframe,$Config,$template,$db;
+	   	  $post=IRequest::get("POST");
+		  
+		  unset($post[view]);
+		  unset($post[task]);
+	  
+		  $email_exists = 0;
+		
+		  $Query = "select email from #__users Where email=".$db->quote($post[email]);
+		  $db->setQuery($Query);
+		  $email_exists = $db->getOne();
+		  $phone_exists = 0;
+		  $Query = "select phone from #__users Where phone =".$db->quote($post["phone"]);
+		  $db->setQuery($Query);
+		  $phone_exists  = $db->getOne();
+			 //echo $email_exists;exit;		
+		  if($email_exists >= 1 || $phone_exists >= 1)
+		    {
+			  if($email_exists >= 1)
+			  $template->assignRef('RegistrationError','Email Address already Exists!');
+			  if($phone_exists >= 1)
+			  $template->assignRef('RegistrationError','Contact Number already Exists!');
+			  $template->includejs("templates/itcslive/js/signup.js"); 
+			  $template->display('header');	
+			  $template->display('login/signup');
+			  $template->display('footer');	
+			  exit;
+			}
+		 	
+		    $_POST['avatar'] =  $this->uplodeAvatar();
+			parent::bind('users');
+    		parent::save();
+			//print($Config->site.'thank-you'); exit;
+			$mainframe->redirect($Config->site.'thank-you');
+	   }  		
+
+       function uplodeAvatar()
+		{
+				 global $db, $template, $Config,$mainframe;
+				 $files = IRequest::get('FILES');
+				 $img_path = IPATH_ROOT.'/images/avatar/';
+				 $AcceptedFilesInArray = array('jpg','png','jpeg','gif');
+				 $ext = pathinfo($files['avatar']['name'], PATHINFO_EXTENSION);
+				
+				 if(in_array($ext,$AcceptedFilesInArray) && $files['avatar']['size'] < 100000)
+				   {
+ 				     $name = md5(time()).'.'.$ext;     
+				     $res =move_uploaded_file($files['avatar']['tmp_name'], $img_path.$name);
+					// print($img_path.$name);
+					// print_r($res); exit;
+					if($res == 1)
+						$avatar = $name;
+					 
+					 
+				   }
+				 else
+				   {
+					  $template->assignRef('RegistrationError','Please use small Image to upload');
+					  $template->includejs("templates/itcslive/js/signup.js"); 
+					  $template->display('header');	
+					  $template->display('login/signup');
+					  $template->display('footer');	
+					  exit;
+				   }  
+				  return $avatar;
+			
+		}
+
+
+	
+		   function sendmailToRegisteredUser($ArgumentsInArray)
+		  {
+				$mailer=new IMail;
+				ob_start();
+				include_once(IPATH_ROOT."/mail_inc/MailRegisterUser.inc");
+				$message = ob_get_clean();
+				  
+				$message=str_replace('{CustomerName}',$ArgumentsInArray['name'],$message);
+				$mailer->To=$ArgumentsInArray['email'];
+				$mailer->From="info@itcslive.com";
+				$mailer->Subject="Thank You! Your Account is created as Letsport.";
+				$mailer->Message = $message;
+				//print_r($mailer); exit;
+				$mailer->send();
+		  } 
 	 
    }
 
