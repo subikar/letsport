@@ -11,9 +11,11 @@ defined ('ITCS') or die ("Go away.");
 	function dashboard()
 	{
 		global $template,$my,$db;
-	    $Contacts=$this->getContact();
-	  	$template->assignRef('Contacts',$Contacts);
-	   	$Tickets=$this->getTicket();
+		
+	    $MyTruck=$this->getMyTruck();
+	  	$template->assignRef('MyTruck',$MyTruck);
+		
+/*	   	$Tickets=$this->getTicket();
 	  	$template->assignRef('Tickets',$Tickets);
 	   	$Projects=$this->getProject();
 	  	$template->assignRef('Projects',$Projects);
@@ -28,8 +30,46 @@ defined ('ITCS') or die ("Go away.");
 		{
 			$leaveDetail = $this->getLeaveDetail();
 			$template->assignRef('leaveDetail',$leaveDetail);
-		}
+		}*/
 	}
+	
+	function getMyTruck()
+	{
+		global $db,$my,$template;
+		$Query="SELECT * FROM #__truck WHERE status=1 AND truck_owner_id=".$db->quote($my->uid)." ORDER BY truck_id DESC LIMIT 0,5";
+		$db->setQuery($Query);
+		$Trucks = $db->LoadObjectList(); 
+		return $Trucks;
+	}
+	function addtruck()
+	 {
+		global $db,$my,$template;
+		$Query="SELECT * FROM #__vehicletype";
+		$db->setQuery($Query);
+		$VehcleType = $db->LoadObjectList();
+		$vtype = array();
+		foreach($VehcleType as $Vehcle)
+		  {
+		    $vtype[$Vehcle->vehicle_type] = $Vehcle->vehicle_type; 
+		  }
+		$template->assignRef('VehcleType',$vtype); 
+	   
+	 }
+	function savetruck()
+	 {
+	    global $mainframe,$Config;
+	    $post = IRequest::get('POST');
+	    unset($post["view"]);
+	    unset($post["task"]);
+	    $this->post = $post;
+		parent::bind('truck');
+		parent::save();
+		$mainframe->redirect($Config->site."dashboard");
+
+	   //print_r($post); exit;
+	 }  
+	
+	//No Function after this is usable 	
 	function getGoogleToken()
 	{
 		global $my,$db,$template;
@@ -125,17 +165,7 @@ defined ('ITCS') or die ("Go away.");
 		}
 		return $Tickets;
 	}	
-	function getContact()
-	{
-		global $db,$my;
-		if(strtolower($my->usertype) == 'admin')
-			$Query="SELECT uid,refrer_id,name,email,phone FROM #__users WHERE status=1 AND usertype='customer' OR refrer_id=".$db->quote($my->uid)." ORDER BY uid DESC LIMIT 0,5";
-		else
-		$Query="SELECT uid,refrer_id,name,email,phone FROM #__users WHERE status=1 AND refrer_id=".$db->quote($my->uid)." ORDER BY uid DESC LIMIT 0,5";
-		$db->setQuery($Query);
-		$Contacts = $db->LoadObjectList(); 
-		return $Contacts;
-	}
+
 	function getProject()
 	{
 		global $db,$my;

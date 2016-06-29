@@ -24,7 +24,7 @@
 			if($searchTest != '')
 			{
 				$where = "WHERE start_location LIKE '%".$searchTest."%' OR end_location LIKE '%".$searchTest."%' OR vehicle_type LIKE '%".$searchTest."%' OR material_type LIKE '%".$searchTest."%' OR consignment_weight LIKE '%".$searchTest."%'";
-			}
+			} 
 			else
 			{
 				$where = "";

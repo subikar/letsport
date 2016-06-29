@@ -11,7 +11,10 @@ h2 {font-size:28px; color:#000000; font-weight:bold;}
 .nopadlft {padding-left:0;}
 .nopadrgt {padding-right:0;}
 img {max-width:100% !important;}
-
+.fa-question-circle-o:before {
+    content: "\f29c";
+    font-size: 30px;
+}
 .topbar .top{position: relative;
     top: 5px;
     left: -22px;}
@@ -25,6 +28,7 @@ img {max-width:100% !important;}
     width: 25px;
     margin-right: 5px;
 }*/
+.fa-truck:before{font-size: 20px;}
 .top_login_button{float:left;}
 .top_help_button img {
     padding: 3px;
@@ -33,12 +37,13 @@ img {max-width:100% !important;}
     border: 1px solid #313131;
     margin-right: 5px;
 }
+.topfix{margin-left: 65px;}
 .top_coll_button .fa-phone {
     width: 25px;
     height: 25px;
     border: 2px solid #313131;
     text-align: center;
-    line-height: 15px;
+    line-height: 22px;
     border-radius: 50%;
     padding-right: 0px;
     margin-right: 10px;
@@ -519,6 +524,7 @@ footer p {
     float: right;
     z-index: 9999;
 }
+.sear .serspan{padding: 0px;background:#5f615f;}
 .tooltip {
     position: relative;
     display: inline-block;
@@ -565,4 +571,24 @@ input[type="submit"]{background: #5f615f !important;
     background-clip: padding-box;
     background: #fff;
 }
-.tip{padding: 29px;}
+.tip{padding: 29px;margin-top:15px;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);}
+.searchtop{    background-color: #ff7f12;
+    color: #FFF;}
+.topbordr{border:solid 2px #ff7f12;}
+.midilser{padding-left: 31px; }
+.fa-refresh:before{font-size: 15px; 
+    padding: 6px;}
+.bordershadow{padding-bottom:15px;border: solid 3px #e6e6e6;}
+.pagetop{margin-top:20px;}
+.panel-body .banner-item .form-group .input-group input {border:solid 1px;}
+.topmidilbar{font-size: 12px;text-align: right;position: relative;top: 9px;}
+.topaccount{display: none; position: absolute;}
+.dropdown-content a{color:#FFF;}
+.dropdown-content {display: none;
+    position: absolute;
+    width: 100px;
+    background: #4ab8cf;
+    padding: 10px;left: 44px;}
+.dropdown:hover .dropdown-content {
+    display: block;}
+.getofferForm .popupform{padding: 2px 46px 0px 44px;}

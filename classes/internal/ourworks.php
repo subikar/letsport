@@ -65,7 +65,7 @@
 		{
 			global $db;
 			$post = IRequest::get('POST');
-			print_r($post);
+			//print_r($post);
 			$Where = array();
 			
 			$Where[] = 'w.status=1';
@@ -91,12 +91,10 @@
 				
 				if($post['optn'] != '')
 			  {
-			     $Where[] = 'w.operation_type LIKE '.$db->quote('%'.$post['operation_type'].'%');
+			     $Where[] = 'w.operation_type LIKE '.$db->quote($post['optn']);
 			  }
-			
-			
 			$Where = ' WHERE '.implode(' AND ',$Where);
-			$Query="SELECT w.*,u.* FROM #__ourworks as w LEFT JOIN #__users as u ON w.owner_id = u.uid $Where order by w.id desc ";
+			$Query="SELECT w.*,u.* FROM #__ourworks as w LEFT JOIN #__users as u ON w.owner_id = u.uid $Where order by w.id ".$post[order];
 			//echo $Query; exit;
 			$db->setQuery($Query,$Start,$Limit);
 			$worksInArray= $db->loadObjectList();

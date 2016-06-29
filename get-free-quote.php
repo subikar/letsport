@@ -11,6 +11,13 @@ $template->includejs("templates/itcslive/js/getfreequote.js");
 	  $template->display('contact/addtruck');
 	  $template->display('tmplpopup/footer');	
 	  break;
+	   case 'addload':
+	  $template->assignRef('Title','Submit Load For Free');	
+	  $template->display('tmplpopup/header');	
+	  $template->display('contact/addload');
+	  $template->display('tmplpopup/footer');	
+	  break;
+	 
 	  default: 
 	  $template->assignRef('Title','Get Free Quote');	
 	  $template->display('tmplpopup/header');	

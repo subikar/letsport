@@ -11,6 +11,7 @@
 		  $template->display('footer');	
 	  break;
   	  case 'signuptransporter':
+		  $template->includejs("templates/itcslive/js/signup.js");
 		  $template->display('header');	
 		  $template->display('login/signuptransporter');
 		  $template->display('footer');	

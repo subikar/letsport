@@ -342,45 +342,9 @@
 					<!--testimonial-->
 		
 		<section id="carousel">    				
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-                <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
-				<div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
-				  <!-- Carousel indicators -->
-                  <ol class="carousel-indicators">
-				    <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
-				    <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
-				    <li data-target="#fade-quote-carousel" data-slide-to="2"></li>
-				  </ol>
-				  <!-- Carousel items -->
-				  <div class="carousel-inner">
-				    <div class="active item">
-				    	<div class="profile-circle" style="background-color: rgba(145,169,216,.2);"><img src="images/35.png" /></div>
-				    	<blockquote>
-				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,   Impedit temporibus nisi accusamus.</p>
-				    	</blockquote>
-				    	
-				    </div>
-				    <div class="item">
-				    	<div class="profile-circle" style="background-color: rgba(145,169,216,.2);"><img src="images/35.png" /></div>
-				    	<blockquote>
-				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,   Impedit temporibus nisi accusamus.</p>
-				    	</blockquote>
-				    	
-				    </div>
-				    <div class="item">
-				    	<div class="profile-circle" style="background-color: rgba(145,169,216,.2);"><img src="images/35.png" /></div>
-				    	<blockquote>
-				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,   Impedit temporibus nisi accusamus.</p>
-				    	</blockquote>
-				    	
-				    </div>
-				  </div>
-				</div>
-			</div>							
-		</div>
-	</div>
+	
+			<?php includemodule('testimonials'); ?>
+	
 </section>
 		
 		

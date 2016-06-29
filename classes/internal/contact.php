@@ -296,9 +296,22 @@ error_reporting(0);
 		    $_POST['avatar'] =  $this->uplodeAvatar();
 			parent::bind('users');
     		parent::save();
+			if($post[usertype]=='transporter')
+				{
+					
+				$id = $db->insertid();
+				$_POST['id']=$id;
+				//print_r($_POST);exit;
+				parent::bind('profiledata');
+    			parent::save();
+					
+				}
 			//print($Config->site.'thank-you'); exit;
 			$mainframe->redirect($Config->site.'thank-you');
 	   }  		
+
+
+ 
 
        function uplodeAvatar()
 		{

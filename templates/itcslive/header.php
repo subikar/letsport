@@ -56,16 +56,10 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 <!-- For Mobile End -->
 <?php if($my->uid > 0):?>
 <link rel="stylesheet" href="<?php echo $this->site; ?>templates/itcslive/css/dashboard.css">
-<!-- For Inner Pages -->
-<link rel=stylesheet type="text/css" media=all href="<?php echo $this->site; ?>templates/itcslive/js/auto_jqueryui/kendo.common.min.css"/>
-<script src="<?php echo $this->site; ?>templates/itcslive/js/auto_jqueryui/kendo.all.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.12/tinymce.min.js"></script>
-<!-- For Inner Pages -->
 <?php endif; ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"></script>
 <script src="<?php echo $this->site; ?>templates/itcslive/js/templatejs/script.js" ></script>
 <?php $template->HeadCss(); ?>
-
 <?php $template->HeadJs(); ?>
 </head>
 <body id="page-1">
@@ -76,24 +70,34 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
       <!-- For Desktop Header View -->
      <div class="container-fluid">
      	<div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 logo-sp-outer">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 logo-sp-outer">
 			
 		</div>
-		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 topbar">
-			<ul class="quick-contact">
-				<!--<li class="">Load Board</li>
-				<li class="">Truck Board</li>
-				<li class="">Submit Load</li>-->
-				<li class="top"><div class="login"><a class="truckavailibilty" href="<?php echo $Config->site.'add-truck-available'; ?>" title="Submit Truck Availability For Free">Submit Truck Availability For Free</a> &nbsp;&nbsp;</li>
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-5 topbar">
+			<ul class="quick-contact topmidilbar">
+				<li><a class="truckavailibilty" href="<?php echo $Config->site.'load-available'; ?>" title="Submit Load For Free">Submit Load</a></li>
+				<li><a class="truckavailibilty" href="<?php echo $Config->site.'add-truck-available'; ?>" title="Submit Truck Availability For Free">Submit Truck</a></li>
+				<li><a href="<?php echo $Config->site.'customer-signup'; ?>" title="Customer Signup For Free">Customer Signup</a></li>
+				<li><a href="<?php echo $Config->site.'transporter-signup'; ?>" title="Transporter Signup For Free">Transporter Signup</a></li>
 			</ul>
 		</div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 topfix">
 			<ul class="quick-contact">
-				<li class="top_login_button">
+				<li class="top_login_button dropdown">
                 <?php if(isset($my->uid)): ?>
-                <a class="logout" href="<?php echo $Config->site.'logout'; ?>" title="Client Logout">Logout</a>
+                <a href="#"><img src="images/user.png"></a>
+                <div class="dropdown-content">
+   				 	<a href="<?php echo $Config->site.'dashboard'; ?>">Dashboard</a>
+    				<a href="<?php echo $Config->site.'addtruck'; ?>">Add Truck</a>
+  					<a href="<?php echo $Config->site.'adddriver'; ?>">Add Driver</a>
+  					<a href="<?php echo $Config->site.'myload'; ?>">My Load</a>
+  					<a href="<?php echo $Config->site.'mytruck'; ?>">My Truck</a>
+  					<a href="<?php echo $Config->site.'mysubscription'; ?>">My Subcription</a>
+  					<a href="<?php echo $Config->site.'myinvoice'; ?>">Invoice History</a>
+  					<a href="<?php echo $Config->site.'logout'; ?>">Logout</a>
+  				</div>
                 <?php else:?>
-                <a class="clientlogin" href="<?php echo $Config->site.'login'; ?>" title="Client Login"><img src="images/user.png"></a>
+                <a class="clientlogin" href="<?php echo $Config->site.'login'; ?>" title="Client Login"><div class="dropbtn"><img src="images/user.png"></div></a>
                 <?php endif; ?>
             </li>
 				<li class="top_help_button"><i class="fa fa-question-circle-o" aria-hidden="true"></i><a href="http://192.168.9.100/custom/letsport/help">Help</a></li>
@@ -182,12 +186,7 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
       <div class="grid_12">
         <div class="nav-search">
           <nav>
-            <?php if(isset($my->uid) && $my->uid > 0): ?>
-     <?php $this->menu('user-menu'); ?>
-            <?php else:?>
-    <?php  $this->menu('top-menu'); ?>
-
-            <?php endif; ?>
+           <?php  $this->menu('top-menu'); ?>
           </nav>
            
           <div class="clear"></div>
@@ -199,10 +198,9 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 
 <div class="header__navigation-widgets">
 <div class="widget  widget-social-icons">
-<a class="social-icons__link" href="https://www.facebook.com" target="_blank"><i class="fa  fa-facebook"></i></a>
-<a class="social-icons__link" href="https://twitter.com" target="_blank"><i class="fa  fa-twitter"></i></a>
-<a class="social-icons__link" href="http://themeforest.net" target="_blank"><i class="fa  fa-wordpress"></i></a>
-<a class="social-icons__link" href="https://www.youtube.com" target="_blank"><i class="fa  fa-youtube"></i></a>
+<a class="social-icons__link" href="https://www.facebook.com/itcslive" target="_blank"><i class="fa  fa-facebook"></i></a>
+<a class="social-icons__link" href="https://twitter.com/outsourcing_web" target="_blank"><i class="fa  fa-twitter"></i></a>
+<a class="social-icons__link" href="https://www.youtube.com/itcslive" target="_blank"><i class="fa  fa-youtube"></i></a>
 </div> </div>
 </header>
 </div>

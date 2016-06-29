@@ -1,7 +1,7 @@
 <form action="" method="post" class="form-horizontal getofferForm" name="AddTruck" id="AddTruck" target="_parent">
 <div class="container popupform">
 
-			<div class="grid_4">
+			<div class="grid_4"> 
 
 				<label class="control-label" for="name">From Location:</label>
 
