@@ -21,6 +21,7 @@ global $Config;
 			<span class="input-group-addon" ><i class="fa fa-truck"></i></span>													
 			<select id="vehicle_type_id" name="vehicle_type_id">
 										<option value="1">Truck type</option>
+										<option value="2">Trailer</option>
 										<option value="2">Tipper</option>
 										<option value="3">Container</option>
 										<option value="4">Tractor</option>
@@ -51,10 +52,12 @@ global $Config;
 					<span class="input-group-addon" ><i class="fa fa-calendar"></i></span>													
 					<input type="date" name="avaliable_date" placeholder="Date" />		
 					<span class="input-group-addon right-btn-load " style="min-width:65px;padding: 0px;background:#5f615f;">
+					<input type="hidden" name="optn" value="truck"/>
+					<input type="hidden" name="order" value="desc"/>
 					<input type="submit" name="submit" value="Search" />					      	
 					</span>				      	
 			</div>
-		<input type="hidden" name="optn" value="truck"/>
+		
 	   
 	   
  </form>
@@ -77,6 +80,7 @@ global $Config;
 			<span class="input-group-addon" ><i class="fa fa-truck"></i></span>													
 			<select id="vehicle_type_id" name="vehicle_type_id">
 										<option value="1">Truck type</option>
+										<option value="21">Trailer</option>
 										<option value="2">Tipper</option>
 										<option value="3">Container</option>
 										<option value="4">Tractor</option>
@@ -96,19 +100,31 @@ global $Config;
 										<option value="18">Other Container Truck</option>
 										<option value="19">14 Wheel Truck</option>
 										<option value="20">19 Ft Open Body Truck</option>
+				
+				
+				
 				</select>
-			
-			
+
+
+	
 		</div>
 		<div class="input-group col-sm-1 inline sour" >
+		
+		
 			<span class="input-group-addon" ><i class="fa fa-automobile"></i></span>													
+			
+			
 			<input type="text" name="consignment_weight" placeholder="Load "/>
+		
+		
 		</div>
 			
 			<div class="input-group col-sm-2 inline sear" >
 					<span class="input-group-addon" ><i class="fa fa-calendar"></i></span>													
 					<input type="date" name="avaliable_date" placeholder="Date" />		
-					<span class="input-group-addon right-btn-load" style="padding: 0px;background:#5f615f;">
+					<span class="input-group-addon right-btn-load serspan">
+					<input type="hidden" name="optn" value="load"/>		
+					<input type="hidden" name="order" value="desc"/>			
 					<input type="submit" name="submit" value="Search" />					      	
 					</span>				      	
 			</div>

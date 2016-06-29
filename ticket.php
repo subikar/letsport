@@ -2,7 +2,7 @@
 	global $template,$Config,$my,$mainframe;
 	
 	$task=IRequest::getVar('task');
-	$template->includejs($Config->site."classes/external/editor/editor.js");
+	//$template->includejs($Config->site."classes/external/editor/editor.js");
 	$template->includejs($Config->site."templates/itcslive/js/ticket.js");
 	$template->includecss("templates/itcslive/css/ticket.css");
 	switch($task)
@@ -89,11 +89,11 @@
 				$template->display('ticket/mycontacts');
 				$template->display('footer');
 			break;
-			case "addcontact":
-				$template->assignRef('Title','Welcome to My Projects');
+			case "addtruck":
+				$template->assignRef('Title','Add Truck');
 				$template->display('tmplpopup/header');
-				 $Model = includeclass('mycontact');
-				$template->display('ticket/addcontact');
+				$Model = includeclass('dashboard');
+				$template->display('ticket/addtruck');
 				$template->display('tmplpopup/footer');
 			break;
 			case "appointment":
