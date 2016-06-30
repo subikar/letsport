@@ -13,13 +13,6 @@
 			$template->display('ourworks/popup'); 
 			$template->display('tmplpopup/footer');
 		break;
-		case "description":
-			$template->assignRef('Title','Project Description');
-			$template->display('tmplpopup/header');
-			$Model = includeclass('ourworks');
-			$template->display('ourworks/description'); 
-			$template->display('tmplpopup/footer');
-		break;
 		default:
 			$template->assignRef('Title','LoadBoard');
 			$template->display('header');

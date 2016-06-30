@@ -75,13 +75,14 @@
                               </div>
                           </div></td>
                       </tr>
-                    </tfoot>
+                    </tfoot>  
                   </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <input type="hidden" name="operation_type" value="truck" />
 		<input type="hidden" name="view" value="ourworks" />
 		</form>
 		<div class="clear"></div>

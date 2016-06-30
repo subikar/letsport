@@ -13,9 +13,7 @@
 	   {
 	     global $db;
 		 $this->table = '#__'.$table;
-		 $this->post = IRequest::get("POST");
 		 $post = $this->post;
-		// print_r($_POST); exit;
 		 $Query = "SHOW COLUMNS FROM ".$this->table;
 		 $db->setQuery($Query);
 		 $Fields = $db->loadObjectList();

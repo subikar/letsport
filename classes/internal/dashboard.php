@@ -12,8 +12,10 @@ defined ('ITCS') or die ("Go away.");
 	{
 		global $template,$my,$db;
 		
-	    $MyTruck=$this->getMyTruck();
-	  	$template->assignRef('MyTruck',$MyTruck);
+	    $this->getMyTruck();
+	    $this->getMyDriver();
+		$template->assignRef('TrucksAvailable',$this->getTruckLoadAvailable('truck'));
+		$template->assignRef('LoadAvailable',$this->getTruckLoadAvailable('load'));
 		
 /*	   	$Tickets=$this->getTicket();
 	  	$template->assignRef('Tickets',$Tickets);
@@ -32,18 +34,36 @@ defined ('ITCS') or die ("Go away.");
 			$template->assignRef('leaveDetail',$leaveDetail);
 		}*/
 	}
-	
+	function getTruckLoadAvailable($type)
+	 {
+		global $db,$my,$template;
+		$Query="SELECT * FROM #__ourworks WHERE owner_id=".$db->quote($my->uid)." AND operation_type=".$db->quote($type)." ORDER BY avaliable_date DESC LIMIT 0,5";
+		$db->setQuery($Query);
+		$Listings = $db->LoadObjectList();
+		//print_r($db); exit; 
+		return $Listings;
+	 } 
 	function getMyTruck()
 	{
 		global $db,$my,$template;
-		$Query="SELECT * FROM #__truck WHERE status=1 AND truck_owner_id=".$db->quote($my->uid)." ORDER BY truck_id DESC LIMIT 0,5";
+		$Query="SELECT * FROM #__truck WHERE truck_owner_id=".$db->quote($my->uid)." ORDER BY truck_id DESC LIMIT 0,5";
 		$db->setQuery($Query);
 		$Trucks = $db->LoadObjectList(); 
-		return $Trucks;
+	//	print_r($Trucks); exit;
+		$template->assignRef('Trucks',$Trucks);
 	}
 	function addtruck()
 	 {
 		global $db,$my,$template;
+		$TruckID = IRequest::getInt('id',0);
+		if($TruckID > 0)
+		  {
+			$Query="SELECT * FROM #__truck WHERE truck_owner_id=".$db->quote($my->uid)." AND truck_id=".$db->quote($TruckID)." ORDER BY truck_id DESC LIMIT 0,5";
+			$db->setQuery($Query);
+			$Trucks = $db->LoadObjectList();
+			$template->assignRef('truckdetails',$Trucks[0]);
+		  }
+
 		$Query="SELECT * FROM #__vehicletype";
 		$db->setQuery($Query);
 		$VehcleType = $db->LoadObjectList();
@@ -57,17 +77,120 @@ defined ('ITCS') or die ("Go away.");
 	 }
 	function savetruck()
 	 {
-	    global $mainframe,$Config;
+	    global $mainframe,$Config,$db;
 	    $post = IRequest::get('POST');
-	    unset($post["view"]);
-	    unset($post["task"]);
-	    $this->post = $post;
-		parent::bind('truck');
-		parent::save();
-		$mainframe->redirect($Config->site."dashboard");
+		$TruckID = IRequest::getInt('truck_id',0);
+		if($TruckID <= 0)
+		  {
+				unset($post["view"]);
+				unset($post["task"]);
+				$this->post = $post;
+				parent::bind('truck');
+				parent::save();
+		   }
+		 else
+		   {
+		     $Where = array();
+			 $Where[] = 'truck_id = '.$db->quote($TruckID);
+			 $this->where = implode(' AND ', $Where);
+			 unset($post["view"]);
+			 unset($post["task"]);
+			 unset($post["truck_id"]);
+			 $this->post = $post;
+			 parent::bind('truck'); 
+			 parent::update();
+		   }  
+		$mainframe->miniredirect($Config->site."dashboard");
 
 	   //print_r($post); exit;
 	 }  
+	 
+	function getMyDriver()
+	{
+		global $db,$my,$template;
+		$Query="SELECT * FROM #__driver WHERE driver_id=".$db->quote($my->uid)." ORDER BY driver_id DESC LIMIT 0,5";
+		$db->setQuery($Query);
+		$Drivers = $db->LoadObjectList(); 
+		$template->assignRef('Drivers',$Drivers);
+	}
+	function adddriver()
+	 {
+	  
+		global $db,$my,$template;
+		$DriverID = IRequest::getInt('id',0);
+		if($DriverID > 0)
+		  {
+			$Query="SELECT * FROM #__driver WHERE driver_owner=".$db->quote($my->uid)." AND driver_id=".$db->quote($DriverID)."  ORDER BY driver_id DESC LIMIT 0,5";
+			$db->setQuery($Query);
+			$Driver = $db->LoadObjectList(); 
+		//	print_r($db); exit;
+			$template->assignRef('driverdetails',$Driver[0]);
+		  }
+
+
+	   
+	 }
+	function savedriver()
+	 {
+	    global $mainframe,$Config,$db;
+	    $post = IRequest::get('POST');
+		$driver_id = IRequest::getInt('driver_id',0);
+		if($driver_id <= 0)
+		  {
+		        $post['driver_avatar'] = $this->uploadAvatar();
+				unset($post["view"]);
+				unset($post["task"]);
+				$this->post = $post;
+				parent::bind('driver');
+				parent::save();
+		   }
+		 else
+		   {
+		     $Where = array();
+			 $Where[] = 'driver_id = '.$db->quote($driver_id);
+			 $this->Where = implode(' AND ', $Where);
+			 $post['driver_avatar'] = $this->uploadAvatar();
+			 unset($post["view"]);
+			 unset($post["task"]);
+			 unset($post["driver_id"]);
+			 $this->post = $post;
+			 parent::bind('driver'); 
+			 parent::update();
+		   }  
+		$mainframe->miniredirect($Config->site."dashboard");
+	 }
+       function uploadAvatar()
+		{
+		       
+				 global $db, $template, $Config,$mainframe;
+				 $files = IRequest::get('FILES');
+				 $img_path = IPATH_ROOT.'/images/driver_avatar/';
+				 $AcceptedFilesInArray = array('jpg','png','jpeg','gif');
+				 $ext = pathinfo($files['driver_avatar']['name'], PATHINFO_EXTENSION);
+				
+				 if(in_array($ext,$AcceptedFilesInArray) && $files['driver_avatar']['size'] < 100000)
+				   {
+ 				     $name = md5(time()).'.'.$ext;     
+				     $res =move_uploaded_file($files['driver_avatar']['tmp_name'], $img_path.$name);
+					// print($img_path.$name);
+					 //print_r($res); exit;
+					if($res == 1)
+						$avatar = $name;
+					 
+					 
+				   }
+				 else
+				   {
+						$template->assignRef('Title','Add Driver');
+						$template->display('tmplpopup/header');
+						$Model = includeclass('dashboard');
+						$template->display('ticket/adddriver');
+						$template->display('tmplpopup/footer');
+					    exit;
+				   }  
+				  return $avatar;
+			
+		}	   	 
 	
 	//No Function after this is usable 	
 	function getGoogleToken()

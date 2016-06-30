@@ -33,6 +33,11 @@
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Truck Availability</span></a>
         </li>
+        
+            <li class="ng-scope"><a href="index.php?view=loadavailability" class="ng-scope">
+          <i ng-if="item.iconClasses" class="fa fa-blog"></i>
+          <span class="ng-binding">Load Availability</span></a>
+        </li>
 		
         <li class="ng-scope"><a href="index.php?view=blog" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
@@ -63,7 +68,22 @@
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Truck Add Enquiry</span></a>
         </li>
-		
+
+        <li class="ng-scope"><a href="index.php?view=alltruck" class="ng-scope">
+          <i ng-if="item.iconClasses" class="fa fa-blog"></i>
+          <span class="ng-binding">All Truck </span></a>
+        </li>		
+
+ 		<li class="ng-scope"><a href="index.php?view=alldriver" class="ng-scope">
+          <i ng-if="item.iconClasses" class="fa fa-blog"></i>
+          <span class="ng-binding">All Driver </span></a>
+        </li>		
+
+	<li class="ng-scope"><a href="index.php?view=subscriber" class="ng-scope">
+          <i ng-if="item.iconClasses" class="fa fa-blog"></i>
+          <span class="ng-binding">Subscriber</span></a>
+        </li>
+
 
         <li class="ng-scope"><a href="index.php?view=cache" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
