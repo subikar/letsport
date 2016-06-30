@@ -7,7 +7,7 @@
 			parent::__construct();			  
 	   	}
 		function display()
-	   	{
+	   	{	
 			global $template; 
 			$template->includejs('templates/itcslive/js/ourworks.js');
 			$this->getworks();
@@ -16,18 +16,21 @@
 			$template->display('footer');
 	  	 }  
 	  	function  getworks()
-		{
+		{ 
 			global $db, $template, $Config;
 			$start = IRequest::getInt('start',0);
 			$searchTest = IRequest::getVar('search_txt');
 			$Limit = ($Config->limit)?$Config->limit:20;
 			if($searchTest != '')
 			{
-				$where = "WHERE start_location LIKE '%".$searchTest."%' OR end_location LIKE '%".$searchTest."%' OR vehicle_type LIKE '%".$searchTest."%' OR material_type LIKE '%".$searchTest."%' OR consignment_weight LIKE '%".$searchTest."%'";
+				$where = "WHERE start_location LIKE '%".$searchTest."%' OR end_location LIKE '%".$searchTest."%' OR vehicle_type LIKE '%".$searchTest."%' OR material_type LIKE '%".$searchTest."%' OR consignment_weight LIKE '%"
+				.$searchTest."%' OR operation_type LIKE '%".$searchText."'%";
+				
 			} 
 			else
 			{
-				$where = "";
+				$where = "WHERE operation_type ="."'truck'";
+				
 			}
 			
 			$Query = "select count(*) from #__ourworks ".$where; 
