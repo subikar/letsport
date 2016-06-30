@@ -14,22 +14,48 @@
 
 }
 
-@media (min-width: 1199px) and (max-width: 1600px) {
-	
-
-
+@media (min-width: 1100px) and (max-width: 1199px) {
+	.topmidilbar{ font-size: 12px;text-align: right;position: relative; top: 9px;left: 63px;}
+.main-width {  width: 56%;}
+.header__logo img{left:-42px;}
+.topfix .respontop{position: relative;left: -31px;}
+.respontop2{position: relative;left: -47px;}
+.banner-item{width: 79% ;}
+.banneritembox{position: relative;top: -50px;}
+}
+@media (min-width: 999px) and (max-width: 1099px) {
+.topbar{position: relative; left: -25px;}
+.main-width {width: 56%;}
+.topmidilbar {position: relative;left: 60px;}
+.respontop2{position:relative;left:-51px;}
+.quick-contact{width:382px;}
+.respontop{position: relative;left: 78px;}
+.banneritembox{position: relative;top: -98px;}
+.zomut{padding-left:25px;}
+.moduletable{}
 
 
 }
-@media (min-width: 980px) and (max-width: 1199px) {
-.banner-item{width:auto !important;}
-	
+
+@media (min-width: 990px) and (max-width: 998px) {
+ul.sf-menu > li > a{padding-left: 14px; padding-right: 18px;}
+.fa-facebook-f:before, .fa-facebook:before, { content: "\f09a";font-size: 18px;}
+.header{width: 141%;position: relative;left: -194px;}
+.cruv{margin-left: -8% ! important;}
+.header__logo img{left:65px;}
+.respontop2{width: 334px;position: relative;left: -44px;}
+.topmidilbar{left: 47px;}
+.banneritembox{position: relative;top: -102px;}
+.
+
+
+
 
 }
 
 
 @media (min-width: 768px) and (max-width: 920px) {
-.banner-item{width:auto !important;}
+.banner-item{ }
 	
 
 }
@@ -41,7 +67,7 @@
 // ------------------*/
 
 @media (max-width: 767px){
-.banner-item{width:auto !important;}
+.banner-item{width:auto }
 	
 
 }

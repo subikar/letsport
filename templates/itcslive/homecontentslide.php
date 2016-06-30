@@ -85,7 +85,7 @@
                 <div class="row our-services container-fluid block-content">
      
         <div class="col-sm-6 col-md-4 col-lg-4 wow zoomInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInLeft;">
-        <a href="http://192.168.9.100/custom/letsport/see_freight">
+        <a href="<?php echo $Config->site.'see_freight'; ?>">
             <span><i class="glyph-icon fa fa-bell fa-3x"></i></span>
             <h4>See Freight</h4>
             <p></p><p>Integer congue elit non semper laore lectus orci posuer nisl tempor lacus mauris led ipsum.</p><p></p>
@@ -93,7 +93,7 @@
     </div>
          
         <div class="col-sm-6 col-md-4 col-lg-4 wow zoomInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInLeft;">
-        <a href="http://192.168.9.100/custom/letsport/road-transportation">
+        <a href="<?php echo $Config->site.'road-transportation'; ?>">
             <span><i class="fa fa-inr" aria-hidden="true"></i></span>
             <h4>Road Transportation</h4>
             <p>Integer congue elit non semper laore lectus orci posuer nisl tempor lacus mauris led ipsum.</p>
@@ -101,7 +101,7 @@
     </div>
          
         <div class="col-sm-6 col-md-4 col-lg-4 wow zoomInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInLeft;">
-        <a href="http://192.168.9.100/custom/letsport/submenu">
+         <a href="<?php echo $Config->site.'submenu'; ?>">
             <span><i class="fa fa-inr" aria-hidden="true"></i></span>
             <h4>Submenu</h4>
             <p>Integer congue elit non semper laore lectus orci posuer nisl tempor lacus mauris led ipsum.</p>
@@ -109,7 +109,7 @@
     </div>
          
         <div class="col-sm-6 col-md-4 col-lg-4 wow zoomInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInLeft;">
-        <a href="http://192.168.9.100/custom/letsport/air_freight">
+         <a href="<?php echo $Config->site.'air_freight'; ?>">
             <span><i class="fa fa-inr" aria-hidden="true"></i></span>
             <h4>AIR FREIGHT</h4>
             <p>Integer congue elit non semper laore lectus orci posuer nisl tempor lacus mauris led ipsum.</p>
@@ -117,7 +117,7 @@
     </div>
          
         <div class="col-sm-6 col-md-4 col-lg-4 wow zoomInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInLeft;">
-        <a href="http://192.168.9.100/custom/letsport/railway-logistics">
+         <a href="<?php echo $Config->site.'railway-logistics'; ?>">
             <span><i class="fa fa-inr" aria-hidden="true"></i></span>
             <h4>Railway logistics</h4>
             <p>Integer congue elit non semper laore lectus orci posuer nisl tempor lacus mauris led ipsum.</p>
@@ -125,7 +125,7 @@
     </div>
          
         <div class="col-sm-6 col-md-4 col-lg-4 wow zoomInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomInLeft;">
-        <a href="http://192.168.9.100/custom/letsport/warehousing">
+         <a href="<?php echo $Config->site.'warehousing'; ?>">
             <span><i class="fa fa-inr" aria-hidden="true"></i></span>
             <h4>warehousing</h4>
             <p>Integer congue elit non semper laore lectus orci posuer nisl tempor lacus mauris led ipsum.</p>

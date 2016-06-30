@@ -7,7 +7,7 @@
                 <div class="row block-content">
                        <div class="col-sm-4 wow zoomIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
                                                  
-<a href="#" class="logo-footer">
+<a href="<?php echo $Config->site; ?>" class="logo-footer">
     <img src="images/logo2.png" alt="">
 </a>
 <p>Integer congue elit non semper laoreet sed lectu orc posuer nisl tempor sed felis ac mauris ellent esque ndu ca urna Integer vitae felis.</p>
@@ -26,24 +26,24 @@
                                                 		<div class="moduletable">
 							<h4>USEFUL LINKS</h4>
 						<nav class="ftnav">
-<a href="http://192.168.9.100/custom/letsport/terms-of-service">Terms of Service</a>
-<a href="http://192.168.9.100/custom/letsport/privacy-policy">Privacy Policy</a>
-<a href="http://192.168.9.100/custom/letsport/disclaimer">Disclaimer</a>
-<a href="http://192.168.9.100/custom/letsport/copyright">Copyright</a>
-<a href="http://192.168.9.100/custom/letsport/careers">Careers</a>
-<a href="http://192.168.9.100/custom/letsport/sitemap">Sitemap</a></nav>
+<a href="<?php echo $Config->site.'terms-of-service'; ?>">Terms of Service</a>
+<a href="<?php echo $Config->site.'privacy-policy'; ?>">Privacy Policy</a>
+<a href="<?php echo $Config->site.'disclaimer'; ?>">Disclaimer</a>
+<a href="<?php echo $Config->site.'copyright'; ?>">Copyright</a>
+<a href="<?php echo $Config->site.'careers'; ?>">Careers</a>
+<a href="<?php echo $Config->site.'sitemap'; ?>">Sitemap</a></nav>
 		</div>
 	
                                             </div>
-                    <div class="col-sm-2 wow zoomIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
+                    <div class="col-sm-2 wow zoomIn zomut" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
                                                 		<div class="moduletable">
 							<h4>Main Links</h4>
 						<nav class="ftnav">
-<a href="http://192.168.9.100/custom/letsport/">Home</a>
-<a href="http://192.168.9.100/custom/letsport/search">Search</a>
-<a href="http://192.168.9.100/custom/letsport/submit">Submit</a>
-<a href="http://192.168.9.100/custom/letsport/about-us">About</a>
-<a href="http://192.168.9.100/custom/letsport/contact-us">Contact</a>
+<a href="<?php echo $Config->site; ?>">Home</a>
+<a href="<?php echo $Config->site.'search'; ?>">Search</a>
+<a href="<?php echo $Config->site.'submit'; ?>">Submit</a>
+<a href="<?php echo $Config->site.'about-us'; ?>">About</a>
+<a href="<?php echo $Config->site.'contact-us'; ?>">Contact</a>
 </nav>
 		</div>
 	

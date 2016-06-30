@@ -10,7 +10,7 @@
       </button>
     </div>
     <div class="grid_2 mobile-logo-outer">
-      <h1><a href="<?php echo $this->site; ?>"><img src="<?php echo $this->site; ?>templates/itcslive/images/logo1.png" alt=""></a></h1>
+      
     </div>
     <div class="grid_8 mobile-menu-links">
       <ul class="links">
@@ -22,7 +22,7 @@
     </div>
 	
 	<div class="clear"></div>
-	<div class="mobile-hedr-tagline">Information Technology Consultant Services</div>
+	
 	
 	
   </div>

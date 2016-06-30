@@ -156,6 +156,7 @@ color:#FFF;}
     display: table;
     content: " ";
 }
+.header__navigation-widgets{padding-left: 0px;}
 .our-services div > a > span {
     text-align: center;
     padding-top: 15px;
@@ -328,12 +329,6 @@ color:#FFF;}
 /*      @maridlcrmn              */
 /*-------------------------------*/
 
-
-section {
-    padding-top: 100px;
-    padding-bottom: 80px;
-}
-
 .quote {
     color: rgba(0,0,0,.1);
     text-align: center;
@@ -345,7 +340,7 @@ section {
 /*-------------------------------*/
 
 #fade-quote-carousel.carousel {
-  padding-bottom: 60px;
+  
 }
 #fade-quote-carousel.carousel .carousel-inner .item {
   opacity: 0;
@@ -592,3 +587,11 @@ input[type="submit"]{background: #5f615f !important;
 .dropdown:hover .dropdown-content {
     display: block;}
 .getofferForm .popupform{padding: 2px 46px 0px 44px;}
+.padDiv .fa-user:before {
+    content: "\f007";
+    font-size: 15px;
+}
+.padDiv .fa-truck:before {
+    font-size: 15px;
+}
+.toggle-menu .mobile-nav-list{position: relative;top: -64px;}

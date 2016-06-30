@@ -70,19 +70,19 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
       <!-- For Desktop Header View -->
      <div class="container-fluid">
      	<div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 logo-sp-outer">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 logo-sp-outer">
 			
 		</div>
-		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-5 topbar">
-			<ul class="quick-contact topmidilbar">
-				<li><a class="truckavailibilty" href="<?php echo $Config->site.'load-available'; ?>" title="Submit Load For Free">Submit Load</a></li>
+		<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 topbar">
+			<ul class="quick-contact topmidilbar respontop">
+				<li><a class="truckavailibilty" href="<?php echo $Config->site.'submit-load'; ?>" title="Submit Load For Free">Submit Load</a></li>
 				<li><a class="truckavailibilty" href="<?php echo $Config->site.'add-truck-available'; ?>" title="Submit Truck Availability For Free">Submit Truck</a></li>
 				<li><a href="<?php echo $Config->site.'customer-signup'; ?>" title="Customer Signup For Free">Customer Signup</a></li>
 				<li><a href="<?php echo $Config->site.'transporter-signup'; ?>" title="Transporter Signup For Free">Transporter Signup</a></li>
 			</ul>
 		</div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 topfix">
-			<ul class="quick-contact">
+			<ul class="quick-contact respontop2">
 				<li class="top_login_button dropdown">
                 <?php if(isset($my->uid)): ?>
                 <a href="#"><img src="images/user.png"></a>
@@ -111,51 +111,9 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
     </div>
   </div>
     <?php $this->display('mobilemenu',0); ?>
-<!--<div class="main-width">
-    <div class="container_12">
-      <div class="grid_12">
-        <div class="nav-search">
-          <nav>
-            <?php if(isset($my->uid) && $my->uid > 0): ?>
-     <?php $this->menu('user-menu'); ?>
-            <?php else:?>
-    <?php  $this->menu('top-menu'); ?>
-
-            <?php endif; ?>
-          </nav>
-            <?php //includemodule('contentsearch'); ?>
-          <div class="clear"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>-->
-  <?php  //if($this->is_home): ?>
-  <div id="slide">
-
-    <?php //$this->display('slideshow',0); ?>
-  </div>
-  <?php //endif; ?>
 </div>
 <?php  //if($this->is_home): ?>
-<aside>
-  <div class="main-aside">
-    <div class="inner">
-      <div class="container_12">
-        <div class="wrapper">
-          <div class="grid_4">
-            <?php //includemodule('welcome'); ?>
-          </div>
-          <div class="grid_4">
-            <?php //includemodule('development'); ?>
-          </div>
-          <div class="grid_4">
-            <?php //includemodule('success'); ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </aside>
 	<!-- Navbar -->
 <div class="header__container">
@@ -166,7 +124,7 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 <a href="http://192.168.9.100/custom/letsport/">
 <img src="images/logo.png" alt="CargoPress" srcset="images/logo.png" class="img-responsive">
 </a>
- 
+<!-- 
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cargopress-navbar-collapse">
 <span class="navbar-toggle__text">MENU</span>
 <span class="navbar-toggle__icon-bar">
@@ -175,6 +133,7 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 <span class="icon-bar"></span>
 </span>
 </button>
+ -->
 </div>
 
 
@@ -200,7 +159,8 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 <div class="widget  widget-social-icons">
 <a class="social-icons__link" href="https://www.facebook.com/itcslive" target="_blank"><i class="fa  fa-facebook"></i></a>
 <a class="social-icons__link" href="https://twitter.com/outsourcing_web" target="_blank"><i class="fa  fa-twitter"></i></a>
-<a class="social-icons__link" href="https://www.youtube.com/itcslive" target="_blank"><i class="fa  fa-youtube"></i></a>
+<a class="social-icons__link" href="https://www.googlie.com/itcslive" target="_blank"><i class="fa  fa-google-plus"></i></a>
+<a class="social-icons__link" href="https://www.linkedin.com/itcslive" target="_blank"><i class="fa  fa-linkedin"></i></a>
 </div> </div>
 </header>
 </div>

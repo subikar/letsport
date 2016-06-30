@@ -18,6 +18,22 @@
 				$template->display('ticket/index');
 				$template->display('footer');
 			break;
+			case "addtruck":
+				$template->assignRef('Title','Add Truck');
+				$template->display('tmplpopup/header');
+				$Model = includeclass('dashboard');
+				$template->display('ticket/addtruck');
+				$template->display('tmplpopup/footer');
+			break;
+			case "adddriver":
+				$template->assignRef('Title','Add Driver');
+				$template->display('tmplpopup/header');
+				$Model = includeclass('dashboard');
+				$template->display('ticket/adddriver');
+				$template->display('tmplpopup/footer');
+			break;
+			
+			
 			case "breaktime":
 				$template->assignRef('Title','Welcome to break time');
 				$template->display('tmplpopup/header');
@@ -88,13 +104,6 @@
 	    	    $Model = includeclass('mycontact');
 				$template->display('ticket/mycontacts');
 				$template->display('footer');
-			break;
-			case "addtruck":
-				$template->assignRef('Title','Add Truck');
-				$template->display('tmplpopup/header');
-				$Model = includeclass('dashboard');
-				$template->display('ticket/addtruck');
-				$template->display('tmplpopup/footer');
 			break;
 			case "appointment":
 				$template->assignRef('Title','Welcome to Appointment');

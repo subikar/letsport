@@ -1,7 +1,7 @@
 <?php
 	defined ('ITCS') or die ("Go away.");
 	global $Config;
-	$post = IRequest::get('POST');
+	
 ?>
 
 
@@ -11,7 +11,7 @@
 		
 		<div class="topbordr">
 	<ul class="nav nav-tabs panel-heading searchtop ">
-					<i class="fa fa-search"></i> Search Your <?php echo $post[optn] ;?></ul>
+					<i class="fa fa-search"></i> Search Your <?php echo $this->type; ?></ul>
 				
 	
 <div class="panel panel-orange">
@@ -180,9 +180,15 @@
     <td></td>
     <td></td> 
     <td></td>
-    <td><button type="button" name="btn" class="btn btn-sm btn-success filter-submit"   value=""  style="width:130px;margin-bottom: 11px;">
-	<i class="fa fa-send"></i>&nbsp;Submit Quote
-</button></td>
+    <td>
+	<?php if($this->type == 'truck'):?>
+	<a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addtruckbid?id=".$work->id; ?>">
+	<i class="fa fa-send"></i>&nbsp;Submit Quote</a>
+	<?php else: ?>
+	<a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addloadbid?id=".$work->id; ?>">
+	<i class="fa fa-send"></i>&nbsp;Submit Quote</a>
+	<?php endif; ?>
+	</td>
   </tr>  
   <tr class="bordershadow">
     <td></td>
@@ -199,16 +205,5 @@
 </div>
 </div>
 
-			</div>
+</div>
 
-<script type="text/javascript">
-var myLink = document.getElementById('mylink');
-
-myLink.onclick = function(){
-	window.location.href="leaderboard";
-alert("inside");
-
-}
-
-
-</script>

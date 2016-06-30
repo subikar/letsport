@@ -2,12 +2,12 @@
 global $Config;
 ?>
 <ul class="quick-contact">
-	<li class="top_coll_button search_load tab ta2"><i class="fa fa-tasks" aria-hidden="true"></i>Search Load</li>
 	<li class="top_help_button search_truck tab selected"><i class="fa fa-car" aria-hidden="true"></i>Search Truck</li>
+	<li class="top_coll_button search_load tab ta2"><i class="fa fa-tasks" aria-hidden="true"></i>Search Load</li>
 </ul>
 <div class="form-group">
 	
-<form id="truck" method="POST" accept-charset="utf-8" action="leaderboard">
+<form id="truck" method="POST" accept-charset="utf-8" action="search-truck">
 	<div class="input-group col-sm-2 inline">
 		<span class="input-group-addon" ><i class="fa fa-map-marker"></i></span>																								
 		<input type="text" name="start_location"  placeholder="From Location " />
@@ -52,7 +52,6 @@ global $Config;
 					<span class="input-group-addon" ><i class="fa fa-calendar"></i></span>													
 					<input type="date" name="avaliable_date" placeholder="Date" />		
 					<span class="input-group-addon right-btn-load " style="min-width:65px;padding: 0px;background:#5f615f;">
-					<input type="hidden" name="optn" value="truck"/>
 					<input type="hidden" name="order" value="desc"/>
 					<input type="submit" name="submit" value="Search" />					      	
 					</span>				      	
@@ -62,7 +61,7 @@ global $Config;
 	   
  </form>
  
-<form id="load" method="POST" accept-charset="utf-8" action="leaderboard" style="display:none;">
+<form id="load" method="POST" accept-charset="utf-8" action="search-load" style="display:none;">
 	<div class="input-group col-sm-1 inline sour">
 		<span class="input-group-addon" ><i class="fa fa-map-marker"></i></span>																								
 		<input type="text" name="start_location"  placeholder="From Location   " />
@@ -123,7 +122,6 @@ global $Config;
 					<span class="input-group-addon" ><i class="fa fa-calendar"></i></span>													
 					<input type="date" name="avaliable_date" placeholder="Date" />		
 					<span class="input-group-addon right-btn-load serspan">
-					<input type="hidden" name="optn" value="load"/>		
 					<input type="hidden" name="order" value="desc"/>			
 					<input type="submit" name="submit" value="Search" />					      	
 					</span>				      	
