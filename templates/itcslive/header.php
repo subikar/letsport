@@ -86,15 +86,17 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 				<li class="top_login_button dropdown">
                 <?php if(isset($my->uid)): ?>
                 <a href="#"><img src="images/user.png"></a>
-                <div class="dropdown-content">
-   				 	<a href="<?php echo $Config->site.'dashboard'; ?>">Dashboard</a>
-    				<a href="<?php echo $Config->site.'addtruck'; ?>">Add Truck</a>
-  					<a href="<?php echo $Config->site.'adddriver'; ?>">Add Driver</a>
-  					<a href="<?php echo $Config->site.'myload'; ?>">My Load</a>
-  					<a href="<?php echo $Config->site.'mytruck'; ?>">My Truck</a>
-  					<a href="<?php echo $Config->site.'mysubscription'; ?>">My Subcription</a>
-  					<a href="<?php echo $Config->site.'myinvoice'; ?>">Invoice History</a>
-  					<a href="<?php echo $Config->site.'logout'; ?>">Logout</a>
+                <div>
+                	<ul class="dropdown-content">
+   				 	<li><a href="<?php echo $Config->site.'dashboard'; ?>">Dashboard</a></li>
+    				<li><a href="<?php echo $Config->site.'addtruck'; ?>">Add Truck</a></li>
+  					<li><a href="<?php echo $Config->site.'adddriver'; ?>">Add Driver</a></li>
+  					<li><a href="<?php echo $Config->site.'myload'; ?>">My Load</a></li>
+  					<li><a href="<?php echo $Config->site.'mytruck'; ?>">My Truck</a></li>
+  					<li><a href="<?php echo $Config->site.'mysubscription'; ?>">My Subcription</a></li>
+  					<li><a href="<?php echo $Config->site.'myinvoice'; ?>">Invoice History</a></li>
+  					<li><a href="<?php echo $Config->site.'logout'; ?>">Logout</a></li>
+  					</ul>
   				</div>
                 <?php else:?>
                 <a class="clientlogin" href="<?php echo $Config->site.'login'; ?>" title="Client Login"><div class="dropbtn"><img src="images/user.png"></div></a>

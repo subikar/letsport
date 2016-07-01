@@ -11,12 +11,12 @@
 ?>		  
 	  <ul class="<?php echo $ulClass; ?>" id="<?php echo $ulID; ?>">
 	  <?php foreach($this->MenuInArray as $Menu):   $activeClass=(strcasecmp(trim($Config->site.$Menu->alias),$current_url)==0) ? "sfHover" : ""; ?>
-	  <li class="<?php echo $activeClass; ?>">
+	  <li class="<?php echo $activeClass; ?> dropdown">
 	  <a href="<?php echo $Config->site.$Menu->alias; ?>"><?php echo $Menu->title?></a>
 	  	<?php if(count($Menu->submenu) > 0): ?>
-		<ul class="sub-nav">
+		<ul class="dropdown-content">
 		<?php foreach($Menu->submenu as $Submenu): ?>
-		 <li>
+		 <li >
 	  	<a href="<?php echo $Config->site.$Submenu->alias; ?>"><?php echo $Submenu->title?></a>
 	  	</li>
 		<?php endforeach; ?>

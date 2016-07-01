@@ -3,7 +3,7 @@
 	<?php includemodule('contentsearch'); ?>
 </div>
  
-<div class="banneritembox col-xs-12 col-sm-12 col-md-12 col-lg-9">
+<div class="banneritembox col-xs-12 col-sm-12 col-md-12 col-lg-9 mob">
 	
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		
@@ -78,7 +78,7 @@
 
 		<!--containarOUR FEATURES-->
 		
-		<div class=" container-fluid block-content">
+		<div class=" container-fluid block-content mobilblock">
                 <div class="hgroup text-center wow zoomIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
                     <h1>OUR FEATURES</h1>
                   </div> 

@@ -48,6 +48,18 @@ var getfreequote = new function()
 		  var input=document.getElementById(input_id);
 		  input.submit();
 	  }
+    this.ValidateAddTruckBid=function(input_id)
+	  {
+		  var input=document.getElementById(input_id);
+		  //alert(input);
+		  input.submit();
+	  }
+	this.ValidateAddLoadBid=function(input_id)
+	  {
+		  var input=document.getElementById(input_id);
+		  //alert(input);
+		  input.submit();
+	  }
 
 	this.CheckLength = function(thisobj,textcounter) 
 	{

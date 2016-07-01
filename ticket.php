@@ -33,6 +33,13 @@
 				$template->display('tmplpopup/footer');
 			break;
 			
+			case "bidstruck":
+				$template->assignRef('Title','Bids Truck');
+				$template->display('tmplpopup/header');
+				$Model = includeclass('dashboard');
+				$template->display('ticket/bidstruck');
+				$template->display('tmplpopup/footer');
+			break;			
 			
 			case "breaktime":
 				$template->assignRef('Title','Welcome to break time');
