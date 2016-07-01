@@ -19,7 +19,8 @@
 	else
 		 $view = 'login'; 
 
-    include_once(IPATH_BASE.DS.'controller'.DS.$view.'.php');  
+    include_once(IPATH_BASE.DS.'controller'.DS.$view.'.php');
+	//echo "IPATH_BASE.DS.'controller'.DS.$view.'.php'";exit;  
     new $view();
 
 ?>

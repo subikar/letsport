@@ -83,6 +83,11 @@
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Subscriber</span></a>
         </li>
+        
+        <li class="ng-scope"><a href="index.php?view=subscriptionplan" class="ng-scope">
+          <i ng-if="item.iconClasses" class="fa fa-blog"></i>
+          <span class="ng-binding">Subscription Plan</span></a>
+        </li>
 
 
         <li class="ng-scope"><a href="index.php?view=cache" class="ng-scope">

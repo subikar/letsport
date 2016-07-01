@@ -63,16 +63,8 @@ defined ('ITCS') or die ("Go away.");
 			$Trucks = $db->LoadObjectList();
 			$template->assignRef('truckdetails',$Trucks[0]);
 		  }
+		$template->VehcleType();  
 
-		$Query="SELECT * FROM #__vehicletype";
-		$db->setQuery($Query);
-		$VehcleType = $db->LoadObjectList();
-		$vtype = array();
-		foreach($VehcleType as $Vehcle)
-		  {
-		    $vtype[$Vehcle->vehicle_type] = $Vehcle->vehicle_type; 
-		  }
-		$template->assignRef('VehcleType',$vtype); 
 	   
 	 }
 	function savetruck()
@@ -345,5 +337,90 @@ defined ('ITCS') or die ("Go away.");
 		$Category = $db->loadObjectList();
 		return $Category;
 	}  
+	
+	function bid()
+	 {
+	 	$this->VehicleNumber();
+		$this->SelectDriver();
+	 }
+	 
+	 function bid1()
+	 {
+	 	$this->MaterialType();
+		
+	 }
+	 
+	 
+function MaterialType()
+	 {	//echo("hi");exit;
+	 	global $db,$my,$template; 
+		$Query="SELECT * FROM #__ourworks";
+		$db->setQuery($Query);
+		$MaterialType = $db->LoadObjectList();
+		//print_r($VehicleDriver);exit;
+		$vno = array();
+		foreach($MaterialType as $Mtrl)
+		  {
+		    $vno[$Mtrl->material_type] = $Mtrl->material_type; 
+		  }
+		$template->assignRef('MaterialType',$vno); 
+		//print_r($vno);exit;
+	 	
+	 } 
+	 	 
+function VehicleNumber()
+	 {	//echo("hi");exit;
+	 	global $db,$my,$template; 
+		$Query="SELECT * FROM #__truck";
+		$db->setQuery($Query);
+		$VehicleNumber = $db->LoadObjectList();
+		//print_r($VehicleNumber);exit;
+		$vno = array();
+		foreach($VehicleNumber as $Vehcle)
+		  {
+		    $vno[$Vehcle->truck_no] = $Vehcle->truck_no; 
+		  }
+		$template->assignRef('VehicleNumber',$vno); 
+		//print_r($vno);exit;
+	 	
+	 }   
+
+function SelectDriver()
+	 {	//echo("hi");exit;
+	 	global $db,$my,$template; 
+		$Query="SELECT * FROM #__driver";
+		$db->setQuery($Query);
+		$VehicleDriver = $db->LoadObjectList();
+		//print_r($VehicleDriver);exit;
+		$vno = array();
+		foreach($VehicleDriver as $Vehcle)
+		  {
+		    $vno[$Vehcle->name] = $Vehcle->name; 
+		  }
+		$template->assignRef('DriverName',$vno); 
+		//print_r($vno);exit;
+	 	
+	 } 	
+	 
+function bidstruck()
+	 {	
+	 	global $db,$my,$template; 
+		$ID = IRequest::getVar(id);
+		//echo $ID;exit; 
+		$Query="SELECT * FROM #__bids WHERE bid_id=".$ID;
+		$db->setQuery($Query);
+		$truckbids = $db->LoadObjectList();
+		//print_r($truckbids);exit;
+		$template->assignRef('TruckBids',$truckbids);
+		//print_r($VehicleDriver);exit;
+		/*$vno = array();
+		foreach($VehicleDriver as $Vehcle)
+		  {
+		    $vno[$Vehcle->name] = $Vehcle->name; 
+		  }
+		$template->assignRef('DriverName',$vno);*/ 
+		//print_r($vno);exit;
+	 } 	
+
   }
 ?>

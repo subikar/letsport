@@ -363,6 +363,65 @@ error_reporting(0);
 				$mailer->send();
 		  } 
 	 
+ 		function addtruckbid()
+ 		{
+ 			global $db,$my;
+			$id = IRequest::getVar('id');
+			$post=IRequest::get('post');
+			//print_r($post[amount]);exit;
+ 			$Query = "select * from #__ourworks Where id=".$db->quote($id);
+			$db->setQuery($Query);
+		    $Category = $db->loadObjectList();
+			//print_r($Category);exit;
+			$Category = $Category[0];
+			//print_r($Category);exit;
+			$arr = array('material_type' => $post[material_type], 'price' => $Category->price);
+			//print_r($arr);exit;
+			$PostArray[work_id] = $my->uid;
+			$PostArray[bid_text] = json_encode($arr);
+			$PostArray[amount] = $post[amount];
+			$PostArray[bid_owner_id] = $id;
+			$PostArray[bid_won] = '0';
+			$PostArray[bid_remove] = '0';
+			//print_r($PostArray);exit; 
+						                   
+			$this->post = $PostArray;
+			//print_r($this->post);exit;
+			parent::bind('bids');
+    		parent::save();
+			
+ 		}
+ 
+ 
+  		function addloadbid()
+ 		{
+ 			global $db,$my;
+			$id = IRequest::getVar('id');
+			$post=IRequest::get('post');
+			//print_r($post);exit;
+ 			$Query = "select * from #__ourworks Where id=".$db->quote($id);
+			$db->setQuery($Query);
+		    $Category = $db->loadObjectList();
+			$Category = $Category[0];
+			//print_r($Category);exit;
+			$arr = array('truck_no' => $post[truck_no], 'name' => $post[name]);
+			//print_r($arr);exit;
+			$PostArray[work_id] = $my->uid;
+			$PostArray[bid_text] = json_encode($arr);
+			$PostArray[amount] = $post[amount];
+			$PostArray[bid_owner_id] = $id;
+			$PostArray[bid_won] = '0';
+			$PostArray[bid_remove] = '0';
+			//print_r($PostArray);exit; 
+						                   
+			$this->post = $PostArray;
+			//print_r($this->post);exit;
+			parent::bind('bids');
+    		parent::save();
+			
+ 		}
+ 
+ 
    }
 
 ?>

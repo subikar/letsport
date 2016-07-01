@@ -499,7 +499,23 @@ defined ('ITCS') or die ("Go away.");
 				  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 				 }
 				 return $pageURL;
-		 }	   
+		 }	  
+	function VehcleType()
+	 {
+	 	global $db,$my,$template; 
+		$Query="SELECT * FROM #__vehicletype";
+		$db->setQuery($Query);
+		$VehcleType = $db->LoadObjectList();
+		$vtype = array();
+		foreach($VehcleType as $Vehcle)
+		  {
+		    $vtype[$Vehcle->vehicle_type] = $Vehcle->vehicle_type; 
+		  }
+		$template->assignRef('VehcleType',$vtype); 
+	 	
+	 } 
+
+		   
      }
   global $template;
   $template = new TemplateEngine($template);
