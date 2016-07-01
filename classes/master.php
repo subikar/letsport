@@ -14,6 +14,7 @@
 	     global $db;
 		 $this->table = '#__'.$table;
 		 $post = $this->post;
+		 //print_r($post);exit;
 		 $Query = "SHOW COLUMNS FROM ".$this->table;
 		 $db->setQuery($Query);
 		 $Fields = $db->loadObjectList();
@@ -24,7 +25,8 @@
 		       if(isset($post[$Field->Field])) 
 		         $data[$Field->Field] = $post[$Field->Field];
 		   }
-		 $this->Fields = $data;  
+		 $this->Fields = $data;
+		 //print_r($data); exit; 
 	   }
 	 function save()
 	   {
@@ -36,7 +38,7 @@
 			 } 
 	      $SetQuery = ' SET '.implode(',',$SetQuery);   
 		  $Query  = 'INSERT into '.$this->table.$SetQuery;
-		 // echo $Query;exit;
+		  //echo $Query;exit;
 		  $db->setQuery($Query);
 	   }  
 	 function update()

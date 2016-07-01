@@ -67,23 +67,72 @@ ul.sf-menu > li > a{padding-left: 14px; padding-right: 18px;}
 // ------------------*/
 
 @media (max-width: 767px){
-.banner-item{width:auto }
+.banner-item{ }
 	
 
 }
 @media (max-width: 480px){
-.banner-item{width:auto !important;}
-	
+.links{display:none}
+.cruv{width: 65% !important;}
+.main-width{width:9%;}
+.jPushMenuBtn{position: relative;top: -60px;}
+.banner-item{margin-top: 157px !important;}	
+.banner-item h1{font-size: 23px;position: relative;top: -31px;left: 50px;}
+.mobilblock{margin-top: 230px !important;}	
+.mob{display:none;}
+
+
+
+
+
+
+
+
 
 }
 @media (max-width: 320px){
+.links{display:none}
 .cruv{display:none !important;}
 .social-icons__link{.social-icons__link}
 .banner-item{width:auto !important;}
 .navbar-collapse{margin-left: 28px;}
-.header__logo img {
-    position: relative;
-    top: 10px;
-    left: 46px;
-}
+.header__logo img {position: relative;top: 10px;left: 46px;}
+.mobile-nav-list{position: relative;}
+.respontop2{width: 118%;position: relative;left: -94px;}
+.header__logo img {position: relative !important;top: 11px !important;
+.mobile-menu-links{display:none !important;}
+.main-width{display:none !important;}
+.banner-item 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
