@@ -14,7 +14,7 @@ $Mysubscription = $this->Mysubscription;
 				<div class="panel panel-yellow">
 					<!-- Begening of yellow panel -->
 					
-					<form action="" method="post" id="subscribe" name="subscribe" enctype="multipart/form-data" novalidate="novalidate" class="bv-form"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+					<form action="" method="post" id="Subscribe" name="Subscribe" enctype="multipart/form-data" novalidate="novalidate" class="bv-form"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
 						<div id="form1">
 							<!-- Begening of form 1 -->
 							
@@ -36,17 +36,14 @@ $Mysubscription = $this->Mysubscription;
 													Subscription Name:<?php echo $subscription->subscription_name;?><br />
 													Amount:<?php echo $subscription->amount;?><br/>
 													No of Bids:<?php echo $subscription->bids_number;?><br/>
-													<div class="form-actions text-right pal">
-										<input value="SUBSCRIBE" name="SUBSCRIBE" type="button" id="btn_next" class="btn btn-primary" onclick="Subscribe.SubmitForm('subscribe');"/>
-										<input name="view" value="contact" type="hidden" />
-										<input name="task" value="SaveRegister" type="hidden" />
-										<input name="usertype" value="customer" type="hidden" />
-									</div>
+											<input value="SUBSCRIBE" name="SUBSCRIBE" type="button" id="btn_next" class="btn btn-primary" onclick="ticket.SubmitForm('Subscribe');"/>			
+										</div>
 												</div>	
 												
 											</div>
+								<?php endforeach ?>
 										</div>	
-								<?php endforeach ?>			
+										
 									</div>
 								
 									
@@ -56,14 +53,7 @@ $Mysubscription = $this->Mysubscription;
 								            <div id="messages"></div>
 								        </div>
 								    </div>
-									<div class="form-actions text-right pal">
-										<input value="NEXT" name="NEXT" type="button" id="btn_next" class="btn btn-primary" onclick="SignUp.SubmitForm('signup');"/>
-										
-										&nbsp;<button type="button" class="btn btn-primary" onclick="window.location = '<?php echo $this->site; ?>';" name="cancel">cancel</button>
-										<input name="view" value="contact" type="hidden" />
-										<input name="task" value="SaveRegister" type="hidden" />
-										<input name="usertype" value="customer" type="hidden" />
-									</div>
+									
 								</div><!-- End Form Body Panel -->
 							</div>
 						</div>
@@ -71,5 +61,10 @@ $Mysubscription = $this->Mysubscription;
 					</form>
 				</div><!-- End Yellow Panel -->
 			</div><!-- End Column -->
-		</div><!-- End Row -->
+		</div><!-- End Row -->			
+											<!--		<div class="form-actions text-right pal">
+										<input value="SUBSCRIBE" name="SUBSCRIBE" type="button" id="btn_next" class="btn btn-primary" onclick="Ticket.SubmitForm('subscribe');"/>
+										<input name="view" value="contact" type="hidden" />
+										<input name="task" value="SaveRegister" type="hidden" />
+										<input name="usertype" value="customer" type="hidden" />-->
 	</div>

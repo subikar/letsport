@@ -1,5 +1,6 @@
 var getfreequote = new function()
-{
+{	
+	
 	this.validateEnquery=function(input_id)
 	{	
 		var input=document.getElementById(input_id);
@@ -43,6 +44,13 @@ var getfreequote = new function()
 			input.submit();
 		}
 	}
+
+	this.SubmitForm=function(input_id)
+	  {	
+		  var input=document.getElementById(input_id);
+		  input.submit();
+	  }
+
     this.ValidateAddTruck=function(input_id)
 	  {
 		  var input=document.getElementById(input_id);
@@ -60,7 +68,12 @@ var getfreequote = new function()
 		  //alert(input);
 		  input.submit();
 	  }
-
+	this.ValidateAddLoadBid=function(input_id)
+	  {
+		  var input=document.getElementById(input_id);
+		  //alert(input);
+		  input.submit();
+	  }
 	this.CheckLength = function(thisobj,textcounter) 
 	{
       maxLen = 2000; // max number of characters allowed

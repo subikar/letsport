@@ -35,6 +35,21 @@ $template->includejs("templates/itcslive/js/getfreequote.js");
 	  $template->display('contact/addloadbid');
 	  $template->display('tmplpopup/footer');	
 	  break;
+	 case 'subscribe':
+	  $template->assignRef('Title','Subscribe');	
+	  $Model = includeclass('dashboard');
+	  $template->display('tmplpopup/header');	
+	  $template->display('contact/subscribe');
+	  $template->display('tmplpopup/footer');	
+	  break;
+	case "mysubscription":
+		
+		$template->assignRef('Title','My Subscriptions');
+		$template->display('header');
+	    $Model = includeclass('dashboard');
+		$template->display('contact/mysubscription');
+		$template->display('footer');
+	break;
 	  
 	  default: 
 	  $template->assignRef('Title','Get Free Quote');	
