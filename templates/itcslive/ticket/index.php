@@ -64,12 +64,16 @@ global $Config,$my;
 			<div class="col-xs-12 col-sm-12 col-md-12">
 			<div class="col-xs-12 col-sm-12 col-md-12 padDiv">
 			 <h2 class="boiteHeader">My Truck Listing <span class="right"><a  href="<?php echo $Config->site."add-truck-available" ?>" class="truckavailibilty" title="Add Truck"><span class="fa fa-fw fa-truck"></span>Add Truck Availability</a> </span></h2>
-			 <div class="col-xs-12"><div class="col-xs-12 col-sm-2 col-md-2">Start Date Time</div><div class="col-xs-12 col-sm-2 col-md-2">Location</div>
+			 <div class="col-xs-12">
+			 <div class="col-xs-12 col-sm-2 col-md-2">Start Date Time</div>
+			 <div class="col-xs-12 col-sm-2 col-md-2">Location</div>
 			 <div class="col-xs-12 col-sm-2 col-md-2">Vehicle Type</div>
 			 <div class="col-xs-12 col-sm-2 col-md-2">Material Type</div>
 			 <div class="col-xs-12 col-sm-2 col-md-2">Consignment Weight</div>
-			 <div class="col-xs-12 col-sm-2 col-md-2">Bids Recieved</div></div>
-			 <div class="col-xs-12 col-sm-2 col-md-2">Close</div></div>
+			 <div class="col-xs-12 col-sm-2 col-md-1">Bids Recieved</div>
+			 <div class="col-xs-12 col-sm-2 col-md-1">Close</div>
+			 </div>
+			<?php //print_r($this->TrucksAvailable);//exit; ?>
 			 <?php foreach($this->TrucksAvailable as $Available):?>
 			 <div class="col-xs-12">
 			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo date('d M Y',strtotime($Available->avaliable_date))?> <?php echo $Available->reporting_time; ?></div>
@@ -77,8 +81,35 @@ global $Config,$my;
 			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->vehicle_type; ?></div>
 			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->material_type; ?></div>
 			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->consignment_weight; ?></div>
-			 <div class="col-xs-12 col-sm-2 col-md-2"><a  href="<?php echo $Config->site."bidstruck?id=".$Driver->driver_id; ?>" class="truckavailibilty" title="Modify Truck">Bids</a></div></div>
-			 <div class="col-xs-12 col-sm-2 col-md-2"><a  href="<?php echo $Config->site."adddriver?id=".$Driver->driver_id; ?>" class="truckavailibilty" title="Modify Truck">close</a></div></div>
+			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."bidstruck?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">Bids</a></div>
+			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."closetruck?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">close</a></div>
+			 </div>
+			 <?php endforeach; ?>
+			</div> 
+			</div>
+			
+			<div class="col-xs-12 col-sm-12 col-md-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 padDiv">
+			 <h2 class="boiteHeader">My Load Listing <span class="right"><a  href="<?php echo $Config->site."add-truck-available" ?>" class="truckavailibilty" title="Add Truck"><span class="fa fa-fw fa-truck"></span>Add Load</a> </span></h2>
+			 <div class="col-xs-12">
+			 <div class="col-xs-12 col-sm-2 col-md-2">Start Date Time</div>
+			 <div class="col-xs-12 col-sm-2 col-md-2">Location</div>
+			 <div class="col-xs-12 col-sm-2 col-md-2">Vehicle Type</div>
+			 <div class="col-xs-12 col-sm-2 col-md-2">Material Type</div>
+			 <div class="col-xs-12 col-sm-2 col-md-2">Consignment Weight</div>
+			 <div class="col-xs-12 col-sm-2 col-md-1">Bids Recieved</div>
+			 <div class="col-xs-12 col-sm-2 col-md-1">Close</div>
+			 </div>
+			 <?php foreach($this->LoadAvailable as $Available):?>
+			 <div class="col-xs-12">
+			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo date('d M Y',strtotime($Available->avaliable_date))?> <?php echo $Available->reporting_time; ?></div>
+			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->start_location?> <?php echo $Available->end_location; ?></div>
+			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->vehicle_type; ?></div>
+			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->material_type; ?></div>
+			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->consignment_weight; ?></div>
+			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."bidsload?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">Bids</a></div>
+			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."closeload?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">close</a></div>
+			 </div>
 			 <?php endforeach; ?>
 			</div> 
 			</div>

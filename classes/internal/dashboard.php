@@ -407,19 +407,46 @@ function bidstruck()
 	 	global $db,$my,$template; 
 		$ID = IRequest::getVar(id);
 		//echo $ID;exit; 
-		$Query="SELECT * FROM #__bids WHERE bid_id=".$ID;
+		$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
 		$db->setQuery($Query);
-		$truckbids = $db->LoadObjectList();
-		//print_r($truckbids);exit;
+		$truckbid = $db->LoadObjectList();
+		//print_r($truckbid);
+		$array[] = json_decode($truckbid[0]->bid_text);
+		//$array=$array->material_type;
+		//print_r($array[material_type]);exit;
+		$Query="SELECT name FROM #__users WHERE uid=".$my->uid;
+		//echo $Query;exit;
+		$db->setQuery($Query);
+		$name = $db->LoadObjectList();
+
+		$truckbids[0]=array_merge($name,$array);
+
 		$template->assignRef('TruckBids',$truckbids);
-		//print_r($VehicleDriver);exit;
-		/*$vno = array();
-		foreach($VehicleDriver as $Vehcle)
-		  {
-		    $vno[$Vehcle->name] = $Vehcle->name; 
-		  }
-		$template->assignRef('DriverName',$vno);*/ 
-		//print_r($vno);exit;
+		$this->dashboard();
+	 } 	
+	 
+function bidsload()
+	 {	
+	 	global $db,$my,$template; 
+		$ID = IRequest::getVar(id);
+		//echo $ID;exit; 
+		$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
+		$db->setQuery($Query);
+		$loadbid = $db->LoadObjectList();
+		//print_r($loadbid);
+		$array[] = json_decode($loadbid[0]->bid_text);
+		//$array=$array->material_type;
+		//print_r($array[material_type]);exit;
+		$Query="SELECT name FROM #__users WHERE uid=".$my->uid;
+		//echo $Query;exit;
+		$db->setQuery($Query);
+		$name = $db->LoadObjectList();
+
+		$loadbids[0]=array_merge($name,$array,$loadbid);
+		
+		$template->assignRef('LoadBids',$loadbids);
+		$this->dashboard();
+		
 	 } 	
 
   }

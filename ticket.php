@@ -33,6 +33,14 @@
 				$template->display('tmplpopup/footer');
 			break;
 			
+			case "bidsload":
+				$template->assignRef('Title','Bids Load');
+				$template->display('tmplpopup/header');
+				$Model = includeclass('dashboard');
+				$template->display('ticket/bidsload'); 
+				$template->display('tmplpopup/footer');
+			break;			
+			
 			case "bidstruck":
 				$template->assignRef('Title','Bids Truck');
 				$template->display('tmplpopup/header');
@@ -41,6 +49,7 @@
 				$template->display('tmplpopup/footer');
 			break;			
 			
+
 			case "breaktime":
 				$template->assignRef('Title','Welcome to break time');
 				$template->display('tmplpopup/header');
