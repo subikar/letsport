@@ -129,6 +129,14 @@
 				$template->display('footer');
 			break;
 			
+			case "mysubscription":
+				$template->assignRef('Title','My Subscriptions');
+				$template->display('header');
+	    	    $Model = includeclass('appointment');
+				$template->display('ticket/mysubscription');
+				$template->display('footer');
+			break;
+			
 			default:
 				$template->assignRef('Title','Welcome to Ticket');
 				$template->display('header');

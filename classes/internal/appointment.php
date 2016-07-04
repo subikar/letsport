@@ -38,6 +38,30 @@ defined ('ITCS') or die ("Go away.");
 			$db->setQuery($Query);
 			$Appointments = $db->LoadObjectList(); 
 			$template->assignRef('Appointments',$Appointments);
-		}		
+		}	
+	function mysubscription()
+		{
+			global $db,$template,$my;
+			$post=IRequest::get("POST");
+			$whereArray=array();
+			$where=' WHERE subscription_id IS NOT NULL'; 		
+			//$where=" WHERE ".implode(" AND ",$where);
+			
+			$Query="SELECT s.*, g.data FROM #__gallery as g LEFT JOIN #__subscription_plan as s ON s.image=g.gallery_id ".$where." ORDER BY subscription_id DESC";
+			//$Query="SELECT * FROM #__subscription_plan";			
+			//echo $Query;exit;
+			$db->setQuery($Query);
+			$Mysubscription = $db->LoadObjectList(); 
+			foreach($Mysubscription as $subscription){
+				$subscription->data = unserialize($subscription->data);
+				//print_r($subscription);
+				
+			}
+			//exit;
+			$template->assignRef('Mysubscription',$Mysubscription);
+			
+		}
+
+	
 }
 ?>

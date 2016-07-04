@@ -365,7 +365,7 @@ error_reporting(0);
 	 
  		function addtruckbid()
  		{
- 			global $db,$my;
+ 			global $db,$my,$mainframe;
 			$id = IRequest::getVar('id');
 			$post=IRequest::get('post');
 			//print_r($post[amount]);exit;
@@ -389,13 +389,14 @@ error_reporting(0);
 			//print_r($this->post);exit;
 			parent::bind('bids');
     		parent::save();
+			$mainframe->miniredirect($Config->site."search-truck");
 			
  		}
  
  
   		function addloadbid()
  		{
- 			global $db,$my;
+ 			global $db,$my,$mainframe;
 			$id = IRequest::getVar('id');
 			$post=IRequest::get('post');
 			//print_r($post);exit;
@@ -418,6 +419,7 @@ error_reporting(0);
 			//print_r($this->post);exit;
 			parent::bind('bids');
     		parent::save();
+			$mainframe->miniredirect($Config->site."search-truck");
 			
  		}
  
