@@ -407,10 +407,14 @@ function bidstruck()
 	 	global $db,$my,$template; 
 		$ID = IRequest::getVar(id);
 		//echo $ID;exit; 
-		$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
+		$Query = "SELECT *FROM #__ourworks LEFT JOIN #__bids  on #__ourworks.id=#__bids.work_id WHERE #__ourworks.id =".$ID."UNION SELECT *FROM #__ourworks RIGHT JOIN #__bids  on #__ourworks.id=#__bids.work_id #__ourworks.id =".$ID;
+		
+		//SELECT t.*,u.name,u.Company FROM #__ticket as t LEFT JOIN #__users as u ON t.owner_id=b.uid WHERE t.owner_id IN(".$customers.") AND t.status=1 AND t.parent_id=0 ORDER BY t.id DESC LIMIT 0,4";
+		//$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
+		echo $Query;exit; 
 		$db->setQuery($Query);
 		$truckbid = $db->LoadObjectList();
-		//print_r($truckbid);
+		print_r($truckbid);
 		$array[] = json_decode($truckbid[0]->bid_text);
 		//$array=$array->material_type;
 		//print_r($array[material_type]);exit;
