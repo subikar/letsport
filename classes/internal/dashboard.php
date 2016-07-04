@@ -34,6 +34,67 @@ defined ('ITCS') or die ("Go away.");
 			$template->assignRef('leaveDetail',$leaveDetail);
 		}*/
 	}
+	
+	function mysubscription()
+		{	
+			global $db,$template,$my;
+			$post=IRequest::get("POST");
+			$whereArray=array();
+			$where=' WHERE subscription_id IS NOT NULL'; 		
+			//$where=" WHERE ".implode(" AND ",$where);
+			
+			$Query="SELECT s.*, g.data FROM #__gallery as g LEFT JOIN #__subscription_plan as s ON s.image=g.gallery_id ".$where." ORDER BY subscription_id DESC";
+			//$Query="SELECT * FROM #__subscription_plan";			
+			//echo $Query;exit;
+			$db->setQuery($Query);
+			$Mysubscription = $db->LoadObjectList(); 
+			foreach($Mysubscription as $subscription){
+				$subscription->data = unserialize($subscription->data);
+				//print_r($subscription);
+					
+			}
+			//print_r($Mysubscription);exit;
+			
+	
+			
+			//print_r($post);exit;
+			
+			$template->assignRef('Mysubscription',$Mysubscription);
+			
+		}
+	
+	function subscribe()
+	{
+			global $db,$template,$my;
+			$id=IRequest::getVar("id");
+			print_r($_POST);exit;
+			//print_r($this->post);exit;
+			foreach($Mysubscription as $subscription){
+				
+				$post[lead]=$subscription->bids_number;
+				$post[lead_count]=$subscription->bids_number;
+				$this->post=$post;
+				parent::bind('subscriber');
+				parent::save();
+			}
+			//echo $id;exit;
+			$post[subscription_id]=$id;
+			$post[owner]=$my->uid;
+			$post[status]=0;
+			$this->post=$post;
+			//print_r($this->post);exit;
+			parent::bind('subscriber');
+			parent::save();
+			$Query="SELECT * FROM #__subscription_plan WHERE subscription_id=".$db->quote($id);			
+			//echo $Query;exit;
+			$db->setQuery($Query);
+			$package_name = $db->LoadObjectList();
+			//print_r($package_name);exit;
+			$template->assignRef('PackageName',$package_name);
+		
+	}
+	
+	
 	function getTruckLoadAvailable($type)
 	 {
 		global $db,$my,$template;

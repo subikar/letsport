@@ -35,7 +35,13 @@ var Ticket = new function()
 			 return false;
 		 }
    }
+
+	
+
 }
+
+
+
 
 jQuery(document).ready(function() {
 	jQuery('.chk_boxes').click(function(){

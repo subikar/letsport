@@ -20,13 +20,25 @@
 			global $db, $template, $Config;
 			$start = IRequest::getInt('start',0);
 			$searchTest = IRequest::getVar('search_txt');
+			$post = IRequest::get('POST');
+			//print_r($post);exit;
 			$Limit = ($Config->limit)?$Config->limit:20;
 			if($searchTest != '')
 			{
-				$where = "WHERE start_location LIKE '%".$searchTest."%' OR end_location LIKE '%".$searchTest."%' OR vehicle_type LIKE '%".$searchTest."%' OR material_type LIKE '%".$searchTest."%' OR consignment_weight LIKE '%"
-				.$searchTest."'%";
+				$where = "WHERE subscription_id LIKE '%".$searchTest."%' OR owner LIKE '%".$searchTest."%'";
+				
 				
 			} 
+			elseif($post[status] != '' && $searchTest != '')
+			{
+				$where = "WHERE subscription_id LIKE '%".$searchTest."%' OR owner LIKE '%".$searchTest."%'status = ".$post[status];
+				
+			}
+				elseif($post[status] != '')
+			{
+				$where = "WHERE status = ".$post[status];
+				
+			}
 			else
 			{
 				$where = "";
@@ -38,8 +50,10 @@
 			$db->setQuery($Query);
 			$TestCount = $db->getOne();
 			$template->SetPagination($TestCount);
-			 
-			$Query = "select *  from #__subscriber ".$where." order by 	subscriber_id desc";
+			
+			$where=" WHERE subscription_id IS NOT NULL ".implode(" , ",$where);
+			$Query="SELECT s.*, u.name FROM #__users as u LEFT JOIN #__subscriber as s ON s.owner=u.uid ".$where;
+			//$Query = "select *  from #__subscriber ".$where." order by 	subscriber_id desc";
 			//echo $Query;exit;
 			$db->setQuery($Query,$start,$Limit);
 			$Subscriber = $db->loadObjectList();
@@ -63,24 +77,39 @@
 		function getworksdetails($workID)
 		{
 			global $db,$template;
-			$Query = "select *  from #__subscriber WHERE subscriber_id=".(int)$workID;
+			$where=" WHERE subscription_id IS NOT NULL ".implode(" , ",$where);
+			$Query="SELECT s.*, u.name FROM #__users as u LEFT JOIN #__subscriber as s ON s.owner=u.uid ".$where;
 			//echo $Query;exit; 
 			$db->setQuery($Query);
 			$Work = $db->loadObjectList();
 			$Work=$Work[0];
 			//print_r($Work);exit;
-			if((int)$Work->gallery_id > 0)
+			/*if((int)$Work->gallery_id > 0)
 			{
 				$SQL="SELECT data FROM #__gallery WHERE gallery_id=".(int)$Work->gallery_id;
 				$db->setQuery($SQL);
 				$Data = $db->getOne();
 				$Work->gallery=unserialize($Data);
-			}
+			}*/
 			$template->assignRef('Subscriber',$Work);
 		} 
 		function savepage()
 		{
 			  global $db, $template, $Config,$mainframe,$my;
+			 
+			 $work = IRequest::getVar('work');
+			 $sub_id = IRequest::getVar('subscriber_id');
+			 $status= IRequest::getVar('status');
+			 
+			 if($work == 'status')
+			 {
+			 	$Query="UPDATE #__subscriber SET   status=".$db->quote(!$status)."
+													WHERE subscriber_id=".$db->quote($sub_id);
+				
+				$db->setQuery($Query);
+				$mainframe->redirect('index.php?view=subscriber');
+				
+			 } 
 			 
               $post = IRequest::get('POST');
 			  $post['modified'] = date('Y-m-d h:i');

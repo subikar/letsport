@@ -40,13 +40,20 @@
 				  </div>				  
 				   <div class="input-group">
 				  	<span class="input-group-addon"><i class="fa fa-link"></i>Owner</span>
-					<input class="form-control" type="text" name="owner" id="avaliable_date" value="<?php echo $WorkData->owner; ?>" placeholder="Owner"  style="width:70%"/>
+					<input class="form-control" type="text" name="owner" id="avaliable_date" value="<?php echo $WorkData->name; ?>" placeholder="Owner"  style="width:70%"/>
 				  </div>
 				  <div class="input-group">
 				  	<span class="input-group-addon"><i class="fa fa-male"></i>status</span>
 					<input class="form-control" type="text" name="status" value="<?php echo $WorkData->status; ?>" placeholder="status" />
 				  </div>
-				  
+				  	<div class="input-group">
+				  	<span class="input-group-addon"><i class="fa fa-male"></i>Lead</span>
+					<input class="form-control" type="text" name="status" value="<?php echo $WorkData->status; ?>" placeholder="status" />
+				  </div>
+				  	<div class="input-group">
+				  	<span class="input-group-addon"><i class="fa fa-male"></i>Lead Count</span>
+					<input class="form-control" type="text" name="status" value="<?php echo $WorkData->status; ?>" placeholder="status" />
+				  </div>
 				</div>
 				<div class="panel-body-right"> 				  
 				  <div class="input-group">
