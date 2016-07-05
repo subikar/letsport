@@ -102,7 +102,7 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
                 <a class="clientlogin" href="<?php echo $Config->site.'login'; ?>" title="Client Login"><div class="dropbtn"><img src="images/user.png"></div></a>
                 <?php endif; ?>
             </li>
-				<li class="top_help_button"><i class="fa fa-question-circle-o" aria-hidden="true"></i><a href="http://192.168.9.100/custom/letsport/help">Help</a></li>
+				<li class="top_help_button"><i class="fa fa-question-circle-o" aria-hidden="true"></i><a href="<?php echo $this->site; ?>help">Help</a></li>
 				<li class="top_coll_button"><i class="fa fa-phone"></i>8500-65-333</li>
 			</ul>
 		</div>
@@ -123,7 +123,7 @@ $template->includecss("templates/itcslive/css/bootstrap.css",12,0);
 <header class="header" role="banner">
 <div class="cruv"></div>
 <div class="header__logo">
-<a href="http://192.168.9.100/custom/letsport/">
+<a href="<?php echo $this->site; ?>">
 <img src="images/logo.png" alt="CargoPress" srcset="images/logo.png" class="img-responsive">
 </a>
 <!-- 

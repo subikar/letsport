@@ -74,17 +74,20 @@ global $Config,$my;
 			 <div class="col-xs-12 col-sm-2 col-md-1">Close</div>
 			 </div>
 			<?php //print_r($this->TrucksAvailable);//exit; ?>
+			
 			 <?php foreach($this->TrucksAvailable as $Available):?>
-			 <div class="col-xs-12">
-			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo date('d M Y',strtotime($Available->avaliable_date))?> <?php echo $Available->reporting_time; ?></div>
-			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->start_location?> <?php echo $Available->end_location; ?></div>
-			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->vehicle_type; ?></div>
-			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->material_type; ?></div>
-			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->consignment_weight; ?></div>
-			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."bidstruck?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">Bids</a></div>
-			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."closetruck?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">close</a></div>
-			 </div>
-			 <?php endforeach; ?>
+				<?php if($Available->operation_type=='truck'): ?>
+					 <div class="col-xs-12">
+					 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo date('d M Y',strtotime($Available->avaliable_date))?> <?php echo $Available->reporting_time; ?></div>
+					 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->start_location?> <?php echo $Available->end_location; ?></div>
+					 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->vehicle_type; ?></div>
+					 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->material_type; ?></div>
+					 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->consignment_weight; ?></div>
+					 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."bidstruck?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">Bids</a></div>
+					 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."closetruck?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">close</a></div>
+					 </div>
+				<?php endif; ?>
+		 <?php endforeach; ?>
 			</div> 
 			</div>
 			
@@ -100,7 +103,8 @@ global $Config,$my;
 			 <div class="col-xs-12 col-sm-2 col-md-1">Bids Recieved</div>
 			 <div class="col-xs-12 col-sm-2 col-md-1">Close</div>
 			 </div>
-			 <?php foreach($this->LoadAvailable as $Available):?>
+		<?php foreach($this->LoadAvailable as $Available):?>
+		   <?php if($Available->operation_type=='load'): ?>
 			 <div class="col-xs-12">
 			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo date('d M Y',strtotime($Available->avaliable_date))?> <?php echo $Available->reporting_time; ?></div>
 			 <div class="col-xs-12 col-sm-2 col-md-2"><?php echo $Available->start_location?> <?php echo $Available->end_location; ?></div>
@@ -110,7 +114,8 @@ global $Config,$my;
 			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."bidsload?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">Bids</a></div>
 			 <div class="col-xs-12 col-sm-2 col-md-1"><a  href="<?php echo $Config->site."closeload?id=".$Available->id; ?>" class="truckavailibilty" title="Modify Truck">close</a></div>
 			 </div>
-			 <?php endforeach; ?>
+		   <?php endif; ?>
+		 <?php endforeach; ?>
 			</div> 
 			</div>
 			

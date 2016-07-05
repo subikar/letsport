@@ -1,6 +1,6 @@
 <?php
 defined ('ITCS') or die ("Go away.");
-
+$id=IRequest::getVar(id);
 global $my,$mainframe;
 ?>
 <div id="primary">
@@ -57,7 +57,7 @@ global $my,$mainframe;
 			 <div class="col-md-2"><?php echo $Available->consignment_weight; ?></div>
 			 <?php endforeach; ?>
 				</div>
-		</div>
+			</div>
 		
 		
 		
@@ -83,10 +83,12 @@ global $my,$mainframe;
 					  
 		<div class="row">
 			<div class="container">	
+						
                         <div class="col-md-3"><?php echo $bids->name; ?></div>
 						<div class="col-md-3"><?php echo $bids->bid_text->material_type; ?></div>
 						<div class="col-md-3"><?php echo $bids->bid_text->price; ?></div>
-                        <div class="col-md-3"><input type="submit" value="win Bid" id="win_bid" /></div>
+                        <div class="col-md-3"><a class="" href="<?php echo $Config->site."bidstruck?id=".$id."&task=bid_win"; ?>">
+	<i class="fa fa-send"></i>&nbsp;Win Bid</a></div>
                       
                       <?php  endforeach; ?> 
 	    </div>

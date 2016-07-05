@@ -54,12 +54,17 @@ defined ('ITCS') or die ("Go away.");
 					
 			}
 			//print_r($Mysubscription);exit;
-			
 	
-			
-			//print_r($post);exit;
-			
 			$template->assignRef('Mysubscription',$Mysubscription);
+			$where=' WHERE s.subscription_id IS NOT NULL AND owner='.$my->uid;
+			$Query="SELECT s.*, sp.* FROM #__subscription_plan as sp LEFT JOIN #__subscriber as s ON s.subscription_id=sp.subscription_id ".$where." ORDER BY s.subscription_id DESC";
+			//$Query="SELECT * FROM #__subscriber where owner=".$my->uid;
+			//echo $Query;exit; 
+			$db->setQuery($Query);
+			$Subscriber = $db->LoadObjectList();
+			//print_r($Subscriber);exit;
+			$template->assignRef('Subscriber',$Subscriber);
+			
 			
 		}
 	
@@ -78,7 +83,8 @@ defined ('ITCS') or die ("Go away.");
 			//print_r($this->post);exit;
 			parent::bind('subscriber');
 			parent::save();
-			$Query="SELECT * FROM #__subscription_plan WHERE subscription_id=".$db->quote($id);			
+			//$Query="SELECT * FROM #__subscription_plan WHERE subscription_id=".$db->quote($id);			
+			$Query="SELECT s.*, u.name FROM #__users as u LEFT JOIN #__subscriber as s ON s.owner=u.uid ".$where;
 			//echo $Query;exit;
 			$db->setQuery($Query);
 			$package_name = $db->LoadObjectList();
@@ -95,6 +101,7 @@ defined ('ITCS') or die ("Go away.");
 		$db->setQuery($Query);
 		$Listings = $db->LoadObjectList();
 		//print_r($db); exit; 
+		//print_r($Listings);exit;
 		return $Listings;
 	 } 
 	function getMyTruck()
