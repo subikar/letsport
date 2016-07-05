@@ -67,20 +67,13 @@ defined ('ITCS') or die ("Go away.");
 	{
 			global $db,$template,$my;
 			$id=IRequest::getVar("id");
-			print_r($_POST);exit;
-			//print_r($this->post);exit;
-			foreach($Mysubscription as $subscription){
-				
-				$post[lead]=$subscription->bids_number;
-				$post[lead_count]=$subscription->bids_number;
-				$this->post=$post;
-				parent::bind('subscriber');
-				parent::save();
-			}
-			//echo $id;exit;
+			$bids=IRequest::getVar("bids");
+			
 			$post[subscription_id]=$id;
 			$post[owner]=$my->uid;
 			$post[status]=0;
+			$post[lead]=$bids;
+			$post[lead_count]=$bids;
 			$this->post=$post;
 			//print_r($this->post);exit;
 			parent::bind('subscriber');
@@ -471,22 +464,23 @@ function bidstruck()
 		$ID = IRequest::getVar(id);
 		//echo $ID;exit; 
 		
-		$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
+		$where=' WHERE u.uid IS NOT NULL';
+		$Query="SELECT b. *, u. * , o . *  FROM #__bids AS b LEFT JOIN #__users AS u ON b.work_id = u.uid LEFT JOIN #__ourworks AS o ON o.id = u.uid".$where;
+		//$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
 		//echo $Query;exit; 
 		$db->setQuery($Query);
 		$truckbid = $db->LoadObjectList();
-		//print_r($truckbid);
-		$array[] = json_decode($truckbid[0]->bid_text);
-		//$array=$array->material_type;
-		//print_r($array[material_type]);exit;
-		$Query="SELECT name FROM #__users WHERE uid=".$my->uid;
-		//echo $Query;exit;
-		$db->setQuery($Query);
-		$name = $db->LoadObjectList();
-
-		$truckbids[0]=array_merge($name,$array);
-
-		$template->assignRef('TruckBids',$truckbids);
+		//print_r($truckbid);exit;
+		foreach($truckbid as $bids)
+			{
+				$bids->bid_text=json_decode($bids->bid_text);
+				//print_r($bids);//exit;
+				//print("<br/>");exit;
+				
+			}
+	
+		
+		$template->assignRef('TruckBids',$truckbid);
 		$this->dashboard();
 	 }
 	 
@@ -495,21 +489,24 @@ function bidsload()
 	 	global $db,$my,$template; 
 		$ID = IRequest::getVar(id);
 		//echo $ID;exit; 
-		$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
+		
+		$where=' WHERE u.uid IS NOT NULL';
+		$Query="SELECT b. *, u. * , o . *  FROM #__bids AS b LEFT JOIN #__users AS u ON b.work_id = u.uid LEFT JOIN #__ourworks AS o ON o.id = u.uid".$where;
+		//$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
+		//echo $Query;exit; 
 		$db->setQuery($Query);
 		$loadbid = $db->LoadObjectList();
-		//print_r($loadbid);
-		$array[] = json_decode($loadbid[0]->bid_text);
-		//$array=$array->material_type;
-		//print_r($array[material_type]);exit;
-		$Query="SELECT name FROM #__users WHERE uid=".$my->uid;
-		//echo $Query;exit;
-		$db->setQuery($Query);
-		$name = $db->LoadObjectList();
-
-		$loadbids[0]=array_merge($name,$array,$loadbid);
-		print_r($loadbids);
-		$template->assignRef('LoadBids',$loadbids);
+		
+		foreach($loadbid as $bids)
+			{
+				$bids->bid_text=json_decode($bids->bid_text);
+				//print_r($bids);//exit;
+				//print("<br/>");exit;
+				
+			}
+	
+		//print_r($loadbid);exit;
+		$template->assignRef('Loadbid',$loadbid);
 		$this->dashboard();
 		
 	 } 	
