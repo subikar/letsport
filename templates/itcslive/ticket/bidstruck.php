@@ -7,12 +7,11 @@ global $my,$mainframe;
    <div role="main" id="contactus">
       <div class="article-body"> 
 	  <div class="wpcf7" id="wpcf7-f1533-p61-o1" dir="ltr">
-	 <form action="" id="addContactForm" method="post" class="wpcf7-form" enctype="multipart/form-data">
+	 <form action="" id="win_bid" method="post" class="wpcf7-form" enctype="multipart/form-data">
 		<div style="display: none;">
-		   <input type="hidden" name="view" value="dashboard" />
-		   <input type="hidden" name="task" value="savedriver" />
-		   <input type="hidden" name="driver_owner" value="<?php  echo $my->uid;  ?>" />
-		   <input type="hidden" name="driver_id" value="<?php  echo $Driver->driver_id;  ?>" />
+		  
+		  
+		  
 		</div>
 		
 		
@@ -87,8 +86,13 @@ global $my,$mainframe;
                         <div class="col-md-3"><?php echo $bids->name; ?></div>
 						<div class="col-md-3"><?php echo $bids->bid_text->material_type; ?></div>
 						<div class="col-md-3"><?php echo $bids->bid_text->price; ?></div>
-                        <div class="col-md-3"><a class="" href="<?php echo $Config->site."bidstruck?id=".$id."&task=bid_win"; ?>">
-	<i class="fa fa-send"></i>&nbsp;Win Bid</a></div>
+						 
+                        <div class="col-md-3">	
+                        <input type="hidden" name="bid_id" value="<?php  echo $bids->bid_id;  ?>" />
+                    	<input name="view" value="contact" type="hidden" />
+						<input name="task" value="winbidtruck" type="hidden" />
+                        <input value="WIN BID" name="win_bid" type="button" id="btn_next" class="btn btn-primary" onclick="win_bid_truck.SubmitForm('win_bid');"/>
+						</div>
                       
                       <?php  endforeach; ?> 
 	    </div>

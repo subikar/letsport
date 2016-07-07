@@ -46,7 +46,7 @@
 										<div class="col-md-6">
 											<div class="form-group" id="error-address">
 												<label for="inputCity" class="control-label">Address <span class="require">*</span></label>
-												<div><input value="<?php echo $post['address']; ?>" name="address" id="address" placeholder="Address" type="text" class="form-control" data-bv-field="address"></div>
+												<div><input value="<?php echo $post['address']; ?>" name="address" id="address" placeholder="Address" type="text" class="form-control placepicker" data-type="geo_code" data-bv-field="address"></div>
 												<div class="messageContainer has-error"><small class="help-block" data-bv-validator="notEmpty" data-bv-for="address" data-bv-result="NOT_VALIDATED" style="display: none;">The Address is required and cannot be empty</small></div> 
 											</div>
 										</div>
@@ -130,7 +130,6 @@
 								    </div>
 									<div class="form-actions text-right pal">
 										<input value="NEXT" name="NEXT" type="button" id="btn_next" class="btn btn-primary" onclick="SignUp.SubmitForm('signup');"/>
-										
 										&nbsp;<button type="button" class="btn btn-primary" onclick="window.location = '<?php echo $this->site; ?>';" name="cancel">cancel</button>
 										<input name="view" value="contact" type="hidden" />
 										<input name="task" value="SaveRegister" type="hidden" />

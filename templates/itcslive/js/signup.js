@@ -1,7 +1,7 @@
 var SignUp=new function()
 {	
 	this.SubmitForm=function(formid)
-	{
+	{	
 		var phoneno = /^\d{10}$/;  
 		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		var input=document.getElementById(formid);
@@ -153,3 +153,6 @@ var Transporter_SignUp=new function()
 		
 	}
 }	
+
+
+

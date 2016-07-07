@@ -42,6 +42,7 @@ $template->includejs("templates/itcslive/js/getfreequote.js");
 	  $template->display('contact/subscribe');
 	  $template->display('tmplpopup/footer');	
 	  break;
+	  
 	case "mysubscription":
 		
 		$template->assignRef('Title','My Subscriptions');
@@ -50,7 +51,25 @@ $template->includejs("templates/itcslive/js/getfreequote.js");
 		$template->display('contact/mysubscription');
 		$template->display('footer');
 	break;
+	
+	case "confirmsubscribe":
+		
+		$template->assignRef('Title','Confirm Subscribe');
+		$Model = includeclass('dashboard');
+		 $template->display('tmplpopup/header');
+		$template->display('contact/confirmsubscribe');
+		 $template->display('tmplpopup/footer');
+		
+	break;
 	  
+	  	case "thank-you":		
+		$template->assignRef('Title','Thank You');
+		$template->display('header');
+	    //$Model = includeclass('dashboard');
+		$template->display('contact/thank_you');
+		$template->display('footer');
+	break;
+	
 	  default: 
 	  $template->assignRef('Title','Get Free Quote');	
 	  $template->display('tmplpopup/header');	

@@ -1,6 +1,6 @@
 <?php
 	defined ('ITCS') or die ("Go away.");
-	global $Config;
+	global $Config,$my,$template,$mainframe;
 	
 ?>
 
@@ -43,86 +43,11 @@
 										            </a>
 										            <div class="dropdown-menu" style="width:370px;max-width:600px;">
 										            <form class="ng-pristine ng-valid" style="margin-left:5px;">
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="1" class="search-filters"> Trailer									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="2" class="search-filters"> Tipper									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="3" class="search-filters"> Container									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="4" class="search-filters"> Tractor									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="5" class="search-filters"> Pick-up									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="6" class="search-filters"> Tempo									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="7" class="search-filters"> Refrigerated									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="8" class="search-filters"> Tanker									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="9" class="search-filters"> Flatbed									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="10" class="search-filters"> 6 Wheel Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="11" class="search-filters"> 10 Wheel Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="12" class="search-filters"> 12 Wheel Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="13" class="search-filters"> 20 Ft Container Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="14" class="search-filters"> 24 Ft Single-Axle Container Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="15" class="search-filters"> 24 Ft Multi-Axle Container Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="16" class="search-filters"> 32 Ft Single-Axle Container Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="17" class="search-filters"> 32 Ft Multi-Axle Container Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="18" class="search-filters"> Other Container Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="19" class="search-filters"> 14 Wheel Truck									                               	</div>
-										                      	</div>
-										                									                        	<div class="form-group filter-items col-lg-6">
-										                        	<div class="input-group">
-									                                	<input type="checkbox" name="vehiclecheckbox" value="20" class="search-filters"> 19 Ft Open Body Truck									                               	</div>
-										                      	</div>
+										            	<?php $template->VehcleType();?>
+										            	<?php //print_r($this->VehcleType);exit;?>
+										                									                        	
+									                                	<?php $mainframe->selectbox('vehicle_type',$this->VehcleType,select); ?>
+										                      	
 										                										            </form>
 										            </div>
 										       	</li>
@@ -159,6 +84,7 @@
 			
 <div class="tip" style="">			
 <table style="width:100%; ">
+	<?php //print_r($this->Subscriber[0]);exit;?>
 <?php foreach($this->workList as $work): ?>	
   <tr>
     <td>From</td>
@@ -181,13 +107,22 @@
     <td></td> 
     <td></td>
     <td>
-	<?php if($this->type == 'truck'):?>
-	<a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addtruckbid?id=".$work->id; ?>">
-	<i class="fa fa-send"></i>&nbsp;Submit Quote</a>
-	<?php else: ?>
-	<a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addloadbid?id=".$work->id; ?>">
-	<i class="fa fa-send"></i>&nbsp;Submit Quote</a>
-	<?php endif; ?>
+	<?php if($this->type == 'truck'  ){?>
+		<?php if($my->uid != '') { if($this->Subscriber[0]->lead_count > 0) {?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addtruckbid?id=".$work->id; ?>">
+		<i class="fa fa-send"></i>&nbsp;Submit Quote</a><?php }else { ?>
+			 <a class="btn btn-sm btn-success" href="<?php echo $Config->site."mysubscription"; ?>">
+		<i class="fa fa-send"></i>&nbsp;Submit Quote</a> <?php }?>
+		<?php } else{ ?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."login"; ?>">
+		<i class="fa fa-send"></i>&nbsp;Submit Quote</a><?php }?>
+		
+	<?php }elseif($this->type == 'load'){ ?>
+	<?php if($my->uid != '') { if($this->Subscriber[0]->lead_count > 0) {?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addloadbid?id=".$work->id; ?>">
+	<i class="fa fa-send"></i>&nbsp;Submit Quote</a><?php }else { ?>
+			 <a class="btn btn-sm btn-success" href="<?php echo $Config->site."mysubscription"; ?>">
+		<i class="fa fa-send"></i>&nbsp;Submit Quote</a> <?php }?>
+	
+	<?php } else{ ?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."login"; ?>">
+		<i class="fa fa-send"></i>&nbsp;Submit Quote</a><?php }}?>
 	</td>
   </tr>  
   <tr class="bordershadow">

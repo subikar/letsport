@@ -74,7 +74,7 @@
 										<div class="col-md-6">
 											<div class="form-group" id="error-address">
 												<label for="inputCity" class="control-label">Address <span class="require">*</span></label>
-												<div><input value="<?php echo $post['address']; ?>" name="address" id="address" placeholder="Address" type="text" class="form-control" data-bv-field="address"></div>
+												<div><input value="<?php echo $post['address']; ?>" name="address" id="address" data-type="geo_code" placeholder="Address" type="text" class="form-control placepicker" data-bv-field="address"></div>
 												<div class="messageContainer has-error"><small class="help-block" data-bv-validator="notEmpty" data-bv-for="address" data-bv-result="NOT_VALIDATED" style="display: none;">The Address is required and cannot be empty</small></div> 
 											</div>
 										</div>

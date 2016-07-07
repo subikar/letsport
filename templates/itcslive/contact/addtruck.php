@@ -1,3 +1,4 @@
+<?php global $mainframe ?>
 <form action="" method="post" class="form-horizontal getofferForm" name="AddTruck" id="AddTruck" target="_parent">
 <div class="container popupform">
 
@@ -5,7 +6,7 @@
 
 				<label class="control-label" for="name">From Location:</label>
 
-				<input name="from_location" id="from_location" title="From Location" value="" class="required-entry validate_me span12" type="text" placeholder="From Location" data-type="geo_code">
+				<input name="from_location" id="from_location" title="From Location" value="" class="required-entry validate_me span12 placepicker" type="text" placeholder="From Location" data-type="geo_code">
                 <input type="hidden" name="from_lat" id="load_from_lat" value="">
 				<input type="hidden" name="from_lng" id="load_from_lng" value=""> 
 				<span style="display: none;" class="error error-empty error_tag">*This is not a valid Form Location.</span>
@@ -20,7 +21,7 @@
 
 				 <label class="control-label" for="email">To Location:</label>
 
-				 <input name="to_location" id="to_location" title="Enter To Location" value="" class="input-xlarge required-entry validate-email validate_me span12" type="email" placeholder="Enter To Location">
+				 <input name="to_location" id="to_location" title="Enter To Location" value="" class="input-xlarge required-entry validate-email validate_me span12 placepicker" data-type="geo_code" type="email" placeholder="Enter To Location">
 				 <input type="hidden" name="to_lat" id="load_to_lat" value="">
 				 <input type="hidden" name="to_lng" id="load_to_lng" value="">
 
@@ -49,26 +50,9 @@
 				 <label class="control-label" for="email">Vehcle Type:</label>
 
 				 <select id="trucktype" name="vehicle_type_id" class="input-xlarge required-entry validate-email validate_me span12" required="" placeholder="Select Truck Type">
-										<option value="1">Trailer</option>
-										<option value="2">Tipper</option>
-										<option value="3">Container</option>
-										<option value="4">Tractor</option>
-										<option value="5">Pick-up</option>
-										<option value="6">Tempo</option>
-										<option value="7">Refrigerated</option>
-										<option value="8">Tanker</option>
-										<option value="9">Flatbed</option>
-										<option value="10">6 Wheel Truck</option>
-										<option value="11">10 Wheel Truck</option>
-										<option value="12">12 Wheel Truck</option>
-										<option value="13">20 Ft Container Truck</option>
-										<option value="14">24 Ft Single-Axle Container Truck</option>
-										<option value="15">24 Ft Multi-Axle Container Truck</option>
-										<option value="16">32 Ft Single-Axle Container Truck</option>
-										<option value="17">32 Ft Multi-Axle Container Truck</option>
-										<option value="18">Other Container Truck</option>
-										<option value="19">14 Wheel Truck</option>
-										<option value="20">19 Ft Open Body Truck</option>
+										<span class="wpcf7-form-control-wrap name">
+					<?php $mainframe->selectbox('vehicle_type',$this->VehcleType,select); ?>
+					</span>
 				</select>
 
 				<span style="display: none;" class="error error-empty error_tag">*This is not a valid email address.</span>

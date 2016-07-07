@@ -10,12 +10,12 @@ global $Config;
 <form id="truck" method="POST" accept-charset="utf-8" action="search-truck">
 	<div class="input-group col-sm-2 inline">
 		<span class="input-group-addon" ><i class="fa fa-map-marker"></i></span>																								
-		<input type="text" name="start_location"  placeholder="From Location " />
+		<input type="text" name="start_location" id="start_location"  placeholder="From Location " autocomplete="off" class="placepicker form-control" />
 	</div>
 	   
 	   <div class="input-group col-sm-2 inline" >
 			<span class="input-group-addon" ><i class="fa fa-map-marker"></i></span>													
-			<input type="text" name="end_location" placeholder="To Location "/>
+			<input type="text" name="end_location" placeholder="To Location" class="placepicker form-control"/>
 		</div>
 		<div class="input-group col-sm-2 inline" >
 			<span class="input-group-addon" ><i class="fa fa-truck"></i></span>													
@@ -64,11 +64,11 @@ global $Config;
 <form id="load" method="POST" accept-charset="utf-8" action="search-load" style="display:none;">
 	<div class="input-group col-sm-1 inline sour">
 		<span class="input-group-addon" ><i class="fa fa-map-marker"></i></span>																								
-		<input type="text" name="start_location"  placeholder="From Location   " />
+		<input type="text" name="start_location"  placeholder="From Location" class="placepicker form-control" />
 	</div>
 	<div class="input-group col-sm-1 inline sour">
 		<span class="input-group-addon" ><i class="fa fa-map-marker"></i></span>																								
-		<input type="text" name="start_location"  placeholder="To Location   " />
+		<input type="text" name="start_location"  placeholder="To Location" class="placepicker form-control" />
 	</div>
 	   
 	   <div class="input-group col-sm-1 inline sour" >
