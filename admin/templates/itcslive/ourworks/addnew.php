@@ -33,73 +33,41 @@
               <div class="panel-body no-padding">
 			  	<div class="panel-body-left">
 					<div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> Start Location</span>
-					<input class="form-control" type="start_location" name="start_location" value="<?php echo $WorkData->start_location; ?>" placeholder="Start Location"  />
+				  	<span class="input-group-addon">Start Location</span>
+					<input class="placepicker form-control" type="start_location" name="start_location" value="<?php echo $WorkData->start_location; ?>" placeholder="Start Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>
                   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> End Location</span>
-					<input class="form-control" type="end_location" name="end_location" value="<?php echo $WorkData->end_location; ?>" placeholder="End Location"  />
+				  	<span class="input-group-addon">End Location</span>
+					<input class="placepicker form-control" type="end_location" name="end_location" value="<?php echo $WorkData->end_location; ?>" placeholder="End Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>				  
 				   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-link"></i>Avaliable Date</span>
-					<input class="form-control" type="text" name="avaliable_date" id="avaliable_date" value="<?php echo $WorkData->avaliable_date; ?>" placeholder="Avaliable Date"  style="width:70%"/>
+				  	<span class="input-group-addon">Avaliable Date</span>
+					<input class="form-control" type="date" name="avaliable_date" id="avaliable_date" value="<?php echo $WorkData->avaliable_date; ?>" placeholder="Avaliable Date"  />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Vehicle Type</span>
+				  	<span class="input-group-addon">Vehicle Type</span>
 					<input class="form-control" type="text" name="vehicle_type" value="<?php echo $WorkData->vehicle_type; ?>" placeholder="Vehicle Type" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Reporting Time</span>
-					<input class="form-control" type="text" name="reporting_time" id="reporting_time" value="<?php echo $WorkData->reporting_time; ?>" placeholder="Reporting Time" style="width:70%" />
+				  	<span class="input-group-addon">Reporting Time</span>
+					<input class="form-control" type="time" name="reporting_time" id="reporting_time" value="<?php echo $WorkData->reporting_time; ?>" placeholder="Reporting Time" style="width:70%" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Material Type</span>
+				  	<span class="input-group-addon">Material Type</span>
 					<input class="form-control" type="text" name="material_type" value="<?php echo $WorkData->material_type; ?>" placeholder="Material Type" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Consignment Weight</span>
+				  	<span class="input-group-addon">Consignment Weight</span>
 					<input class="form-control" type="text" name="consignment_weight" value="<?php echo $WorkData->consignment_weight; ?>" placeholder="Consignment Weight" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Owner ID</span>
+				  	<span class="input-group-addon">Owner ID</span>
 					<input class="form-control" type="text" name="owner_id" value="<?php echo $WorkData->owner_id; ?>" placeholder="Owner ID" />
 				  </div>
 				</div>
-				<div class="panel-body-right"> 				  
-				  <div class="input-group">
-				  <div id="" class="uploaded_area">				  
-				 <?php foreach($WorkData->gallery as $image): ?>
-				 <span class="total_uploaded_pic">
-					 <span>
-					 	<img src="../images/gallery/<?php echo $image; ?>"/>
-					 </span>
-					 <span>				 
-					 	<input type="checkbox" name="remove_gallery[]" value="<?php echo $image; ?>" />Delete:
-					 </span>
-					 <div class="clear"></div>
-				 </span>
-				 <?php endforeach; ?>
-				  </div>
-				  <div class="clear"></div>
-				  	<div class="upload_area"><span><i class="fa fa-upload"></i></span><span class="upload_div">Upload Gallery:</span></div>
-						<div id="prevworkGroup" class="galleryarea">
-							<div class="add_image">
-								<div id="prevworkBoxDiv1" class="input_browse">
-								<div id="message1"></div>
-								<label>Gallery#1: </label>
-								<input class="pop_button file_uploadd" type="file" name="image_upload[]"  onchange="Ourworks.uplodeGallery(this,1);"/>
-							  	</div>
-								<img id="img_progress1" src="../images/photo_loader.gif" style="width:200px; height:20px; display:none;"/>
-							  <span class="sp_image_upload"><img id="blah1" src="../images/no_image_found.jpg" style="height:100px; width:100px;" align="right" /></span>
-							  <div class="clear"></div>
-							  </div>
-						  </div>
-						  <input type='button' value='+' id='addButton'>
-						 <input type='button' value='-' id='removeButton'>
-				  </div> 
-				 </div>
+				
 				 <div class="clear"></div>
 			  </div>
 			  <input type="hidden" name="view" value="ourworks" />

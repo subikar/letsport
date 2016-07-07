@@ -34,12 +34,12 @@
 			  	<div class="panel-body-left">
 					<div class="input-group">
 				  	<span class="input-group-addon"><i class="fa fa-male"></i> Start Location</span>
-					<input class="form-control" type="start_location" name="start_location" value="<?php echo $WorkData->start_location; ?>" placeholder="Start Location"  />
+					<input class="form-control placepicker" type="start_location" name="start_location" data-type="geo_code" value="<?php echo $WorkData->start_location; ?>" placeholder="Start Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>
                   <div class="input-group">
 				  	<span class="input-group-addon"><i class="fa fa-male"></i> End Location</span>
-					<input class="form-control" type="end_location" name="end_location" value="<?php echo $WorkData->end_location; ?>" placeholder="End Location"  />
+					<input class="form-control placepicker" type="end_location" data-type="geo_code" name="end_location" value="<?php echo $WorkData->end_location; ?>" placeholder="End Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>				  
 				   <div class="input-group">

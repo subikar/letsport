@@ -32,7 +32,7 @@
 						<th>Subscription Name</th>
                         <th>Amount</th>
                         <th>Bids Number </th>
-                        <th>State</th>
+                        <th>Status</th>
                         <th class="col-xs-2 col-sm-2 text-right">Action</th>
                       </tr>
                     </thead>

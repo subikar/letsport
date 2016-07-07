@@ -35,37 +35,37 @@
               <div class="panel-body no-padding">
 			  	<div class="panel-body-left">
 					<div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> Truck Type</span>
+				  	<span class="input-group-addon">  Truck Type</span>
 					<input class="form-control" type="start_location" name="truck_type" value="<?php echo $Trucks->truck_type; ?>" placeholder="Truck Type"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>
                   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> Registration No</span>
+				  	<span class="input-group-addon">  Registration No</span>
 					<input class="form-control" type="end_location" name="registration_no" value="<?php echo $Trucks->registration_no; ?>" placeholder="Registration No"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>				  
 				   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-link"></i>Chasis No</span>
+				  	<span class="input-group-addon"></i>Chasis No</span>
 					<input class="form-control" type="text" name="chasis_no" id="avaliable_date" value="<?php echo $Trucks->chasis_no; ?>" placeholder="Chasis No"  style="width:70%"/>
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Engine No</span>
+				  	<span class="input-group-addon"> Engine No</span>
 					<input class="form-control" type="text" name="engine_no" value="<?php echo $Trucks->engine_no; ?>" placeholder="Engine No" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Truck Registration Date</span>
+				  	<span class="input-group-addon"> Truck Registration Date</span>
 					<input class="form-control" type="text" name="truck_registration_date" id="reporting_time" value="<?php echo $Trucks->truck_registration_date; ?>" placeholder="Truck Registration Date" style="width:70%" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Insurance Date</span>
-					<input class="form-control" type="text" name="insurance_date" value="<?php echo $Trucks->insurance_date; ?>" placeholder="Insurance Date" />
+				  	<span class="input-group-addon"> Insurance Date</span>
+					<input class="form-control" type="date" name="insurance_date" value="<?php echo $Trucks->insurance_date; ?>" placeholder="Insurance Date" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Truck No</span>
+				  	<span class="input-group-addon"> Truck No</span>
 					<input class="form-control" type="text" name="truck_no" value="<?php echo $Trucks->truck_no; ?>" placeholder="Truck No" />
 				  </div>
 				</div>
-				<div class="panel-body-right"> 				  
+				<!--<div class="panel-body-right"> 				  
 				  <div class="input-group">
 				  <div id="" class="uploaded_area">				  
 				 <?php foreach($WorkData->gallery as $image): ?>
@@ -97,7 +97,7 @@
 						  <input type='button' value='+' id='addButton'>
 						 <input type='button' value='-' id='removeButton'>
 				  </div> 
-				 </div>
+				</div>-->
 				 <div class="clear"></div>
 			  </div>
 			  <input type="hidden" name="view" value="alltruck" />

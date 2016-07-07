@@ -63,7 +63,19 @@
 		}
 		function getAllWorks($Start=0, $Limit=12)
 		{
-			global $db,$template;
+			global $db,$template,$my;
+			
+			/* to check if bids enough to submit quote*/
+			$where=' WHERE s.subscription_id IS NOT NULL AND s.owner='.$my->uid;
+			$Query="SELECT s.*, sp.* FROM #__subscription_plan as sp LEFT JOIN #__subscriber as s ON s.subscription_id=sp.subscription_id ".$where." ORDER BY s.subscription_id DESC";
+			$db->setQuery($Query);
+			$Subscriber = $db->LoadObjectList();			
+			$template->assignRef('Subscriber',$Subscriber);
+			/* to check if bids enough to submit quote*/
+			
+			
+			
+			
 			$post = IRequest::get('POST');
 			$type = IRequest::getVar('type','truck');
 			$template->assignRef('type',$type);
@@ -101,6 +113,9 @@
 			$db->setQuery($Query,$Start,$Limit);
 			$worksInArray= $db->loadObjectList();
 		    return $worksInArray;
+			
+			
+			
 		}
 		function getWorkCount()
 		{

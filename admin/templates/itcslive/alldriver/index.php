@@ -7,7 +7,7 @@
         <div class="options">
           <div class="btn-toolbar">
             <div class="btn-sm btn-default btn-top" dropdown="">
-               <a href="index.php?view=alldriver&task=addnew">Add Availibility</a>
+               <a href="index.php?view=alldriver&task=addnew">Add Driver</a>
             </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <?php 
  $WorkData=$this->Drivers;
- print_r($WorkData);//exit;
+ //print_r($WorkData);//exit;
 ?>
   <div style="min-height: 601px;" id="page-content" class="clearfix ng-scope" fit-height="">
     <div style="" id="wrap" ng-view="" class="mainview-animation ng-scope">
@@ -34,46 +34,46 @@
               <div class="panel-body no-padding">
 			  	<div class="panel-body-left">
 					<div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> Name</span>
+				  	<span class="input-group-addon">  Name</span>
 					<input class="form-control" type="start_location" name="name" value="<?php echo $WorkData->name; ?>" placeholder="Start Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>
                   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> Address</span>
-					<input class="form-control" type="end_location" name="address" value="<?php echo $WorkData->address; ?>" placeholder="End Location"  />
+				  	<span class="input-group-addon">  Address</span>
+					<input class="form-control placepicker" type="end_location" name="address" data-type="geo_code" value="<?php echo $WorkData->address; ?>" placeholder="End Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>				  
 				   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-link"></i>Phone</span>
+				  	<span class="input-group-addon">Phone</span>
 					<input class="form-control" type="text" name="phone" id="avaliable_date" value="<?php echo $WorkData->phone; ?>" placeholder="Avaliable Date"  style="width:70%"/>
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Place</span>
+				  	<span class="input-group-addon"> Place</span>
 					<input class="form-control" type="text" name="place" value="<?php echo $WorkData->place; ?>" placeholder="Vehicle Type" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>State</span>
+				  	<span class="input-group-addon"> State</span>
 					<input class="form-control" type="text" name="state" id="reporting_time" value="<?php echo $WorkData->state; ?>" placeholder="Reporting Time" style="width:70%" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Driving License No</span>
+				  	<span class="input-group-addon"> Driving License No</span>
 					<input class="form-control" type="text" name="driving_license_no" value="<?php echo $WorkData->driving_license_no; ?>" placeholder="Material Type" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Adhar Voter Id</span>
+				  	<span class="input-group-addon"> Adhar Voter Id</span>
 					<input class="form-control" type="text" name="adhar_voter_id" value="<?php echo $WorkData->adhar_voter_id; ?>" placeholder="Consignment Weight" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Status ID</span>
+				  	<span class="input-group-addon"> Status ID</span>
 					<input class="form-control" type="text" name="status" value="<?php echo $WorkData->status; ?>" placeholder="Owner ID" />
 				  </div>
 				    <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Driver Owner</span>
+				  	<span class="input-group-addon"> Driver Owner</span>
 					<input class="form-control" type="text" name="driver_owner" value="<?php echo $WorkData->driver_owner; ?>" placeholder="Owner ID" />
 				  </div>
 				  
 				</div>
-				<div class="panel-body-right"> 				  
+				<!--<div class="panel-body-right"> 				  
 				  <div class="input-group">
 				  <div id="" class="uploaded_area">		
 				  			  
@@ -106,7 +106,7 @@
 						  <input type='button' value='+' id='addButton'>
 						 <input type='button' value='-' id='removeButton'>
 				  </div> 
-				 </div>
+				</div>-->
 				 <div class="clear"></div>
 			  </div>
 			  <input type="hidden" name="view" value="alldriver" />

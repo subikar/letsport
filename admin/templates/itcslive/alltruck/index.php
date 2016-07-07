@@ -7,7 +7,7 @@
         <div class="options">
           <div class="btn-toolbar">
             <div class="btn-sm btn-default btn-top" dropdown="">
-               <a href="index.php?view=alltruck&task=addnew">Add Availibility</a>
+               <a href="index.php?view=alltruck&task=addnew">Add Truck</a>
             </div>
         </div>
       </div>

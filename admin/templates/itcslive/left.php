@@ -39,30 +39,30 @@
           <span class="ng-binding">Load Availability</span></a>
         </li>
 		
-        <li class="ng-scope"><a href="index.php?view=blog" class="ng-scope">
+        <!--<li class="ng-scope"><a href="index.php?view=blog" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Blog</span></a>
         </li>
-		
+		-->
         <li class="ng-scope"><a href="index.php?view=testimonial" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Testimonial</span></a>
         </li>
-		
+		<!--
         <li class="ng-scope"><a href="index.php?view=category" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Category</span></a>
-        </li>
+        </li>-->
 		
         <li class="ng-scope"><a href="index.php?view=menu" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Menu</span></a>
         </li>
-		
+		<!--
         <li class="ng-scope"><a href="index.php?view=comment" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>
           <span class="ng-binding">Comment</span></a>
-        </li>
+        </li>-->
 		
         <li class="ng-scope"><a href="index.php?view=enquiry" class="ng-scope">
           <i ng-if="item.iconClasses" class="fa fa-blog"></i>

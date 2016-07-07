@@ -34,28 +34,28 @@
               <div class="panel-body no-padding">
 			  	<div class="panel-body-left">
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> Subscription Id</span>
+				  	<span class="input-group-addon">  Subscription Id</span>
 					<input class="form-control" type="end_location" name="subscription_id" value="<?php echo $WorkData->subscription_id; ?>" placeholder="Subscription Id"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>				  
 				   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-link"></i>Owner</span>
+				  	<span class="input-group-addon">Owner</span>
 					<input class="form-control" type="text" name="owner" id="avaliable_date" value="<?php echo $WorkData->name; ?>" placeholder="Owner"  style="width:70%"/>
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>status</span>
+				  	<span class="input-group-addon"> status</span>
 					<input class="form-control" type="text" name="status" value="<?php echo $WorkData->status; ?>" placeholder="status" />
 				  </div>
 				  	<div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Lead</span>
+				  	<span class="input-group-addon"> Lead</span>
 					<input class="form-control" type="text" name="status" value="<?php echo $WorkData->status; ?>" placeholder="status" />
 				  </div>
 				  	<div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Lead Count</span>
+				  	<span class="input-group-addon"> Lead Count</span>
 					<input class="form-control" type="text" name="status" value="<?php echo $WorkData->status; ?>" placeholder="status" />
 				  </div>
 				</div>
-				<div class="panel-body-right"> 				  
+				<!--<div class="panel-body-right"> 				  
 				  <div class="input-group">
 				  <div id="" class="uploaded_area">		
 				  			  
@@ -88,7 +88,7 @@
 						  <input type='button' value='+' id='addButton'>
 						 <input type='button' value='-' id='removeButton'>
 				  </div> 
-				 </div>
+				</div>-->
 				 <div class="clear"></div>
 			  </div>
 			  <input type="hidden" name="view" value="subscriber" />

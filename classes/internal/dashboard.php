@@ -7,6 +7,7 @@ defined ('ITCS') or die ("Go away.");
     function __construct()
 	{
 		parent::__construct();
+	
 	}
 	function dashboard()
 	{
@@ -56,8 +57,8 @@ defined ('ITCS') or die ("Go away.");
 			//print_r($Mysubscription);exit;
 	
 			$template->assignRef('Mysubscription',$Mysubscription);
-			$where=' WHERE s.subscription_id IS NOT NULL AND owner='.$my->uid;
-			$Query="SELECT s.*, sp.* FROM #__subscription_plan as sp LEFT JOIN #__subscriber as s ON s.subscription_id=sp.subscription_id ".$where." ORDER BY s.subscription_id DESC";
+			$where=' WHERE s.subscription_id IS NOT NULL AND s.status=1 AND s.owner='.$my->uid;
+			$Query="SELECT s.*, sp.subscription_name FROM #__subscription_plan as sp LEFT JOIN #__subscriber as s ON s.subscription_id=sp.subscription_id ".$where." ORDER BY s.subscription_id DESC";
 			//$Query="SELECT * FROM #__subscriber where owner=".$my->uid;
 			//echo $Query;exit; 
 			$db->setQuery($Query);
@@ -67,6 +68,26 @@ defined ('ITCS') or die ("Go away.");
 			
 			
 		}
+	
+	function confirmsubscribe()
+	{			global $db,$template,$my;
+			$id=IRequest::getVar("id");
+			$whereArray=array();
+			$where=' WHERE s.subscription_id IS NOT NULL AND s.subscription_id='.$id; 		
+			//$where=" WHERE ".implode(" AND ",$where);
+			
+			$Query="SELECT s.*, g.data FROM #__gallery as g LEFT JOIN #__subscription_plan as s ON s.image=g.gallery_id ".$where." ORDER BY subscription_id DESC";
+			//$Query="SELECT * FROM #__subscription_plan";			
+			//echo $Query;exit;
+			$db->setQuery($Query);
+			$Mysubscription = $db->LoadObjectList(); 
+			foreach($Mysubscription as $subscription){
+				$subscription->data = unserialize($subscription->data);
+				//print_r($subscription);
+					
+			}
+			$template->assignRef('ConfirmSubscriber',$Mysubscription);
+	}
 	
 	function subscribe()
 	{
@@ -471,10 +492,10 @@ function bidstruck()
 		$ID = IRequest::getVar(id);
 		//echo $ID;exit; 
 		
-		$where=' WHERE u.uid IS NOT NULL';
-		$Query="SELECT b. *, u. * , o . *  FROM #__bids AS b LEFT JOIN #__users AS u ON b.work_id = u.uid LEFT JOIN #__ourworks AS o ON o.id = u.uid".$where;
-		//$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
-		//echo $Query;exit; 
+		$where=' WHERE b.work_id ='.$ID;
+		$Query="SELECT b. *, u. * , o . *  FROM #__bids AS b LEFT JOIN #__ourworks AS o ON b.work_id = o.id LEFT JOIN #__users AS u ON o.owner_id = u.uid".$where; 
+
+
 		$db->setQuery($Query);
 		$truckbid = $db->LoadObjectList();
 		//print_r($truckbid);exit;
@@ -488,6 +509,7 @@ function bidstruck()
 	
 		
 		$template->assignRef('TruckBids',$truckbid);
+		//print_r($truckbid);exit;
 		$this->dashboard();
 	 }
 	 
@@ -497,9 +519,8 @@ function bidsload()
 		$ID = IRequest::getVar(id);
 		//echo $ID;exit; 
 		
-		$where=' WHERE u.uid IS NOT NULL';
-		$Query="SELECT b. *, u. * , o . *  FROM #__bids AS b LEFT JOIN #__users AS u ON b.work_id = u.uid LEFT JOIN #__ourworks AS o ON o.id = u.uid".$where;
-		//$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
+		$where=' WHERE b.work_id ='.$ID;
+		$Query="SELECT b. *, u. * , o . *  FROM #__bids AS b LEFT JOIN #__ourworks AS o ON b.work_id = o.id LEFT JOIN #__users AS u ON o.owner_id = u.uid".$where;		//$Query="SELECT * FROM #__bids WHERE bid_owner_id=".$ID;
 		//echo $Query;exit; 
 		$db->setQuery($Query);
 		$loadbid = $db->LoadObjectList();

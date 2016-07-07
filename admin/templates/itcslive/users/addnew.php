@@ -2,7 +2,7 @@
 if(isset($this->User))
 $User=$this->User;
 
-$UserType=array("registered"=>"Registered","customer"=>"Customer","Admin"=>"Admin","employee"=>"Employee","telecaller"=>"Telecaller","ceo"=>"CEO","finance-manager"=>"Finance Manager","fieldexecutive"=>"Field Executive","jobseeker"=>"Jobseeker");
+$UserType=array("customer"=>"Customer","Admin"=>"Admin","owner"=>"Transport Owner","broker"=>"Transport Broker","agent"=>"Transport Agent");
 ?>  
   <div style="min-height: 601px;" id="page-content" class="clearfix ng-scope" fit-height="">
     <!-- ngView:  -->

@@ -1,3 +1,4 @@
+
 <?php 
 error_reporting(0);
   class Contact extends Master {
@@ -288,12 +289,16 @@ error_reporting(0);
 			  $template->assignRef('RegistrationError','Contact Number already Exists!');
 			  $template->includejs("templates/itcslive/js/signup.js"); 
 			  $template->display('header');	
-			  $template->display('login/signup');
+			  if($post[usertype]=='transporter')
+			  	$template->display('login/signuptransporter');
+			  else 
+			  	$template->display('login/signup');
 			  $template->display('footer');	
 			  exit;
 			}
 		 	
 		    $_POST['avatar'] =  $this->uplodeAvatar();
+			$this->post=$post;
 			parent::bind('users');
     		parent::save();
 			if($post[usertype]=='transporter')
@@ -419,9 +424,59 @@ error_reporting(0);
 			//print_r($this->post);exit;
 			parent::bind('bids');
     		parent::save();
+			
+			$Query="SELECT * from #__subscriber WHERE owner=".$my->uid;
+			 $db->setQuery($Query);
+			 $reduce_bids = $db->loadObjectList();
+			 $reduce_bids[0]->lead_count=$reduce_bids[0]->lead_count-1;
+			// print_r($reduce_bids[0]->lead_count);exit;
+			$this->post[lead_count]=$reduce_bids[0]->lead_count;
+			//print_r($this->post);exit;
+			$Where = "owner = ".$my->uid;
+			$this->Where=$Where;
+			parent::bind('subscriber');
+    		parent::update();
 			$mainframe->miniredirect($Config->site."search-truck");
 			
  		}
+ 
+ 	   function winbidtruck()
+		{
+			global $db,$my,$mainframe;
+			$post=IRequest::get('post');
+			
+			unset($post['task']);	
+			unset($post['view']);
+			$bid_id=$post[bid_id];
+			unset($post['bid_id']);
+			//print_r($post);exit;
+			$post[bid_won]=1;
+			$this->post=$post;
+			parent::bind(bids);
+			$Where=' bid_id = '.$bid_id;
+			$this->Where=$Where;
+			parent::update();
+		}
+		
+	   function winbidload()
+		{
+			global $db,$my,$mainframe;
+			$post=IRequest::get('post');
+			
+			unset($post['task']);	
+			unset($post['view']);
+			$bid_id=$post[bid_id];
+			unset($post['bid_id']);
+			
+			$post[bid_won]=1;
+			$this->post=$post;
+			//print_r($post);exit;
+			parent::bind(bids);
+			$Where=' bid_id = '.$bid_id;
+			//print_r($Where);exit;
+			$this->Where=$Where;
+			parent::update();
+		}
  
  
    }

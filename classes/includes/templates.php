@@ -248,7 +248,7 @@ defined ('ITCS') or die ("Go away.");
 			   ob_start(); 
 		       include($this->TemplatePath.$file.'.php');
 			   $content = ob_get_contents();
-			   $content = $this->sanitize_output($content);
+			   //$content = $this->sanitize_output($content);
 			   ob_end_clean();
 			   if($cache == 0)
 			     echo $content;
@@ -501,7 +501,7 @@ defined ('ITCS') or die ("Go away.");
 				 return $pageURL;
 		 }	  
 	function VehcleType()
-	 {
+	 {  //echo "hi";exit;
 	 	global $db,$my,$template; 
 		$Query="SELECT * FROM #__vehicletype";
 		$db->setQuery($Query);

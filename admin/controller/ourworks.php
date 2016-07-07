@@ -35,12 +35,15 @@
 			
 			$Query = "select count(*) from #__ourworks ".$where; 
 			$db->setQuery($Query);
+			
 			$TestCount = $db->getOne();
 			$template->SetPagination($TestCount);
 			 
 			$Query = "select *  from #__ourworks ".$where." order by id desc";
+			//echo $Query;exit;
 			$db->setQuery($Query,$start,$Limit);
 			$works = $db->loadObjectList();
+			//print_r($works);exit;
 			$template->assignRef('Works',$works);
 		}
 		function addnew()	
