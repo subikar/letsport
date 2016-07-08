@@ -3,7 +3,7 @@
 <div style="min-height: 601px;" id="page-content" class="clearfix ng-scope" fit-height="">
     <div style="" id="wrap" ng-view="" class="mainview-animation ng-scope">
       <div class="ng-scope" id="page-heading">
-        <h1>Availibility</h1>
+        <h4>Availibility Manager</h4>
         <div class="options">
           <div class="btn-toolbar">
             <div class="btn-sm btn-default btn-top" dropdown="">
@@ -16,11 +16,14 @@
           <div class="col-md-12">
             <div class="panel panel-gray">
               <div class="panel-heading">
-                <h4>Availibility Manager</h4>
+                
 				<form name="ourworksForm" id="ourworksForm" method="post">
-                <div class="options">
-					<input class="form-control" type="text" name="search_txt" value="<?php echo $post["search_txt"]; ?>" placeholder="Enter type here" />			<input type="submit" value="Go" onclick="document.ourworksForm.submit()" />	
-				</div>
+                
+                	<input type="hidden" name="operation_type" value="load" />
+					<input class="form-control placepicker" type="text" name="start_location" value="<?php echo $post["start_location"]; ?>" placeholder="search with start location" />			
+					<input class="form-control placepicker" type="text" name="end_location" value="<?php echo $post["end_location"]; ?>" placeholder="End Location" />			
+					<input type="submit" value="Go" onclick="document.ourworksForm.submit()" />	
+		        </form>
               </div>
               <div class="panel-body no-padding">
                 <div class="table-responsive">
@@ -84,7 +87,7 @@
         </div>
         <input type="hidden" name="operation_type" value="truck" />
 		<input type="hidden" name="view" value="ourworks" />
-		</form>
+		
 		<div class="clear"></div>
       </div>
       <!-- container -->

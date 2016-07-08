@@ -1,5 +1,6 @@
 <?php 
  $WorkData=$this->WorkData;
+ global $mainframe,$template;
 ?>
   <div style="min-height: 601px;" id="page-content" class="clearfix ng-scope" fit-height="">
     <div style="" id="wrap" ng-view="" class="mainview-animation ng-scope">
@@ -16,7 +17,7 @@
 			  	<input type="submit" name="Save_close" value="Save&Close" />
 			  </div>
 			  <div class="btn btn-default dropdown-toggle btn-save">
-			  	<a href="index.php?view=ourworks">Cancel</a>
+			  	<a href="index.php?view=loadavailability">Cancel</a>
 			  </div>
             </div>
         </div>
@@ -33,41 +34,45 @@
               <div class="panel-body no-padding">
 			  	<div class="panel-body-left">
 					<div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> Start Location</span>
+				  	<span class="input-group-addon">  Start Location</span>
 					<input class="form-control placepicker" type="start_location" name="start_location" data-type="geo_code" value="<?php echo $WorkData->start_location; ?>" placeholder="Start Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>
                   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i> End Location</span>
+				  	<span class="input-group-addon">  End Location</span>
 					<input class="form-control placepicker" type="end_location" data-type="geo_code" name="end_location" value="<?php echo $WorkData->end_location; ?>" placeholder="End Location"  />
 				 	<span id="error_title" style="color:#FF00CC;"></span>
 				  </div>				  
 				   <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-link"></i>Avaliable Date</span>
-					<input class="form-control" type="text" name="avaliable_date" id="avaliable_date" value="<?php echo $WorkData->avaliable_date; ?>" placeholder="Avaliable Date"  style="width:70%"/>
+				  	<span class="input-group-addon">Avaliable Date</span>
+					<input class="form-control" type="date" name="avaliable_date" id="avaliable_date" value="<?php echo $WorkData->avaliable_date; ?>" placeholder="Avaliable Date"  style="width:70%"/>
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Vehicle Type</span>
-					<input class="form-control" type="text" name="vehicle_type" value="<?php echo $WorkData->vehicle_type; ?>" placeholder="Vehicle Type" />
+				  	<span class="input-group-addon"> Vehicle Type</span>
+					<?php $template->VehcleType(); 
+					//print_r($this->VehcleType);exit;
+					$mainframe->selectbox('vehicle_type',$this->VehcleType,Trailer); ?>
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Reporting Time</span>
-					<input class="form-control" type="text" name="reporting_time" id="reporting_time" value="<?php echo $WorkData->reporting_time; ?>" placeholder="Reporting Time" style="width:70%" />
+				  	<span class="input-group-addon"> Reporting Time</span>
+					<input class="form-control" type="time" name="reporting_time" id="reporting_time" value="<?php echo $WorkData->reporting_time; ?>" placeholder="Reporting Time" style="width:70%" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Material Type</span>
+				  	<span class="input-group-addon"> Material Type</span>
 					<input class="form-control" type="text" name="material_type" value="<?php echo $WorkData->material_type; ?>" placeholder="Material Type" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Consignment Weight</span>
+				  	<span class="input-group-addon"> Consignment Weight</span>
 					<input class="form-control" type="text" name="consignment_weight" value="<?php echo $WorkData->consignment_weight; ?>" placeholder="Consignment Weight" />
 				  </div>
 				  <div class="input-group">
-				  	<span class="input-group-addon"><i class="fa fa-male"></i>Owner ID</span>
-					<input class="form-control" type="text" name="owner_id" value="<?php echo $WorkData->owner_id; ?>" placeholder="Owner ID" />
+				  	<span class="input-group-addon"> Owner ID</span>
+					<?php 
+					//print_r($this->Owner_id);exit;
+					$mainframe->selectbox('name',$this->Owner_id,uid); ?>
 				  </div>
 				</div>
-				<div class="panel-body-right"> 				  
+				<!--<div class="panel-body-right"> 				  
 				  <div class="input-group">
 				  <div id="" class="uploaded_area">				  
 				 <?php foreach($WorkData->gallery as $image): ?>
@@ -99,11 +104,12 @@
 						  <input type='button' value='+' id='addButton'>
 						 <input type='button' value='-' id='removeButton'>
 				  </div> 
-				 </div>
+				</div>-->
 				 <div class="clear"></div>
 			  </div>
-			  <input type="hidden" name="view" value="ourworks" />
+			  <input type="hidden" name="view" value="loadavailability" />
 			  <input type="hidden" name="task" value="savepage" />
+			  <input type="hidden" name="operation_type" value="load" />
 			  <input type="hidden" id="work_id" name="work_id" value="<?php echo (int)$WorkData->id; ?>" />
 			  <input type="hidden" name="gallery_id" value="<?php echo (int)$WorkData->gallery_id; ?>" /> 			  
             </div>

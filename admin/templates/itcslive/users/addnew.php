@@ -22,7 +22,7 @@ $UserType=array("customer"=>"Customer","Admin"=>"Admin","owner"=>"Transport Owne
       </div>
       <div class="container ng-scope" ng-controller="DashboardController">
         <div class="row">
-          <form name="userForm" action="" method="post" id="userForm">
+          <form name="userForm" action="" method="post" id="userForm" enctype="multipart/form-data">
           <div class="col-md-12">
             <div class="panel panel-gray">
               <div class="panel-heading">
@@ -37,7 +37,8 @@ $UserType=array("customer"=>"Customer","Admin"=>"Admin","owner"=>"Transport Owne
 									<input class="form-control" type="text" name="name" value="<?php echo $User->name; ?>" placeholder="Enter Name" />
 								</div><span class="user_error" id="error_name"></span>
 							</div>
-						</div>			  
+						</div>	
+								  
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="input-group">
@@ -58,23 +59,16 @@ $UserType=array("customer"=>"Customer","Admin"=>"Admin","owner"=>"Transport Owne
 							<div class="col-sm-12">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
-									<input class="form-control" type="text" name="phone" value="<?php echo $User->landphone; ?>" placeholder="Enter Land phone" />
+									<input class="form-control" type="text" name="PAN_Card_No" value="<?php echo $User->PAN_Card_No; ?>" placeholder="Enter PAN Card OR Adhar Card No" />
 								</div>
 							</div>
 						</div>			  
-						<div class="form-group">
-							<div class="col-sm-12">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-									<input class="form-control" type="text" name="password" value="<?php echo $User->password; ?>" placeholder="Enter password" />
-								</div>
-							</div>
-						</div>			  
+								  
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-info-circle"></i></span>
-									<input class="form-control" type="text" name="address" value="<?php echo $User->address; ?>" placeholder="Enter Address" />
+									<input class="form-control placepicker" data-type="geo_code" type="text" name="address" value="<?php echo $User->address; ?>" placeholder="Enter Address" />
 								</div>
 							</div>
 						</div>			  
@@ -106,10 +100,32 @@ $UserType=array("customer"=>"Customer","Admin"=>"Admin","owner"=>"Transport Owne
 							<div class="col-sm-12">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-info-circle"></i></span>
-									<input class="form-control" type="text" name="postal" value="<?php echo $User->postal; ?>" placeholder="Enter postal" />
+									<input class="form-control" type="text" name="Transport_Name" value="<?php echo $User->Transport_Name; ?>" placeholder="Transport Name" />
 								</div>
 							</div>
-						</div>			  
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+									<input class="form-control" type="text" name="password" value="<?php echo $User->password; ?>" placeholder="Enter password" />
+								</div>
+							</div>
+						</div>		
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+									<input class="form-control" type="text" name="Registration_no" value="<?php echo $User->password; ?>" placeholder="Registration No" />
+								</div>
+							</div>
+						</div>		
+						<div class="form-group">
+												<label for="img_busi_reg" class="control-label">Upload your Profile image: <span class="require">*</span> </label>
+												<div><input type="file" name="avatar" id="img_busi_reg" class="form-control " data-bv-field="img_busi_reg"/></div>
+												<div class="messageContainer has-error"><small class="help-block" data-bv-validator="notEmpty" data-bv-for="img_busi_reg" data-bv-result="NOT_VALIDATED" style="display: none;">The Business Registration Image is required and cannot be empty</small><small class="help-block" data-bv-validator="file" data-bv-for="img_busi_reg" data-bv-result="NOT_VALIDATED" style="display: none;">The selected file is not valid</small></div>
+												<label for="img_busi_reg" class="control-label"><i>(500 KB Max file size allowed)</i></label>
+						</div>		  
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="input-group">

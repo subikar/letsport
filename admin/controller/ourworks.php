@@ -20,35 +20,57 @@
 			global $db, $template, $Config;
 			$start = IRequest::getInt('start',0);
 			$searchTest = IRequest::getVar('search_txt');
+			$post=IRequest::get('POST');
 			$Limit = ($Config->limit)?$Config->limit:20;
-			if($searchTest != '')
-			{
-				$where = "WHERE start_location LIKE '%".$searchTest."%' OR end_location LIKE '%".$searchTest."%' OR vehicle_type LIKE '%".$searchTest."%' OR material_type LIKE '%".$searchTest."%' OR consignment_weight LIKE '%"
-				.$searchTest."%' OR operation_type LIKE '%".$searchText."'%";
-				
-			} 
-			else
-			{
-				$where = "WHERE operation_type ="."'truck'";
-				
-			}
 			
-			$Query = "select count(*) from #__ourworks ".$where; 
+			$Where = array();
+			$Where[] = "operation_type =".$db->quote('truck');
+            if($post['start_location'] != '')
+			  {
+			      $Where[] = "start_location =".$db->quote($post['start_location']);
+			  	
+			  } 			
+			
+            if($post['end_location'] != '')
+			  {
+			      $Where[] = "end_location =".$db->quote($post['end_location']);
+			  	
+			  } 			
+			$Where = (count($Where) > 0)? 'Where '.implode(' AND ',$Where):'';
+			
+			
+			$Query = "select count(*) from #__ourworks ".$Where; 
 			$db->setQuery($Query);
-			
 			$TestCount = $db->getOne();
 			$template->SetPagination($TestCount);
 			 
-			$Query = "select *  from #__ourworks ".$where." order by id desc";
-			//echo $Query;exit;
+			$Query = "select *  from #__ourworks ".$Where." order by id desc";
+			//echo $Query;exit; 
 			$db->setQuery($Query,$start,$Limit);
 			$works = $db->loadObjectList();
-			//print_r($works);exit;
-			$template->assignRef('Works',$works);
-		}
+			//print_r($db); exit;
+			$template->assignRef('Works',$works);		}
 		function addnew()	
 		{
-			global $template;
+			global $template,$db;
+			
+				global $template,$db;
+			
+			$Query = "select uid,name from #__users ";
+			 
+			$db->setQuery($Query);
+			$owner_id = $db->loadObjectList();
+			
+			$ownerid = array();
+			foreach($owner_id as $oid)
+		  {
+		  	
+		    $ownerid[$oid->uid] = $oid->name;
+			//$ownerid[$oid->uid] = $oid->uid; 
+		  }
+		 
+			$template->assignRef('Owner_id',$ownerid);
+		
 			$template->includejs('templates/itcslive/js/ourworks.js');
 			$workID = IRequest::getInt("work_id");
 			if((int)$workID >0)
@@ -132,7 +154,7 @@
 													reporting_time=".$db->quote($post['reporting_time']).",
 													material_type=".$db->quote($post["material_type"]).",
 													consignment_weight=".$db->quote($post["consignment_weight"]).",
-													owner_id=".$db->quote($post["owner_id"]).",
+													owner_id=".$db->quote($post["name"]).",
 													modified_id=".$my->id.",
 													modified=".$db->quote($post['modified'])." 
 													WHERE id=".$db->quote($post['work_id']);
@@ -147,6 +169,7 @@
 						$post["gallery_id"]=$db->insertid();
 					   	$post['modified_id'] = $my->id;
 					   	$post['status'] = 1;
+						$post['owner_id'] = $post['name'];
 					   	$post['created_on'] = date('Y-m-d h:i');
 						$this->post = $post;
 						parent::bind('ourworks');

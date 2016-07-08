@@ -108,7 +108,7 @@
     <td></td>
     <td>
 	<?php if($this->type == 'truck'  ){?>
-		<?php if($my->uid != '') { if($this->Subscriber[0]->lead_count > 0) {?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addtruckbid?id=".$work->id; ?>">
+		<?php if($my->uid != '') {  if($this->Subscriber[0]->lead_count > 0) {?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addtruckbid?id=".$work->id; ?>">
 		<i class="fa fa-send"></i>&nbsp;Submit Quote</a><?php }else { ?>
 			 <a class="btn btn-sm btn-success" href="<?php echo $Config->site."mysubscription"; ?>">
 		<i class="fa fa-send"></i>&nbsp;Submit Quote</a> <?php }?>
@@ -116,7 +116,7 @@
 		<i class="fa fa-send"></i>&nbsp;Submit Quote</a><?php }?>
 		
 	<?php }elseif($this->type == 'load'){ ?>
-	<?php if($my->uid != '') { if($this->Subscriber[0]->lead_count > 0) {?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addloadbid?id=".$work->id; ?>">
+	<?php if($my->uid != '') {  if($this->Subscriber[0]->lead_count > 0) {?><a class="btn btn-sm btn-success filter-submit truckavailibilty" href="<?php echo $Config->site."addloadbid?id=".$work->id; ?>">
 	<i class="fa fa-send"></i>&nbsp;Submit Quote</a><?php }else { ?>
 			 <a class="btn btn-sm btn-success" href="<?php echo $Config->site."mysubscription"; ?>">
 		<i class="fa fa-send"></i>&nbsp;Submit Quote</a> <?php }?>

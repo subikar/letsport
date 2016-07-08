@@ -72,8 +72,8 @@ global $my,$mainframe;
 		<div class="row">
 			<div class="container">	
  
-						<div class="col-md-3"><label>Name</label></div>
-						<div class="col-md-3"><label>Material Type</label></div>
+						<div class="col-md-3"><label>Truck No.</label></div>
+						<div class="col-md-3"><label>Driver Name</label></div>
                         <div class="col-md-3"><label>Amount</label></div>
                         <div class="col-md-3"><label>Action</label></div>					 
  			</div>
@@ -81,12 +81,12 @@ global $my,$mainframe;
  		
  		<div class="row">
 			<div class="container">	
-                    	<?php //print_r($this->Loadbid); exit;?>
+                    	<?php //print_r($this->Loadbid[0]); exit;?>
 					   <?php  foreach($this->Loadbid as $bids): ?>   
 					   	
-                         <div class="col-md-3"><?php echo $bids->name; ?></div>
-						<div class="col-md-3"><?php echo $bids->bid_text->material_type; ?></div>
-						<div class="col-md-3"><?php echo $bids->bid_text->price; ?></div>
+                         <div class="col-md-3"><?php echo $bids->bid_text->truck_no; ?></div>
+						<div class="col-md-3"><?php echo $bids->bid_text->name; ?></div>
+						<div class="col-md-3"><?php echo $bids->amount; ?></div>
                         <div class="col-md-3">	
                         <input type="hidden" name="bid_id" value="<?php  echo $bids->bid_id;  ?>" />
                     	<input name="view" value="contact" type="hidden" />

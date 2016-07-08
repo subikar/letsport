@@ -3,11 +3,11 @@
 <div style="min-height: 601px;" id="page-content" class="clearfix ng-scope" fit-height="">
     <div style="" id="wrap" ng-view="" class="mainview-animation ng-scope">
       <div class="ng-scope" id="page-heading">
-        <h1>Availibility</h1>
+       <h4>Availibility Manager</h4>
         <div class="options">
           <div class="btn-toolbar">
             <div class="btn-sm btn-default btn-top" dropdown="">
-               <a href="index.php?view=ourworks&task=addnew">Add Availibility</a>
+               <a href="index.php?view=loadavailability&task=addnew&operation_type=load">Add Availibility</a>
             </div>
         </div>
       </div>
@@ -16,12 +16,15 @@
           <div class="col-md-12">
             <div class="panel panel-gray">
               <div class="panel-heading">
-                <h4>Availibility Manager</h4>
 				<form name="ourworksForm" id="ourworksForm" method="post">
-                <div class="options">
-					<input class="form-control" type="text" name="search_txt" value="<?php echo $post["search_txt"]; ?>" placeholder="Enter type here" />			<input type="submit" value="Go" onclick="document.ourworksForm.submit()" />	
-				</div>
+                
+                	<input type="hidden" name="operation_type" value="load" />
+					<input class="form-control placepicker" type="text" name="start_location" value="<?php echo $post["start_location"]; ?>" placeholder="search with start location" />			
+					<input class="form-control placepicker" type="text" name="end_location" value="<?php echo $post["end_location"]; ?>" placeholder="End Location" />			
+					<input type="submit" value="Go" onclick="document.ourworksForm.submit()" />	
+		        </form>
               </div>
+              <div class="clear"></div>
               <div class="panel-body no-padding">
                 <div class="table-responsive">
                   <table class="table" style="margin-bottom: 0px;">
@@ -45,7 +48,7 @@
                       <tr class="ng-scope" ng-repeat="ua in accountsInRange()">
                         <td><input type="checkbox" class="chk_boxes1" name="to_select[<?php echo $work->id; ?>]"  /></td>
                          <td><?php echo $work->id; ?></td>
-						<td><a href="index.php?view=ourworks&task=addnew&work_id=<?php echo (int)$work->id; ?>"><?php echo $work->start_location; ?></a></td>
+						<td><a href="index.php?view=loadavailability&task=addnew&work_id=<?php echo (int)$work->id; ?>"><?php echo $work->start_location; ?></a></td>
                         <td><?php echo $work->end_location; ?></td>
 						<td><?php echo $work->avaliable_date; ?> : <?php echo $work->reporting_time; ?></td>
 						<td><?php echo $work->vehicle_type; ?></td>
@@ -55,12 +58,12 @@
                        <td><?php echo $work->created_on; ?></td>
                         <td class="text-right"><div class="btn-group">
 						<span class="btn btn-xs btn-default-alt">
-							<a href="index.php?view=ourworks&task=addnew&work_id=<?php echo (int)$work->id; ?>"><i class="fa fa-fw fa-pencil"></i></a></span>
+							<a href="index.php?view=loadavailability&task=addnew&work_id=<?php echo (int)$work->id; ?>"><i class="fa fa-fw fa-pencil"></i></a></span>
                             <button class="btn btn-xs btn-default-alt" ng-click="uaHandle($index)">
 							<i class="<?php echo ((int)$work->status==1) ? 'fa fa-fw fa-check': 'fa fa-fw fa-times'; ?>">
 							</i></button>
 							<span class="btn btn-xs btn-default-alt">
-							<a title="Delete" href="index.php?view=ourworks&task=Removework&work_id=<?php echo (int)$work->id; ?>"><i class="fa fa-fw fa-times"></i></a>
+							<a title="Delete" href="index.php?view= loadavailability&task=Removework&work_id=<?php echo (int)$work->id; ?>"><i class="fa fa-fw fa-times"></i></a>
 							</span>
                           </div></td>
                       </tr>
@@ -82,9 +85,7 @@
             </div>
           </div>
         </div>
-        <input type="hidden" name="operation_type" value="load" />
-		<input type="hidden" name="view" value="loadavailability"/>
-		</form>
+
 		<div class="clear"></div>
       </div>
       <!-- container -->

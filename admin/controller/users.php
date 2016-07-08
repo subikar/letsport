@@ -67,6 +67,7 @@
 		{
 		   global $db,$mainframe;
 		   $post = IRequest::get('POST');
+		   //print_r($post);exit;
 		   if((int)$post["uid"] > 0)
 		   {
 			  $updateArray=array();
@@ -84,12 +85,47 @@
 			   unset($post['uid']);
 			   $post['sendmail'] = 1;
 			   $post['register_date'] = date('Y-m-d h:i');
-			   $this->post = $post;
+			   $post['avatar'] =  $this->uplodeAvatar();
+			   $this->post=$post;
 			   parent::bind('users');
 			   parent::save();
 		   }
 		   $mainframe->redirect('index.php?view=users');
 		}
+		
+		 function uplodeAvatar()
+		{		//echo "uploading";exit;
+				 global $db, $template, $Config,$mainframe;
+				 $files = IRequest::get('FILES');
+				 $img_path = IPATH_ROOT.'/images/avatar/';
+				 //print_r($img_path);exit;
+				 $AcceptedFilesInArray = array('jpg','png','jpeg','gif');
+				 $ext = pathinfo($files['avatar']['name'], PATHINFO_EXTENSION);
+				
+				 if(in_array($ext,$AcceptedFilesInArray) && $files['avatar']['size'] < 100000)
+				   {
+ 				     $name = md5(time()).'.'.$ext;     
+				     $res =move_uploaded_file($files['avatar']['tmp_name'], $img_path.$name);
+					 //print($img_path.$name);
+					 //print_r($res); exit;
+					if($res == 1)
+						$avatar = $name;
+					 
+					 
+				   }
+				 else
+				   {
+					  $template->assignRef('RegistrationError','Please use small Image to upload');
+					  
+					  $template->display('header');	
+					  $template->display('users/addnew');
+					  $template->display('footer');	
+					  exit;
+				   }  
+				  return $avatar;
+			
+		}
+		
 	   function checkEmail()
 	   {
 			global $db,$mainframe;

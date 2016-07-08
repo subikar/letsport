@@ -1,4 +1,5 @@
 <?php 
+global $mainframe,$template;
  $WorkData=$this->WorkData;
 ?>
   <div style="min-height: 601px;" id="page-content" class="clearfix ng-scope" fit-height="">
@@ -48,7 +49,10 @@
 				  </div>
 				  <div class="input-group">
 				  	<span class="input-group-addon">Vehicle Type</span>
-					<input class="form-control" type="text" name="vehicle_type" value="<?php echo $WorkData->vehicle_type; ?>" placeholder="Vehicle Type" />
+				  	<?php  
+				  	$template->VehcleType();
+				  	//print_r($this->VehcleType);exit;?>
+					<?php $mainframe->selectbox('vehicle_type',$this->VehcleType,Trailer); ?>
 				  </div>
 				  <div class="input-group">
 				  	<span class="input-group-addon">Reporting Time</span>
@@ -62,9 +66,11 @@
 				  	<span class="input-group-addon">Consignment Weight</span>
 					<input class="form-control" type="text" name="consignment_weight" value="<?php echo $WorkData->consignment_weight; ?>" placeholder="Consignment Weight" />
 				  </div>
-				  <div class="input-group">
-				  	<span class="input-group-addon">Owner ID</span>
-					<input class="form-control" type="text" name="owner_id" value="<?php echo $WorkData->owner_id; ?>" placeholder="Owner ID" />
+				  	  <div class="input-group">
+				  	<span class="input-group-addon"> Owner ID</span>
+					<?php 
+					//print_r($this->Owner_id);exit;
+					$mainframe->selectbox('name',$this->Owner_id,uid); ?>
 				  </div>
 				</div>
 				
