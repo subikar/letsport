@@ -1,0 +1,1 @@
+<div class="">Thank You for registering.... we will be back soon</div>
