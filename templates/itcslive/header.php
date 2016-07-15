@@ -57,8 +57,8 @@ $template->includejs("templates/itcslive/js/jPushMenu.js",7,0);
 		</div>
 		<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 topbar">
 			<ul class="quick-contact topmidilbar respontop">
-				<li><a class="truckavailibilty" href="<?php echo $Config->site.'submit-load'; ?>" title="Submit Load For Free">Submit Load</a></li>
-				<li><a class="truckavailibilty" href="<?php echo $Config->site.'add-truck-available'; ?>" title="Submit Truck Availability For Free">Submit Truck</a></li>
+				<li><a class="truckavailibilty" href="<?php if($my->uid > 0) {echo $Config->site.'submit-load';} else {echo $Config->site.'login';} ?>" title="Submit Load For Free">Submit Load</a></li>
+				<li><a class="truckavailibilty" href="<?php if($my->uid > 0) {echo $Config->site.'add-truck-available';} else {echo $Config->site.'login';} ?>" title="Submit Truck Availability For Free">Submit Truck</a></li>
 				<li><a href="<?php echo $Config->site.'customer-signup'; ?>" title="Customer Signup For Free">Customer Signup</a></li>
 				<li><a href="<?php echo $Config->site.'transporter-signup'; ?>" title="Transporter Signup For Free">Transporter Signup</a></li>
 			</ul>
