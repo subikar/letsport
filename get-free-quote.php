@@ -8,12 +8,14 @@ $template->includejs("templates/itcslive/js/getfreequote.js");
 	  case 'addtruck':
 	  $template->assignRef('Title','Submit Truck Availability For Free');	
 	  //$Model = includeclass('dashboard');
+	  $template->VehcleType();
 	  $template->display('tmplpopup/header');	
 	  $template->display('contact/addtruck');
 	  $template->display('tmplpopup/footer');	
 	  break;
 	   case 'addload':
-	  $template->assignRef('Title','Submit Load For Free');		 
+	  $template->assignRef('Title','Submit Load For Free');		
+	  $template->VehcleType(); 
 	  $template->display('tmplpopup/header');	
 	  $template->display('contact/addload');
 	  $template->display('tmplpopup/footer');	

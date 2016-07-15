@@ -1,4 +1,4 @@
-<?php global $my,$mainframe,$template;?>
+<?php global $my,$mainframe;?>
 <form action="" method="post" class="form-horizontal getofferForm" name="AddTruck" id="AddTruck" target="_parent">
 <div class="container popupform">
 
@@ -49,11 +49,9 @@
 
 				 <label class="control-label" for="email">Vehcle Type:</label>
 					<?php //$template->VehcleType(); ?>
-				 <select id="trucktype" name="vehicle_type_id" class="input-xlarge required-entry validate-email validate_me span12" required="" placeholder="Select Truck Type">
-										<span class="wpcf7-form-control-wrap name">
+				 
 					<?php $mainframe->selectbox('vehicle_type',$this->VehcleType,select); ?>
-					</span>
-				</select>
+					
 
 				<span style="display: none;" class="error error-empty error_tag">*This is not a valid email address.</span>
 

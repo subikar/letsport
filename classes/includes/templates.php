@@ -504,7 +504,6 @@ defined ('ITCS') or die ("Go away.");
 	 {
 	 	 
 	 	global $db,$my,$template; 
-			
 		$Query="SELECT * FROM #__vehicletype";
 		$db->setQuery($Query);
 		$VehcleType = $db->LoadObjectList();
@@ -513,6 +512,7 @@ defined ('ITCS') or die ("Go away.");
 		  {
 		    $vtype[$Vehcle->vehicle_type] = $Vehcle->vehicle_type; 
 		  }
+		  
 		$template->assignRef('VehcleType',$vtype); 
 	 	
 	 } 
