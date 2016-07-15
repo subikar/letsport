@@ -501,8 +501,10 @@ defined ('ITCS') or die ("Go away.");
 				 return $pageURL;
 		 }	  
 	function VehcleType()
-	 {  //echo "hi";exit;
+	 {
+	 	 
 	 	global $db,$my,$template; 
+			
 		$Query="SELECT * FROM #__vehicletype";
 		$db->setQuery($Query);
 		$VehcleType = $db->LoadObjectList();
@@ -517,6 +519,7 @@ defined ('ITCS') or die ("Go away.");
 
 		   
      }
+
   global $template;
   $template = new TemplateEngine($template);
 ?>

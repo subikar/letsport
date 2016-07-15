@@ -394,6 +394,17 @@ error_reporting(0);
 			//print_r($this->post);exit;
 			parent::bind('bids');
     		parent::save();
+			$Query="SELECT * from #__subscriber WHERE owner=".$my->uid;
+			 $db->setQuery($Query);
+			 $reduce_bids = $db->loadObjectList();
+			 $reduce_bids[0]->lead_count=$reduce_bids[0]->lead_count-1;
+			// print_r($reduce_bids[0]->lead_count);exit;
+			$this->post[lead_count]=$reduce_bids[0]->lead_count;
+			//print_r($this->post);exit;
+			$Where = "owner = ".$my->uid;
+			$this->Where=$Where;
+			parent::bind('subscriber');
+    		parent::update();
 			$mainframe->miniredirect($Config->site."search-truck");
 			
  		}
@@ -444,7 +455,7 @@ error_reporting(0);
 		{
 			global $db,$my,$mainframe;
 			$post=IRequest::get('post');
-			
+		//	print_r($post);exit;
 			unset($post['task']);	
 			unset($post['view']);
 			$bid_id=$post[bid_id];
@@ -456,8 +467,11 @@ error_reporting(0);
 			$Where=' bid_id = '.$bid_id;
 			$this->Where=$Where;
 			parent::update();
-		}
-		
+			$this->bidstruck();
+			$mainframe->miniredirect($Config->site."dashboard");
+}
+		 
+
 	   function winbidload()
 		{
 			global $db,$my,$mainframe;
@@ -476,6 +490,7 @@ error_reporting(0);
 			//print_r($Where);exit;
 			$this->Where=$Where;
 			parent::update();
+			$mainframe->miniredirect($Config->site."dashboard");
 		}
  
  

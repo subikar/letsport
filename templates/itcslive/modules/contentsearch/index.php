@@ -68,7 +68,7 @@ global $Config;
 	</div>
 	<div class="input-group col-sm-1 inline sour">
 		<span class="input-group-addon" ><i class="fa fa-map-marker"></i></span>																								
-		<input type="text" name="start_location"  placeholder="To Location" class="placepicker form-control" />
+		<input type="text" name="end_location"  placeholder="To Location" class="placepicker form-control" />
 	</div>
 	   
 	   <div class="input-group col-sm-1 inline sour" >

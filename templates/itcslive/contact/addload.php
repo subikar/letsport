@@ -1,4 +1,4 @@
-<?php global $my,$mainframe;?>
+<?php global $my,$mainframe,$template;?>
 <form action="" method="post" class="form-horizontal getofferForm" name="AddTruck" id="AddTruck" target="_parent">
 <div class="container popupform">
 
@@ -48,7 +48,7 @@
 			<div class="grid_4">
 
 				 <label class="control-label" for="email">Vehcle Type:</label>
-
+					<?php //$template->VehcleType(); ?>
 				 <select id="trucktype" name="vehicle_type_id" class="input-xlarge required-entry validate-email validate_me span12" required="" placeholder="Select Truck Type">
 										<span class="wpcf7-form-control-wrap name">
 					<?php $mainframe->selectbox('vehicle_type',$this->VehcleType,select); ?>

@@ -77,9 +77,11 @@
 			
 			
 			$post = IRequest::get('POST');
+			//print_r($post);//exit;
 			$type = IRequest::getVar('type','truck');
+			//print_r($type);exit;
 			$template->assignRef('type',$type);
-			//print_r($post);
+			
 			$Where = array();
 			
 			$Where[] = 'w.status=1';
