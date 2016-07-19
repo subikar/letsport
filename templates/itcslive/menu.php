@@ -17,9 +17,14 @@
 		<ul class="dropdown-content">
 		<?php foreach($Menu->submenu as $Submenu): ?>
 		 <li >
-		 <?php if($Submenu->title == 'Submit Truck' || $Submenu->title == 'Submit Load') {?>	
+		 <?php if($Submenu->title == 'Submit Truck' || $Submenu->title == 'Submit Load') {
+		 	if($my->uid > 0){
+		 	?>		  	
 	  	<a class="truckavailibilty" href="<?php echo $Config->site.$Submenu->alias; ?>"><?php echo $Submenu->title?></a>
-	  	<?php }
+	  	<?php } else { ?>
+	  			<a class="truckavailibilty" href="<?php echo $Config->site.login; ?>"><?php echo $Submenu->title?></a>
+	  	
+	  	<?php } }
   		else { ?>
 	  	<a href="<?php echo $Config->site.$Submenu->alias; ?>"><?php echo $Submenu->title?></a>
 	  	<?php } ?>
