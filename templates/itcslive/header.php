@@ -73,8 +73,8 @@ $template->includejs("templates/itcslive/js/jPushMenu.js",7,0);
    				 	<li><a href="<?php echo $Config->site.'dashboard'; ?>">Dashboard</a></li>
     				<li><a class="truckavailibilty" href="<?php echo $Config->site.'addtruck'; ?>">Add Truck</a></li>
   					<li><a class="truckavailibilty" href="<?php echo $Config->site.'adddriver'; ?>">Add Driver</a></li>
-  					<li><a href="<?php echo $Config->site.'myload'; ?>">My Load</a></li>
-  					<li><a href="<?php echo $Config->site.'mytruck'; ?>">My Truck</a></li>
+  					<!--<li><a href="<?php echo $Config->site.'myload'; ?>">My Load</a></li>-->
+  					<!--<li><a href="<?php echo $Config->site.'mytruck'; ?>">My Truck</a></li>-->
   					<li><a href="<?php echo $Config->site.'mysubscription'; ?>">My Subcription</a></li>
   					<!--<li><a href="<?php echo $Config->site.'myinvoice'; ?>">Invoice History</a></li>-->
   					<li><a href="<?php echo $Config->site.'logout'; ?>">Logout</a></li>
