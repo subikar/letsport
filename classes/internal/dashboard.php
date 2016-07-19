@@ -15,8 +15,15 @@ defined ('ITCS') or die ("Go away.");
 		
 	    $this->getMyTruck();
 	    $this->getMyDriver();
+		
 		$template->assignRef('TrucksAvailable',$this->getTruckLoadAvailable('truck'));
 		$template->assignRef('LoadAvailable',$this->getTruckLoadAvailable('load'));
+		
+		$Query="SELECT usertype FROM #__users where uid=".$my->uid;					
+		$db->setQuery($Query);
+		$Ctype= $db->LoadObjectList(); 
+		$template->assignRef('Customer_type',$Ctype);
+		
 		
 /*	   	$Tickets=$this->getTicket();
 	  	$template->assignRef('Tickets',$Tickets);

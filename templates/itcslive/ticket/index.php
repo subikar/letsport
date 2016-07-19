@@ -1,7 +1,9 @@
 <?php
 defined ('ITCS') or die ("Go away.");
 global $Config,$my;
+//print_r($this->Customer_type);
 ?>
+
 <div class="container-fluid">
      	<div class="row">
 		<h2>Welcome <?php echo $my->name; ?>!</h2>
@@ -35,7 +37,8 @@ global $Config,$my;
                 <a href="<?php echo $Config->site."changepassword" ?>" class="change_password" title="Change Password"><span class="fa fa-fw fa-user"></span>Change Password</a>
 			</div>	
 			 </div>
-		
+			 
+		<?php if($this->Customer_type[0]->usertype != 'customer')  {?>
 			<div class="col-xs-12 col-sm-6 col-md-6">
 			<div class="col-xs-11 col-sm-11 col-md-11 padDiv">
 			 <h2 class="boiteHeader">My Truck <span class="right"><a  href="<?php echo $Config->site."addtruck" ?>" class="truckavailibilty" title="Add Truck"><span class="fa fa-fw fa-truck"></span>Add Truck</a> </span></h2>
@@ -60,7 +63,9 @@ global $Config,$my;
 			 <?php endforeach; ?>
 			</div> 
 			</div>
-
+		
+		<?php } ?>
+		
 			<div class="col-xs-12 col-sm-12 col-md-12">
 			<div class="col-xs-12 col-sm-12 col-md-12 padDiv">
 			 <?php if($this->TrucksAvailable[0]->operation_type=='truck'): ?>
