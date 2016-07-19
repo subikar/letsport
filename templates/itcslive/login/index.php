@@ -32,7 +32,7 @@
 	<input value="Login" name="submit" type="submit" class="add_ticket_btn" onclick="Login.submitform('form');">	
 	
 	<!--<input value="Login" name="submit" type="submit" class="button-1">-->
-	<P class="forgotpass" style="float:left"> <a href="forgotpass">Forgot Password ?</a> | <a href="signup">Register</a> </P>
+	<P class="forgotpass" style="float:left"> <a href="forgotpass">Forgot Password ?</a> | <a href="customer-signup" target="parent">Customer Register</a> | <a href="transporter-signup" target="parent">Transporter Register</a></P>
    	</div>
 	
 <script type="text/javascript">
